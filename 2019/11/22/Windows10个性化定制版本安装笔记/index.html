@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/Windows/QQ%E6%88%AA%E5%9B%BE20191119102732.png">
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/Windows/QQ%E6%88%AA%E5%9B%BE20191119102802.png">
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/Windows/QQ%E6%88%AA%E5%9B%BE20191119102818.png">
-<meta property="og:updated_time" content="2019-11-23T06:42:26.469Z">
+<meta property="og:updated_time" content="2019-11-29T13:56:33.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows10个性化定制版本安装笔记">
 <meta name="twitter:description" content="一、光盘镜像文件：1、使用NTLite软件制作定制的ISO安装文件，我一般精简的内容如下： 组件移除：Metro应用OneDrive（微软云盘）MicrosoftEdgeMicrosoftEdgeDevToolsClientSmartScreenWindows DefenderXboxGameCallableUI零售演示内容屏保Embedded Mode（嵌入模式）Windows Recovery">
@@ -196,10 +196,10 @@
 <h2 id="二、安装步骤："><a href="#二、安装步骤：" class="headerlink" title="二、安装步骤："></a>二、安装步骤：</h2><p>首先，用windows安装盘启动电脑，到下面这个界面，按Shift+F10，就会启动具有管理员权限的ＣＭＤ<br><img src="/assets/img/Windows/QQ%E6%88%AA%E5%9B%BE20191119102818.png" alt="图片"><br>进入CMD程序后，依次输入以下命令：<br>1.diskpart（启动Diskpart程序）<br>2.list disk （查看电脑中有哪些磁盘）<br>3.select disk 0（选中编号为0的磁盘）<br>4.clean（清除磁盘所有分区）<br>5.convert gpt（将磁盘转换成GPT格式）<br>6.list partition（查看当前磁盘分区情况）<br>7.create partition efi size=100（默认大小为M）<br>8.create partition msr size =128<br>9.create partition primary size =102400(此处为你想设置C盘的大小)<br>10.两次输入exit</p>
 <h2 id="三、优化步骤（个人喜好仅作参考）："><a href="#三、优化步骤（个人喜好仅作参考）：" class="headerlink" title="三、优化步骤（个人喜好仅作参考）："></a>三、优化步骤（个人喜好仅作参考）：</h2><p>1.1安装驱动（右键windows图标→设置→更新和安全→Windows更新）<br>  官网下载驱动<br>1.2安装必备组件（.net3.5、C++运行库、DirectX Microsoft图形库）<br>  .net3.5可以通过程序里的打开关闭windows功能安装<br>或者dism.exe /online /enable-feature /featurename:NetFX3 /Source:(安装盘盘符):\sources\sxs</p>
 <p>2.1安装Office<br>2.2激活Windows和Office<br>2.3更改计算机名（设置→系统→关于→重命名这台电脑）<br>2.4更改锁屏方式（设置→账户→登录选项）</p>
-<p>3.1控制面板→操作中心→用户账户控制→推荐<br>  控制面板→Windows防火墙→打开<br>  关闭方法：选择关闭→左边有个高级设置→中间有个Windows防火墙属性→关闭。服务里也可以禁用Windows Firewall<br>3.2服务→禁用Windows Search（因为everything更好用）/Superfetch<br>  服务→打开Security Center/Windows update/Windows Firewall<br>ps:Windows自带的关于安全的软件有操作中心、Security Center、Windows Firewall、Windows Defender</p>
+<p>3.1控制面板→操作中心→用户账户控制→最低<br>  控制面板→Windows防火墙→打开<br>  关闭方法：选择关闭→左边有个高级设置→中间有个Windows防火墙属性→关闭。服务里也可以禁用Windows Firewall<br>3.2服务→禁用Windows Search（因为everything更好用）/Superfetch<br>  服务→打开Security Center/Windows update/Windows Firewall<br>ps:Windows自带的关于安全的软件有操作中心、Security Center、Windows Firewall、Windows Defender</p>
 <p>4.1文件夹选项将所有隐藏全部打开<br>  关闭休眠：powercfg -h off<br>4.2修改虚拟内存到非系统盘</p>
 <p>5.1关闭打开文件提示：<br>  运行→gpedit.msc→用户配置→管理模板→Windows组件→附件管理器→双击中等危险文件类型包含列表<br>  选择已启用→指定中等危险扩展名里输入.exe<br>5.2纯个人喜好，把视频音乐图片下载分别指向别的盘符。<br>ps：运行msconfig可以进行引导项的更改</p>
-<p>Windows 8.1<br>1、Chrome<br>2、火绒、CCleaner（捆绑了avast）、Uninstall Tool<br>3、Rainmeter<br>Windows10<br>1、Chrome<br>2、火绒、CCleaner、Uninstall Tool<br>3、Rainmeter<br>4、游戏相关（暴雪战网、WeGame、炉石传说、炉石传说盒子）<br>5、腾讯QQ、向日葵、百度云盘、360压缩、pandownload、office、potplayer<br>6、NTLite</p>
+<p>Windows 8.1<br>1、Chrome<br>2、火绒、CCleaner（捆绑了avast）、Uninstall Tool<br>3、Rainmeter<br>Windows10<br>1、Chrome<br>2、火绒、CCleaner、Uninstall Tool<br>3、Rainmeter<br>4、游戏相关（暴雪战网、WeGame、炉石传说、炉石传说盒子）<br>5、腾讯QQ、向日葵、百度云盘、bandzip、pandownload、office、potplayer<br>6、NTLite</p>
 
       
 
