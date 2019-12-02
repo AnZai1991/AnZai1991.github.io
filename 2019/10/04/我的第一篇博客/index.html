@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="安仔的博客">
 <meta property="og:description" content="简介这是一个基于Hexo框架的静态博客。此博客用来更新我的日常技术总结文档，用来记录以便后续查找。博客内容使用Markdown编辑器，我的第一篇博客就来尝试使用Markdown来学习使用一下。 环境搭建1、首先下载Node.js下载地址：https://nodejs.org（根据系统环境选择版本，下载LTS长期支持版本）。2、安装下载的文件node-v10.16.3-x64.msi，我选择安装到D">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-12-02T13:25:04.915Z">
+<meta property="og:updated_time" content="2019-12-02T13:53:22.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的第一篇博客">
 <meta name="twitter:description" content="简介这是一个基于Hexo框架的静态博客。此博客用来更新我的日常技术总结文档，用来记录以便后续查找。博客内容使用Markdown编辑器，我的第一篇博客就来尝试使用Markdown来学习使用一下。 环境搭建1、首先下载Node.js下载地址：https://nodejs.org（根据系统环境选择版本，下载LTS长期支持版本）。2、安装下载的文件node-v10.16.3-x64.msi，我选择安装到D">
@@ -291,6 +291,7 @@
 <p>hexo s（hexo server也可以，Win10亲测）启动hexo博客进程<br>最后，可以在本地浏览器中打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>的地址就可访问了！lol<br>使用 <kbd>Ctrl</kbd>+<kbd>C</kbd> 退出</p>
 <hr>
 <h2 id="Hexo博客的常用操作"><a href="#Hexo博客的常用操作" class="headerlink" title="Hexo博客的常用操作"></a>Hexo博客的常用操作</h2><p>hexo new “文章标题” 创建一篇新的博客（会有一个.md的文件在source/_posts下生成，md文件是markdown标记语言的文件格式）<br>hexo g生成博客静态文件<br>hexo s启动浏览一下</p>
+<hr>
 <h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><p>首先登陆上自己的github账号，选择New repository<br>Repository name写入个人github名字.github.io（必须按照github的命名要求）<br>Description写上描述<br>点击Create repository</p>
 <p>下载安装git部署插件<br>在Blog目录下cnpm install –-save hexo-deployer-git<br>也可使用npm install hexo-deployer-git –save<br>等待安装完成</p>
 <p><strong>修改配置文件_config.yml：</strong></p>
@@ -298,12 +299,15 @@
 
 <p><strong>重点：部署到远端之前需要在github上创建ssh key</strong><br>1、首先在目录下创建一个.ssh文件夹<br>mkdir ~/.ssh<br>2、配置全局的name和email（你的github的name和email）<br>git config –global user.email <a href="mailto:XXXX@XX.com" target="_blank" rel="noopener">XXXX@XX.com</a><br>4、生成key<br>ssh-keygen -t rsa -C <a href="mailto:XXXX@XX.com" target="_blank" rel="noopener">XXXX@XX.com</a><br>5、连续按三次回车<br>6、在.ssh文件夹下找到id_rsa.pub（这就是生产的公钥）<br>7、用记事本打开，全选复制</p>
 <p>在github上选择setting，找到SSH and GPG keys<br>选择New SSH key,将剪贴板内容复制进去保存即可。</p>
+<hr>
 <h2 id="PUSH到GitHub"><a href="#PUSH到GitHub" class="headerlink" title="PUSH到GitHub"></a>PUSH到GitHub</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <p>提示输入账号密码，最后完成。</p>
+<hr>
 <h2 id="迁移Hexo"><a href="#迁移Hexo" class="headerlink" title="迁移Hexo"></a>迁移Hexo</h2><p>待补充。</p>
+<hr>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>感谢程序羊大佬的教程，这是大佬个人网站链接<a href="https://www.codesheep.cn/" target="_blank" rel="noopener">CodeSheep</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
       
 
       
