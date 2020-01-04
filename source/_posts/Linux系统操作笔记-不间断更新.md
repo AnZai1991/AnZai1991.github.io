@@ -4,7 +4,7 @@ date: 2019-12-27 23:22:40
 tags: Linux
 ---
 
-## 一、Linux操作系统（以下以Ubuntu为例）
+## 一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）
 #### 分区
 以500G硬盘为例，大致分为以下分区
 | 设备 | 类型 | 挂载点 | 大小 |
@@ -25,7 +25,6 @@ sudo apt-get update
 sudo apt-get upgrade
 #下载并安装在本系统上已有的软件包的最新版本
 ````
-
 #### 开启SSH
 ```bash
 sudo ps -e |grep ssh #查看ssh是否安装，其中ssh是客户端、sshd是服务端
@@ -50,8 +49,7 @@ rpm -qa #列出系统中安装的所有软件包#
 rpm -q 软件包名字 #列出安装的指定的软件包#
 sudo rpm -e 软件包名字 #卸载指定的软件包#
 ***dpkg和rpm这些软件包管理器不能有效解决依赖性问题，所以有了以APT、yum等为代表的高级软件包管理工具。***
-
-#### 不支持root通过ssh远程登陆
+#### 部分Linux不支持root通过ssh远程登陆
 有些Linux是不支持root用户使用ssh远程登陆的，比如Debian、Kali（采用Debian内核）
 修改配置文件/etc/ssh/sshd_config
 1、确认一下
@@ -79,7 +77,6 @@ update-rc.d ssh enable
 按 O：从光标所在行，上面一行开始编辑
 按 a ：从光标当前字符后编辑，
 按 A ：从光标所在行的行尾编辑
-
 #### 命令模式
 ：w 保存文本
 ：q 退出 vim
@@ -103,7 +100,6 @@ sudo chmod a+w 文件名 #a代表所有用户，+代表添加某个权限，w代
 
 ## 三、SecureCRT
 #### 初次使用
-
 使用root用户，变更ssh客户端配置
 ```bash
 cd /etc/ssh
@@ -120,20 +116,30 @@ vi sshd_config
 最后重启系统。
 
 ### 常见问题
+#### 初次连接报错
 初次使用SecureCRT没有配置两个文件，就会报如下错误。
 密钥交换失败。没有兼容的密钥交换方法。服务器支持以下方法：ecdh-sha2-nistp256、ecdh-sha2-nistp384、ecdh-sha2-nistp521、diffie-hellman-group-exchange-sha256
-
-SecureCRT显示中文乱码解决方法：
+#### SecureCRT显示中文乱码解决方法
 菜单栏里-选项-会话选项-外观
 字符编码选项由默认改为UTF-8保存即可。
+#### 设置SSH远程登陆超时的时间（SUSE Linux下）
+```bash
+echo "export TMOUT=900" >> /etc/profile #设置15分钟超时写入配置文件，为0表示不超时
+cat /etc/profile |grep TMOUT -n #查询设置结果
+```
 
 ---
 
 ## 四、VMware Tools
+
 ### 简介
 经常使用虚拟机的童鞋肯定知道VMware虚拟机自带的这个工具，它主要用来本地和虚拟机直接的数据交互，比如最常用的粘贴板。
+
+### 常见问题
+#### Windows下安装VMware Tools
 Windows下的安装最简单，只需要在菜单栏-虚拟机-安装VMware Tools就可以。这个软件是通过自带的iso文件加载到虚拟机的光驱设备中运行安装。
-主要讲一下Linux虚拟机中安装VMware Tools过程，必须进入虚拟机系统后再从菜单栏中选择虚拟机选项-安装VMware Tools。这时候会有一个iso文件加载到了虚拟机的光驱设备中，如果选择纯命令行的方法，就需要使用mount命令，将光驱挂在到/mnt目录下（需要根据具体的Linux版本约定的方式操作）。
+#### Linux下安装VMware Tools
+Linux虚拟机中安装VMware Tools过程，必须进入虚拟机系统后再从菜单栏中选择虚拟机选项-安装VMware Tools。这时候会有一个iso文件加载到了虚拟机的光驱设备中，如果选择纯命令行的方法，就需要使用mount命令，将光驱挂在到/mnt目录下（需要根据具体的Linux版本约定的方式操作）。
 列出挂载点目录的内容
 ```bash
 ls mount-point
@@ -153,6 +159,36 @@ tar zxpf /mnt/cdrom/VMwareTools-x.x.x-yyyy.tar.gz
 ```
 参考[官方文档][在Linux下安装vmwaer tools]
 
+---
+
+## 附录
+
+### 常用Linux操作命令
+查看系统版本
+```bash
+lsb_release -a #适用所有Linux发行版，但是Debian要安装lsb
+cat /etc/issue #适用所有Linux发行版，显示发行版本信息
+```
+查看Linux内核版本
+```bash
+uname -a #显示用户及Linux版本号
+cat /proc/version #显示正在运行的内核版本
+```
+查看cpu信息
+```bash
+cat /proc/cpuinfo
+```
+查看进程信息
+```bash
+ps #不带参数只查看当前进程
+```
+
+---
+
+## 五、VNC Server
+附上一篇[本人CSDN博文链接][文章连接]
 
 
+
+[文章连接]:https://blog.csdn.net/u010665718/article/details/89226720
 [在Linux下安装vmwaer tools]:https://docs.vmware.com/cn/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-08BB9465-D40A-4E16-9E15-8C016CC8166F.html
