@@ -40,7 +40,7 @@ sudo apt-get upgrade
 #### 开启SSH
 ```bash
 dpkg -l |grep ssh #在已安装的程序中查找是否有ssh
-sudo ps -e |grep ssh #在进程中查看ssh是否安装，其中ssh是客户端、sshd是服务端
+sudo ps -ef |grep ssh #在进程中查看ssh是否安装，其中ssh是客户端、sshd是服务端。e代表显示所有进程，f代表全格式
 sudo apt-get install openssh-server #安装openssh
 service sshd start #启动ssh服务端，也可能是service ssh start
 service sshd stop #停止ssh服务端，也可能是service ssh stop
@@ -87,6 +87,14 @@ update-rc.d ssh enable
 ```
 #### 开启SSH后使用工具无法连接
 首先需要去看防火墙的状态，关闭防火墙后再试。
+CentOS查看防火墙
+```bash
+systemctl status firewalld.service #查看防火墙状态
+systemctl stop firewalld.service #停止防火墙
+systemctl disable firewalld.service #禁止防火墙随系统启动
+systemctl start firewalld.service #开启防火墙
+systemctl enable firewalld.service #使防火墙随系统启动
+```
 
 ---
 
@@ -160,13 +168,17 @@ cat /etc/profile |grep TMOUT -n #查询设置结果
 #### Windows下安装VMware Tools
 Windows下的安装最简单，只需要在菜单栏-虚拟机-安装VMware Tools就可以。这个软件是通过自带的iso文件加载到虚拟机的光驱设备中运行安装。
 #### Linux下安装VMware Tools
-Linux虚拟机中安装VMware Tools过程，必须进入虚拟机系统后再从菜单栏中选择虚拟机选项-安装VMware Tools。这时候会有一个iso文件加载到了虚拟机的光驱设备中，如果选择纯命令行的方法，就需要使用mount命令，将光驱挂在到/mnt目录下（需要根据具体的Linux版本约定的方式操作）。
+Linux虚拟机中安装VMware Tools过程，必须进入虚拟机系统后再从菜单栏中选择虚拟机选项-安装VMware Tools。这时候会有一个iso文件加载到了虚拟机的光驱设备中，如果选择纯命令行的方法，就需要使用mount命令，但是一般虚拟机会自动加载到光驱内。
+方法一（推荐）：
+<img src="/assets/img/article_4/VMwareTools.png" width="75%">
+方法二：将光驱挂载在/mnt目录下（需要根据具体的Linux版本约定的方式操作）。
 列出挂载点目录的内容
 ```bash
 ls mount-point
 ```
 当然以上的步骤也可以直接在装有桌面的Linux上直接选择从光驱设备中复制粘贴出VMwareTools-x.x.x-yyyy.tar.gz
 接下来解压缩安装包
+
 ```bash
 tar zxf /mnt/cdrom/VMwareTools-x.x.x-yyyy.tar.gz
 或
@@ -179,6 +191,13 @@ tar zxpf /mnt/cdrom/VMwareTools-x.x.x-yyyy.tar.gz
 ./vmware-install.pl -d #直接采取默认安装，否则需要按很多此回车
 ```
 参考[官方文档][在Linux下安装vmwaer tools]
+#### 在CentOS下安装过程中提示要先卸载open-vm-tools
+```bash
+rpm -qa |grep open-vm #找到要卸载的软件
+rpm -e 软件名 #卸载后再安装
+或
+yum remove 软件名 #卸载再安装
+```
 
 ---
 
