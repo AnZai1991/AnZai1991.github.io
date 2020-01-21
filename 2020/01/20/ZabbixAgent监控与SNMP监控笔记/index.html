@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/article_6/1.png">
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/article_6/2.png">
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/article_6/3.png">
-<meta property="og:updated_time" content="2020-01-20T13:48:57.927Z">
+<meta property="og:updated_time" content="2020-01-21T10:04:19.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZabbixAgent监控与SNMP监控笔记">
 <meta name="twitter:description" content="ZabbixAgent官方下载地址：https://www.zabbix.com/cn/download_agents#tab:40LTS Windows OS将下载文件保存到本地，解压缩到C:\Program Files\路径下配置zabbix_agentd.conf，参考《Zabbix实战》 123Server=127.0.0.1,203.152.200.115 #被动地址，Zabbix-se">
@@ -193,12 +193,20 @@
 
 <a id="more"></a>
 <p><strong>注册服务</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> c:\Program Files\zabbix_agent-4.0.16-windows\bin</span><br><span class="line">zabbix_agentd.exe --install -c <span class="string">"c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.win.conf"</span></span><br><span class="line"><span class="comment">#或者 这两句一样</span></span><br><span class="line">zabbix_agentd.exe -c <span class="string">"c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.win.conf"</span> -i</span><br><span class="line"><span class="comment">#卸载服务</span></span><br><span class="line">zabbix_agentd.exe -d -c <span class="string">"c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.win.conf"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入目录</span></span><br><span class="line"><span class="built_in">cd</span> c:\Program Files\zabbix_agent-4.0.16-windows\bin</span><br><span class="line"><span class="comment">#安装服务</span></span><br><span class="line">zabbix_agentd.exe --install -c <span class="string">"c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"</span></span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">zabbix_agentd.exe -c <span class="string">"c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"</span> -i</span><br><span class="line"><span class="comment">#启动服务</span></span><br><span class="line">zabbix_agentd.exe -s -c <span class="string">"c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"</span></span><br><span class="line"><span class="comment">#停止服务</span></span><br><span class="line">zabbix_agentd.exe -x -c <span class="string">"c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"</span></span><br><span class="line"><span class="comment">#卸载服务</span></span><br><span class="line">zabbix_agentd.exe -d -c <span class="string">"c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"</span></span><br><span class="line"><span class="comment">#请仔细对照路径和文件名，即使文件名错了也可能成功，造成很难排查是这里的问题</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>启动服务</strong>，可以使用图形界面启动service，也可以使用命令行启动</p>
+<p><strong>启动服务</strong>，可以使用图形界面启动service，也可以使用上面的命令启动</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net start <span class="string">"Zabbix Agent"</span> <span class="comment">#启动服务</span></span><br><span class="line">net stop <span class="string">"Zabbix Agent"</span> <span class="comment">#停止服务</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Centos"><a href="#Centos" class="headerlink" title="Centos"></a>Centos</h3><p>参考《Zabbix实战》</p>
+<h3 id="Centos-8"><a href="#Centos-8" class="headerlink" title="Centos 8"></a>Centos 8</h3><p>以下摘自《Zabbix实战》</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum installl -y zabbix zabbix-agent <span class="comment">#前提是已经下载好zabbix的官方yum源，可以替换成清华大学的源，参考zabiix-server的安装。否则请前去官网下载</span></span><br></pre></td></tr></table></figure>
+
+<p>配置zabbix_agentd.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">egrep -v <span class="string">"(^#|^$)"</span> /etc/zabbix/zabbix_agentd.conf</span><br><span class="line">PidFile=/var/run/zabbix/zabbix_agentd.pid</span><br><span class="line">LogFile=/var/<span class="built_in">log</span>/zabbix/zabbix_agentd.log</span><br><span class="line">LogFileSize=0</span><br><span class="line">Server=127.0.0.1,203.152.200.115 <span class="comment">#被动模式，zabbix-server的IP地址</span></span><br><span class="line">Server=127.0.0.1,203.152.200.115 <span class="comment">#主动模式，zabbix-server的IP地址（建议）</span></span><br><span class="line">Hostname=Zabbix server <span class="comment">#本机的Hostname,使用主动模式则必须配置</span></span><br><span class="line">Include=/etc/zabbix/zabbix_agentd.d/</span><br><span class="line">UnsafeUserParameters=1 <span class="comment">#启用特殊字符，用于自定义监控</span></span><br></pre></td></tr></table></figure>
+
+<p>配置完成后，启动zabbix-Agent并加入自启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> zabbix-agent</span><br><span class="line">systemctl start zabbix-agent</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="SNMP"><a href="#SNMP" class="headerlink" title="SNMP"></a>SNMP</h2><h3 id="Windows-2008-R2"><a href="#Windows-2008-R2" class="headerlink" title="Windows 2008 R2"></a>Windows 2008 R2</h3><p><img src="/assets/img/article_6/1.png" alt="图片" title="SNMP Services"><br>2008 R2需要重启，service中双击SNMP Service，在安全选项中，添加团体名public，选择接受来自任何主机的SNMP数据包，或者可以指定主机。<br><img src="/assets/img/article_6/2.png" alt="图片" title="SNMP Services"><br>最后关闭防火墙或者配置下防火墙即可。</p>
 <h3 id="Windows-2003"><a href="#Windows-2003" class="headerlink" title="Windows 2003"></a>Windows 2003</h3><p><img src="/assets/img/article_6/3.png" alt="图片" title="SNMP Services"><br>其他与Win2008一样</p>
@@ -355,7 +363,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ZabbixAgent"><span class="toc-number">1.</span> <span class="toc-text">ZabbixAgent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-OS"><span class="toc-number">1.1.</span> <span class="toc-text">Windows OS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Centos"><span class="toc-number">1.2.</span> <span class="toc-text">Centos</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SNMP"><span class="toc-number">2.</span> <span class="toc-text">SNMP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-2008-R2"><span class="toc-number">2.1.</span> <span class="toc-text">Windows 2008 R2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-2003"><span class="toc-number">2.2.</span> <span class="toc-text">Windows 2003</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUSE-Linux-11"><span class="toc-number">2.3.</span> <span class="toc-text">SUSE Linux 11</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ZabbixAgent"><span class="toc-number">1.</span> <span class="toc-text">ZabbixAgent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-OS"><span class="toc-number">1.1.</span> <span class="toc-text">Windows OS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Centos-8"><span class="toc-number">1.2.</span> <span class="toc-text">Centos 8</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SNMP"><span class="toc-number">2.</span> <span class="toc-text">SNMP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-2008-R2"><span class="toc-number">2.1.</span> <span class="toc-text">Windows 2008 R2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-2003"><span class="toc-number">2.2.</span> <span class="toc-text">Windows 2003</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUSE-Linux-11"><span class="toc-number">2.3.</span> <span class="toc-text">SUSE Linux 11</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -471,11 +479,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
