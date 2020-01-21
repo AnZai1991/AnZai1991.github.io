@@ -429,12 +429,14 @@ systemctl start zabbix-agent
 ```
 至此就可以在web页面上看到服务端的监控信息了！
 ### 使用SNMP监控配置（以SUSE为例）
-在被监控端（SUSE 11）上安装snmp，从光盘中找到所需要的五个安装文件，其中最后两个要一起装，因为互相依赖
+### 安装SNMP
+在被监控端（SUSE 11）上安装snmp，从光盘中找到所需要的五个安装文件，其中最后两个要一起装，因为互相依赖。安装顺序为先snmp-libs再libsensors3、libsnmp15，最后两个一起。
 ![图片](/assets/img/article_5/snmp1.png "SNMP")
 其他系统一般的安装方式为：
 ```bash
 yum install -y net-snmp
 ```
+### 配置SNMP
 配置SNMP，先备份配置文件
 ```bash
 cp /etc/snmpd/snmpd.conf /etc/snmpd/snmpd.conf.bak
@@ -442,10 +444,53 @@ vim /etc/snmpd/snmpd.conf
 ```
 ![图片](/assets/img/article_5/snmp2.png "SNMP")
 ```bash
+# Please see /usr/share/doc/packages/net-snmp/EXAMPLE.conf for a
+# more complete example and snmpd.conf(5).
+#
+# Writing is disabled by default for security reasons.  If you'd like
+# to enable it uncomment the rwcommunity line and change the community
+# name to something nominally secure (keeping in mind that this is
+# transmitted in clear text).
+# don't use ' < > in strings for syslocation or syscontact
+# Note that if you define the following here you won't be able to change
+# them with snmpset
+syslocation Server Room
+syscontact Sysadmin (root@localhost)
+# These really aren't meant for production use.  They include all MIBS
+# and can use considerable resources.  See snmpd.conf(5) for information
+# on setting up groups and limiting MIBS.
+rocommunity public 127.0.0.1
+# rwcommunity mysecret 127.0.0.1
+rocommunity public 203.xxx.xxx.xxx
+# -----------------------------------------------------------------------------
+###############################################################################
+# disk checks
+#
+# The agent can check the amount of available disk space, and make
+# sure it is above a set limit.  
+# disk PATH [MIN=DEFDISKMINIMUMSPACE]
+#
+# PATH:  mount path to the disk in question.
+# MIN:   Disks with space below this value will have the Mib's errorFlag set.
+#        Default value = DEFDISKMINIMUMSPACE.
+# Check the / partition and make sure it contains at least 10 megs.
+disk / 10000 #设置小于10G发送snmp报文
+disk /boot 5% #设置小于5%发送snmp报文
+disk /rem 
+# % snmpwalk -v 1 -c public localhost .1.3.6.1.4.1.2021.9
+# enterprises.ucdavis.diskTable.dskEntry.diskIndex.1 = 0
+# enterprises.ucdavis.diskTable.dskEntry.diskPath.1 = "/" Hex: 2F 
+# enterprises.ucdavis.diskTable.dskEntry.diskDevice.1 = "/dev/dsk/c201d6s0"
+# enterprises.ucdavis.diskTable.dskEntry.diskMinimum.1 = 10000
+```
+根据提示参考/usr/share/doc/packages/net-snmp/EXAMPLE.conf，对被控端的snmpd.conf进行配置，比如disk checks，就将配置拷贝过来就可以了。又比如配置文件的参数View可用于配置snmp可被snmpwalk查看和浏览的OID范围。
+```bash
 service snmpd restart #重启snmp
 chkconfig snmpd on #添加到开机启动项
+service snmpd status #检查snmp状态
 ```
 **tips**：各种系统更改snmp配置参考https://blog.csdn.net/carechere/article/details/51491744
+### 测试SNMP
 使用snmpwalk获取SNMP数据进行测试
 安装snmpwalk
 ```bash
@@ -459,6 +504,27 @@ snmpwalk -v 2c -c public 127.0.0.1 SNMPv2-MIB::sysUpTime.0
 #SNMPv3测试
 Snmpwalk -v 3 -u snmp -a SHA -A SHA@PWD -x AES@PWD -l authPriv 172.18.3.4 SNMPv2-MIB::sysUpTime.0
 ```
+测试服务端没有问题，就测试下客户端
+```bash
+snmpwalk -v 1 -c public 203.xxx.xxx.xxx .1.3.6.1.4.1.2021.9
+UCD-SNMP-MIB::dskIndex.1 = INTEGER: 1
+UCD-SNMP-MIB::dskPath.1 = STRING: /home
+UCD-SNMP-MIB::dskDevice.1 = STRING: /dev/sda4
+UCD-SNMP-MIB::dskMinimum.1 = INTEGER: 10000
+UCD-SNMP-MIB::dskMinPercent.1 = INTEGER: -1
+UCD-SNMP-MIB::dskTotal.1 = INTEGER: 51605464
+UCD-SNMP-MIB::dskAvail.1 = INTEGER: 20201744
+UCD-SNMP-MIB::dskUsed.1 = INTEGER: 28782316
+UCD-SNMP-MIB::dskPercent.1 = INTEGER: 59
+UCD-SNMP-MIB::dskPercentNode.1 = INTEGER: 1
+UCD-SNMP-MIB::dskErrorFlag.1 = INTEGER: noError(0)
+UCD-SNMP-MIB::dskErrorMsg.1 = STRING: 
+snmpwalk -v 1 -c public 203.xxx.xxx.xxx .1.3.6.1.4.1.2021.9.1.9
+UCD-SNMP-MIB::dskPercent.1 = INTEGER: 59
+```
+那么监控/home挂载点使用率就返回成功了，最后要取的OID就是.1.3.6.1.4.1.2021.9.1.9.1（注意最后要再加个1）
+参考https://blog.csdn.net/u014403008/article/details/53780059/
+### 添加到web页面
 通过web管理页面添加设备到服务端
 ![图片](/assets/img/article_5/zhuji1.png "添加主机")
 ![图片](/assets/img/article_5/zhuji2.png "添加主机")

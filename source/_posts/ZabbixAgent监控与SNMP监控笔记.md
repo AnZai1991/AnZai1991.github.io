@@ -17,20 +17,47 @@ Hostname=Zabbix server #本机的Host那么，使用主动模式必须配置
 <!--more-->
 **注册服务**
 ```bash
+#进入目录
 cd c:\Program Files\zabbix_agent-4.0.16-windows\bin
-zabbix_agentd.exe --install -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.win.conf"
-#或者 这两句一样
-zabbix_agentd.exe -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.win.conf" -i
+#安装服务
+zabbix_agentd.exe --install -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"
+#或者
+zabbix_agentd.exe -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf" -i
+#启动服务
+zabbix_agentd.exe -s -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"
+#停止服务
+zabbix_agentd.exe -x -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"
 #卸载服务
-zabbix_agentd.exe -d -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.win.conf"
+zabbix_agentd.exe -d -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbix_agentd.conf"
+#请仔细对照路径和文件名，即使文件名错了也可能成功，造成很难排查是这里的问题
 ```
-**启动服务**，可以使用图形界面启动service，也可以使用命令行启动
+**启动服务**，可以使用图形界面启动service，也可以使用上面的命令启动
 ```bash
 net start "Zabbix Agent" #启动服务
 net stop "Zabbix Agent" #停止服务
 ```
-### Centos
-参考《Zabbix实战》
+### Centos 8
+以下摘自《Zabbix实战》
+```bash
+yum installl -y zabbix zabbix-agent #前提是已经下载好zabbix的官方yum源，可以替换成清华大学的源，参考zabiix-server的安装。否则请前去官网下载
+```
+配置zabbix_agentd.conf
+```bash
+egrep -v "(^#|^$)" /etc/zabbix/zabbix_agentd.conf
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix/zabbix_agentd.log
+LogFileSize=0
+Server=127.0.0.1,203.152.200.115 #被动模式，zabbix-server的IP地址
+Server=127.0.0.1,203.152.200.115 #主动模式，zabbix-server的IP地址（建议）
+Hostname=Zabbix server #本机的Hostname,使用主动模式则必须配置
+Include=/etc/zabbix/zabbix_agentd.d/
+UnsafeUserParameters=1 #启用特殊字符，用于自定义监控
+```
+配置完成后，启动zabbix-Agent并加入自启动
+```bash
+systemctl enable zabbix-agent
+systemctl start zabbix-agent
+```
 
 ---
 
