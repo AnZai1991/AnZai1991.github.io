@@ -1,5 +1,5 @@
 ---
-title: Linux系统操作笔记---不间断更新
+title: Linux系统操作笔记
 date: 2019-12-27 23:22:40
 tags: Linux
 ---
