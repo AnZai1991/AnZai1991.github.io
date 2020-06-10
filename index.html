@@ -164,19 +164,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2019年求职个人说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020年求职个人说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/23/2019年求职个人说明/">2019年求职个人说明</a>
+      <a class="article-title" href="/2020/12/23/2020年求职个人说明/">2020年求职个人说明</a>
     </h1>
   
 
         
-        <a href="/2020/12/23/2019年求职个人说明/" class="archive-article-date">
+        <a href="/2020/12/23/2020年求职个人说明/" class="archive-article-date">
   	<time datetime="2020-12-23T07:46:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-23</time>
 </a>
         
@@ -201,7 +201,86 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/23/2019年求职个人说明/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/12/23/2020年求职个人说明/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ubuntu环境下MySql数据库实操笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/28/Ubuntu环境下MySql数据库实操笔记/">Ubuntu环境下MySql数据库实操笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/28/Ubuntu环境下MySql数据库实操笔记/" class="archive-article-date">
+  	<time datetime="2020-03-28T03:32:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="在Ubuntu下安装MySQL数据库"><a href="#在Ubuntu下安装MySQL数据库" class="headerlink" title="在Ubuntu下安装MySQL数据库"></a>在Ubuntu下安装MySQL数据库</h2><p>系统环境：Ubuntu 18.04.4 LTS<br>数据库环境：MySQL 5.7.29</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+
+<p>安装过程中没有提示要设置初始密码，使用空密码无法登录会报错</p>
+        
+          <a class="article-more-a" href="/2020/03/28/Ubuntu环境下MySql数据库实操笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/28/Ubuntu环境下MySql数据库实操笔记/">展开全文 >></a>
         </p>
       
 
@@ -469,83 +548,6 @@
 
 
   
-    <article id="post-设置SSH通过秘钥登录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/20/设置SSH通过秘钥登录/">设置SSH通过秘钥登录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/20/设置SSH通过秘钥登录/" class="archive-article-date">
-  	<time datetime="2020-01-20T12:12:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>利用密钥生成器制作一对密钥——一只公钥和一只私钥。将公钥添加到服务器的某个账户上，然后在客户端利用私钥即可完成认证并登录。这样一来，没有私钥，任何人都无法通过 SSH 暴力破解你的密码来远程登录到系统。此外，如果将公钥复制到其他账户甚至主机，利用私钥也可以登录。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="制作密钥对（分Linux和Windows）"><a href="#制作密钥对（分Linux和Windows）" class="headerlink" title="制作密钥对（分Linux和Windows）"></a>制作密钥对（分Linux和Windows）</h4><p><strong>Linux</strong><br>在要用密码登录的Linux服务器上制作，登录上后执行以下命令：</p>
-        
-          <a class="article-more-a" href="/2020/01/20/设置SSH通过秘钥登录/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/20/设置SSH通过秘钥登录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Kali-Linux入门实验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -627,19 +629,19 @@
 
 
   
-    <article id="post-Linux系统操作笔记-不间断更新" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Linux系统操作笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/27/Linux系统操作笔记-不间断更新/">Linux系统操作笔记---不间断更新</a>
+      <a class="article-title" href="/2019/12/27/Linux系统操作笔记/">Linux系统操作笔记</a>
     </h1>
   
 
         
-        <a href="/2019/12/27/Linux系统操作笔记-不间断更新/" class="archive-article-date">
+        <a href="/2019/12/27/Linux系统操作笔记/" class="archive-article-date">
   	<time datetime="2019-12-27T15:22:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
 </a>
         
@@ -651,7 +653,7 @@
 <hr>
 <h2 id="一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）"><a href="#一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）" class="headerlink" title="一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）"></a>一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）</h2><h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><p>以500G硬盘为例，大致分为以下分区<br>| 设备 | 类型 | 挂载点 | 大小 |<br>|———|———|———|———|<br>|/dev/sda1|swap| |8GB|<br>|/dev/sda2|efi| |99MB|<br>|/dev/sda3|ext4|/boot|1GB|<br>|/dev/sda4|ext4|/|150GB|<br>|/dev/sda5|ext4|/usr|80GB|<br>|/dev/sda6|ext4|/home|250GB|</p>
         
-          <a class="article-more-a" href="/2019/12/27/Linux系统操作笔记-不间断更新/#more">more >></a>
+          <a class="article-more-a" href="/2019/12/27/Linux系统操作笔记/#more">more >></a>
         
       
 
@@ -675,7 +677,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/27/Linux系统操作笔记-不间断更新/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/27/Linux系统操作笔记/">展开全文 >></a>
         </p>
       
 
@@ -1015,15 +1017,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
