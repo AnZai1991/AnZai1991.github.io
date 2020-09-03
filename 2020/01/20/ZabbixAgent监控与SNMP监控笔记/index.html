@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/article_6/1.png">
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/article_6/2.png">
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/article_6/3.png">
-<meta property="og:updated_time" content="2020-01-21T10:04:19.803Z">
+<meta property="og:updated_time" content="2020-09-03T13:36:06.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZabbixAgent监控与SNMP监控笔记">
 <meta name="twitter:description" content="ZabbixAgent官方下载地址：https://www.zabbix.com/cn/download_agents#tab:40LTS Windows OS将下载文件保存到本地，解压缩到C:\Program Files\路径下配置zabbix_agentd.conf，参考《Zabbix实战》 123Server=127.0.0.1,203.152.200.115 #被动地址，Zabbix-se">
@@ -211,6 +211,7 @@
 <h2 id="SNMP"><a href="#SNMP" class="headerlink" title="SNMP"></a>SNMP</h2><h3 id="Windows-2008-R2"><a href="#Windows-2008-R2" class="headerlink" title="Windows 2008 R2"></a>Windows 2008 R2</h3><p><img src="/assets/img/article_6/1.png" alt="图片" title="SNMP Services"><br>2008 R2需要重启，service中双击SNMP Service，在安全选项中，添加团体名public，选择接受来自任何主机的SNMP数据包，或者可以指定主机。<br><img src="/assets/img/article_6/2.png" alt="图片" title="SNMP Services"><br>最后关闭防火墙或者配置下防火墙即可。</p>
 <h3 id="Windows-2003"><a href="#Windows-2003" class="headerlink" title="Windows 2003"></a>Windows 2003</h3><p><img src="/assets/img/article_6/3.png" alt="图片" title="SNMP Services"><br>其他与Win2008一样</p>
 <h3 id="SUSE-Linux-11"><a href="#SUSE-Linux-11" class="headerlink" title="SUSE Linux 11"></a>SUSE Linux 11</h3><p>参考《Zabbix实战》</p>
+<h3 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h3><p>配置→主机→创建主机<br>使用snmp v2协议，采用Template Network Generic Device SNMPv2模板<br>PS：简单介绍一下Zabbix中菜单“配置”里的内容<br>1、主机群组<br>将同一类型的设备划为一个分组（比如按路由器、交换机、服务器设备类型分类），名称可以包含中文，是zabbix中用来区分不同设备的分组。<br>2、模板<br>本身自带了很多针对不同类型设备的监控模板，可以套用，也可以自建监控模板，名称中不能含有中文字符。<br>3、主机<br>用于创建设备的选项，必填的有主机名称（可自定义），群组（就是上面提到的主机群组），选择对应的监控方式，最后添加描述。在第二个选项“模板”中，可以直接套用已有的监控模板来使用。第四个选项“宏”，用来定义连接时候使用到的自定义宏，比如使用snmp监控，使用主机宏{$SNMP_COMMUNITY}对应的值为public来设置团体名称。</p>
 
       
 
@@ -363,7 +364,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ZabbixAgent"><span class="toc-number">1.</span> <span class="toc-text">ZabbixAgent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-OS"><span class="toc-number">1.1.</span> <span class="toc-text">Windows OS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Centos-8"><span class="toc-number">1.2.</span> <span class="toc-text">Centos 8</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SNMP"><span class="toc-number">2.</span> <span class="toc-text">SNMP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-2008-R2"><span class="toc-number">2.1.</span> <span class="toc-text">Windows 2008 R2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-2003"><span class="toc-number">2.2.</span> <span class="toc-text">Windows 2003</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUSE-Linux-11"><span class="toc-number">2.3.</span> <span class="toc-text">SUSE Linux 11</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ZabbixAgent"><span class="toc-number">1.</span> <span class="toc-text">ZabbixAgent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-OS"><span class="toc-number">1.1.</span> <span class="toc-text">Windows OS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Centos-8"><span class="toc-number">1.2.</span> <span class="toc-text">Centos 8</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SNMP"><span class="toc-number">2.</span> <span class="toc-text">SNMP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-2008-R2"><span class="toc-number">2.1.</span> <span class="toc-text">Windows 2008 R2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-2003"><span class="toc-number">2.2.</span> <span class="toc-text">Windows 2003</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUSE-Linux-11"><span class="toc-number">2.3.</span> <span class="toc-text">SUSE Linux 11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Router"><span class="toc-number">2.4.</span> <span class="toc-text">Router</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -475,7 +476,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,11 +484,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">

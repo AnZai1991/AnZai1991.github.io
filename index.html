@@ -231,6 +231,85 @@
 
 
   
+    <article id="post-iPerf3测试无线Wifi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/03/iPerf3测试无线Wifi/">iPerf3测试无线Wifi</a>
+    </h1>
+  
+
+        
+        <a href="/2020/09/03/iPerf3测试无线Wifi/" class="archive-article-date">
+  	<time datetime="2020-09-03T13:37:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>1、准备一台PC，一部手机，及要测试的无线路由器。将手机和PC都链接至此无线路由器的局域网内<br>2、去官网下载iPerf测试工具<a href="https://iperf.fr/iperf-download.php" target="_blank" rel="noopener">https://iperf.fr/iperf-download.php</a><br>3、在手机端安装HE NET Network Tools，这是官方推荐的手机端软件</p>
+<p>–</p>
+<h2 id="开始测试"><a href="#开始测试" class="headerlink" title="开始测试"></a>开始测试</h2><p>1、在PC上，运行→cmd→ipconfig/all查看本地分配的IP地址，假设为192.168.124.2。<br>2、打开Windows10的PowerShell或命令提示符，把iperf3.exe拖进去，然后后面加上” -s”就将PC作为服务端开始运行。<br>3、在手机端打开APP，选择iperf3功能页，在框里输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-c 192.168.124.2 -i 1 -t 30</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/09/03/iPerf3测试无线Wifi/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/03/iPerf3测试无线Wifi/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Ubuntu环境下MySql数据库实操笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -853,73 +932,6 @@
 
 
   
-    <article id="post-多台电脑更新Hexo博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/17/多台电脑更新Hexo博客/">多台电脑更新Hexo博客</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/17/多台电脑更新Hexo博客/" class="archive-article-date">
-  	<time datetime="2019-12-17T04:01:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在网上找了很多的解决方案，采用了最常见的利用git分支的方法来实现。参考网址：<a href="https://www.jianshu.com/p/0b1fccce74e0" target="_blank" rel="noopener">https://www.jianshu.com/p/0b1fccce74e0</a></p>
-<hr>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>创建新的分支XXX来存储hexo的环境文件，而推送到远端的静态文件（在public目录下）会依然根据配置文件中的配置，推送到master分支下。这样当自己需要在新电脑上更新Hexo博客的时候，只需要搭建好必须的环境，然后通过git clone将新分支XXX的环境文件clone到本地，就可以在本地完成Hexo的更新。</p>
-        
-          <a class="article-more-a" href="/2019/12/17/多台电脑更新Hexo博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/17/多台电脑更新Hexo博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1017,7 +1029,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,11 +1037,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
