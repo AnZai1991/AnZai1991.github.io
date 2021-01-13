@@ -6,13 +6,14 @@ tags: Linux
 
 ## ZabbixAgent
 官方下载地址：https://www.zabbix.com/cn/download_agents#tab:40LTS
+官方网站下选择Windows→Any→amd64→选择版本→OpenSSL→Archive（压缩包）或MSI（安装包）
 ### Windows OS
 将下载文件保存到本地，解压缩到C:\Program Files\路径下
 **配置zabbix_agentd.conf**，参考《Zabbix实战》
 ```bash
 Server=127.0.0.1,203.152.200.115 #被动地址，Zabbix-server的IP地址
 ServerActive=127.0.0.1,203.152.200.115 #主动模式，Zabbix-server的IP地址
-Hostname=Zabbix server #本机的Host那么，使用主动模式必须配置
+Hostname=Zabbix server #本机的Hostname，使用主动模式必须配置
 ```
 <!--more-->
 **注册服务**
@@ -62,6 +63,14 @@ systemctl start zabbix-agent
 ---
 
 ## SNMP
+### 简介
+SNMP协议在OSI模型的第七层（应用层）运行，主要支持一下几种基本操作。
+Get操作：NMS使用该操作获取Agent的一个或多个参数值
+GetNext操作：NMS使用该操作获取Agent的一个或多个参数的下一个参数值
+Set操作：NMS使用该操作设置Agent的一个或多个参数值
+Response操作：Agent返回一个或多个参数值。该操作是前面三种操作的响应
+Trap操作：Agent主动发出的操作，通知NMS有某些事情发生。
+前四种操作，设备使用UDP协议，使用161端口发送报文。执行Trap操作时，设备使用UDP协议，采用162端口发送报文。由于收发采用了不同的端口，所以一个设备可以同时作为Agent和NMS。
 ### Windows 2008 R2
 ![图片](/assets/img/article_6/1.png "SNMP Services")
 2008 R2需要重启，service中双击SNMP Service，在安全选项中，添加团体名public，选择接受来自任何主机的SNMP数据包，或者可以指定主机。
@@ -70,6 +79,11 @@ systemctl start zabbix-agent
 ### Windows 2003
 ![图片](/assets/img/article_6/3.png "SNMP Services")
 其他与Win2008一样
+### Windows 7
+首先在控制面板中将SNMP功能启动
+![图片](/assets/img/article_6/4.png "SNMP Services")
+在Windows的服务中配置如下（发送身份认证陷阱即是Trap操作）
+![图片](/assets/img/article_6/5.png "SNMP Services")
 ### SUSE Linux 11
 参考《Zabbix实战》
 ### Router
