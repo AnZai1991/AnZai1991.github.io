@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="安仔的博客">
 <meta property="og:description" content="在Ubuntu下安装MySQL数据库系统环境：Ubuntu 18.04.4 LTS数据库环境：MySQL 5.7.29 1sudo apt-get install mysql-server  安装过程中没有提示要设置初始密码，使用空密码无法登录会报错">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-06-09T23:54:43.827Z">
+<meta property="og:updated_time" content="2021-02-07T14:33:10.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu环境下MySql数据库实操笔记">
 <meta name="twitter:description" content="在Ubuntu下安装MySQL数据库系统环境：Ubuntu 18.04.4 LTS数据库环境：MySQL 5.7.29 1sudo apt-get install mysql-server  安装过程中没有提示要设置初始密码，使用空密码无法登录会报错">
@@ -190,8 +190,11 @@
 <a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/mysql/debian.cnf</span><br><span class="line"><span class="comment"># Automatically generated for Debian scripts. DO NOT TOUCH!</span></span><br><span class="line">[client]</span><br><span class="line">host     = localhost</span><br><span class="line">user     = debian-sys-maint</span><br><span class="line">password = TSrgdwiw4RHkTLKP</span><br><span class="line">socket   = /var/run/mysqld/mysqld.sock</span><br><span class="line">[mysql_upgrade]</span><br><span class="line">host     = localhost</span><br><span class="line">user     = debian-sys-maint</span><br><span class="line">password = TSrgdwiw4RHkTLKP</span><br><span class="line">socket   = /var/run/mysqld/mysqld.sock</span><br></pre></td></tr></table></figure>
 
-<p>使用上面的账号密码登录，然后修改密码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;use mysql;</span><br><span class="line">&gt;update mysql.user <span class="built_in">set</span> authentication_string=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and Host =<span class="string">'localhost'</span>;</span><br><span class="line">&gt;update user <span class="built_in">set</span>  plugin=<span class="string">"mysql_native_password"</span>; </span><br><span class="line">&gt;flush privileges;</span><br><span class="line">&gt;quit;</span><br></pre></td></tr></table></figure>
+<p>使用上面的自动生成的账号密码登录，然后修改root密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;use mysql;</span><br><span class="line">&gt;update user <span class="built_in">set</span> authentication_string=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and host =<span class="string">'localhost'</span>;</span><br><span class="line">&gt;update user <span class="built_in">set</span>  plugin=<span class="string">"mysql_native_password"</span>; </span><br><span class="line">&gt;flush privileges;</span><br><span class="line">&gt;quit;</span><br></pre></td></tr></table></figure>
+
+<p>系统环境：Ubuntu 20.04.2 LTS<br>数据库环境：MySQL 8.0.23-0ubuntu0.20.04.1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#注意：mysql8更新了密码规范，要求必须包含大小写，数字，特殊字符。</span></span><br><span class="line"><span class="comment">#上述更新root密码过程在更新root密码时会出错</span></span><br><span class="line"><span class="comment">#通过临时账号密码登录之后，使用下述方法更改root密码。参考https://zhuanlan.zhihu.com/p/259617090</span></span><br><span class="line">use mysql</span><br><span class="line">alter user <span class="string">'root'</span>@<span class="string">'localhost'</span> identified with mysql_native_password by <span class="string">'Abcdef_1234'</span>;</span><br><span class="line">Query OK, 0 rows affected (0.16 sec)</span><br></pre></td></tr></table></figure>
 
 <p>重启MySQL服务，重新使用root登录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql restart</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
@@ -220,9 +223,9 @@
 <h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;INSERT INTO secret</span><br><span class="line">&gt;(item, account, password, email)</span><br><span class="line">&gt;VALUES</span><br><span class="line">&gt;(<span class="string">"腾讯QQ"</span>, <span class="string">"38xxxxxx"</span>, <span class="string">"xxxx"</span>, <span class="string">"38xxxxxx@qq.com"</span>);</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="备份还原数据库"><a href="#备份还原数据库" class="headerlink" title="备份还原数据库"></a>备份还原数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在命令行界面输入以下命令</span></span><br><span class="line">mysqldump -u username -p DBname table1 table2 &gt;backup.sql</span><br><span class="line"><span class="comment">#username 比如root</span></span><br><span class="line"><span class="comment">#DBname 数据库的名字</span></span><br><span class="line"><span class="comment"># table1 表名，为空表示备份整个数据库</span></span><br><span class="line"><span class="comment">#backup.sql 文件前可以加上绝对路径，默认是在用户目录下生成</span></span><br></pre></td></tr></table></figure>
+<h2 id="备份还原数据库"><a href="#备份还原数据库" class="headerlink" title="备份还原数据库"></a>备份还原数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在终端界面输入以下命令</span></span><br><span class="line">mysqldump -u username -p DBname table1 table2 &gt;backup.sql</span><br><span class="line"><span class="comment">#username 比如root</span></span><br><span class="line"><span class="comment">#DBname 数据库的名字</span></span><br><span class="line"><span class="comment">#table1 表名，为空表示备份整个数据库</span></span><br><span class="line"><span class="comment">#backup.sql 文件前可以加上绝对路径，默认是在用户目录下生成</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#还原数据库</span></span><br><span class="line">mysql -u username -p DBname &lt; backup.sql</span><br><span class="line"><span class="comment">#DBname 还原后的数据库名</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#还原数据库，若是新搭建的数据库，需要先创建DBname。在终端界面输入</span></span><br><span class="line">mysql -u username -p DBname &lt; backup.sql</span><br></pre></td></tr></table></figure>
       
 
       
@@ -486,11 +489,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
