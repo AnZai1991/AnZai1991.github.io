@@ -26,14 +26,25 @@ user     = debian-sys-maint
 password = TSrgdwiw4RHkTLKP
 socket   = /var/run/mysqld/mysqld.sock
 ```
-使用上面的账号密码登录，然后修改密码
+使用上面的自动生成的账号密码登录，然后修改root密码
 ```bash
 >use mysql;
->update mysql.user set authentication_string=password('123456') where user='root' and Host ='localhost';
+>update user set authentication_string=password('123456') where user='root' and host ='localhost';
 >update user set  plugin="mysql_native_password"; 
 >flush privileges;
 >quit;
 ```
+系统环境：Ubuntu 20.04.2 LTS
+数据库环境：MySQL 8.0.23-0ubuntu0.20.04.1
+```bash
+#注意：mysql8更新了密码规范，要求必须包含大小写，数字，特殊字符。
+#上述更新root密码过程在更新root密码时会出错
+#通过临时账号密码登录之后，使用下述方法更改root密码。参考https://zhuanlan.zhihu.com/p/259617090
+use mysql
+alter user 'root'@'localhost' identified with mysql_native_password by 'Abcdef_1234';
+Query OK, 0 rows affected (0.16 sec)
+```
+
 重启MySQL服务，重新使用root登录
 ```bash
 sudo service mysql restart
@@ -155,15 +166,14 @@ drop table secret;
 
 ## 备份还原数据库
 ```bash
-#在命令行界面输入以下命令
+#在终端界面输入以下命令
 mysqldump -u username -p DBname table1 table2 >backup.sql
 #username 比如root
 #DBname 数据库的名字
-# table1 表名，为空表示备份整个数据库
+#table1 表名，为空表示备份整个数据库
 #backup.sql 文件前可以加上绝对路径，默认是在用户目录下生成
 ```
 ```bash
-#还原数据库
+#还原数据库，若是新搭建的数据库，需要先创建DBname。在终端界面输入
 mysql -u username -p DBname < backup.sql
-#DBname 还原后的数据库名
 ```
