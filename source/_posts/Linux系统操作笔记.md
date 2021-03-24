@@ -28,6 +28,10 @@ tags: Linux
 |/dev/sda6|ext4|/home|250GB|
 <!--more-->
 #### 初次登陆
+安装Ubuntu时没注册root用户密码
+```bash
+sudo passwd root
+```
 第一次登陆系统，运行终端
 ```bash
 sudo apt-get update
@@ -118,6 +122,14 @@ systemctl enable firewalld.service #使防火墙随系统启动
 ：x  与 ：wq 作用一样，保存退出，但是：x 命令不会更改 mtime 的值；
 ：wq 命令会更改 mtime的值
 参考<https://blog.csdn.net/wangshuang_2013/article/details/80724667>
+#### vim强制保存
+```bash
+:w !sudo tee %
+#w：表示保存文件
+#！：表示执行外部命令
+#tee：linux命令，这个有点复杂，可以查看linux命令帮助
+#%：在执行外部命令时，%会扩展成当前文件名；这个%区别于替换时的%，替换时%的意义是代表整个文件，而不是文件名
+```
 
 ### 常见问题
 #### 只读文件的修改
