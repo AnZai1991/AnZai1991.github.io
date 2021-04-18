@@ -1,7 +1,7 @@
 ---
 title: Linux系统操作笔记
 date: 2019-12-27 23:22:40
-tags: Linux
+tags: [操作系统,Linux]
 ---
 
 目录
@@ -300,10 +300,6 @@ cat /proc/cpuinfo
 ```bash
 ps #不带参数只查看当前进程
 ```
-
----
-
-
 
 [文章连接]:https://blog.csdn.net/u010665718/article/details/89226720
 [在Linux下安装vmwaer tools]:https://docs.vmware.com/cn/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-08BB9465-D40A-4E16-9E15-8C016CC8166F.html

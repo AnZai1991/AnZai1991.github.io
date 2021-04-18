@@ -1,12 +1,16 @@
 ---
 title: Ubuntu环境下MySql数据库实操笔记
 date: 2020-03-28 11:32:36
-tags: Linux
+tags: [操作系统,Linux]
 ---
 
-## 在Ubuntu下安装MySQL数据库
-系统环境：Ubuntu 18.04.4 LTS
-数据库环境：MySQL 5.7.29
+## 环境介绍
+操作系统：Ubuntu 18.04.4 LTS
+数据库版本：MySQL 5.7.29
+
+---
+
+## 安装步骤
 ```bash
 sudo apt-get install mysql-server
 ```
@@ -34,8 +38,13 @@ socket   = /var/run/mysqld/mysqld.sock
 >flush privileges;
 >quit;
 ```
-系统环境：Ubuntu 20.04.2 LTS
-数据库环境：MySQL 8.0.23-0ubuntu0.20.04.1
+## 新环境介绍
+操作系统：Ubuntu 20.04.2 LTS
+数据库版本：MySQL 8.0.23-0ubuntu0.20.04.1
+
+---
+
+## 安装步骤
 ```bash
 #注意：mysql8更新了密码规范，要求必须包含大小写，数字，特殊字符。
 #上述更新root密码过程在更新root密码时会出错
@@ -50,8 +59,6 @@ Query OK, 0 rows affected (0.16 sec)
 sudo service mysql restart
 mysql -u root -p
 ```
-
----
 
 ## 登录数据库
 ```bash
@@ -161,8 +168,6 @@ drop table secret;
 >VALUES
 >("腾讯QQ", "38xxxxxx", "xxxx", "38xxxxxx@qq.com");
 ```
-
----
 
 ## 备份还原数据库
 ```bash

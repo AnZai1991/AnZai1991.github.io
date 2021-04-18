@@ -1,7 +1,7 @@
 ---
 title: Bourne Again Shell命令
 date: 2020-10-19 18:36:44
-tags: Linux
+tags: [操作系统,Linux,Shell]
 
 ---
 

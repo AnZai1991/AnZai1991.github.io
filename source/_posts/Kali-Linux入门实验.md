@@ -1,7 +1,12 @@
 ---
 title: Kali Linux入门实验
 date: 2019-12-28 13:57:01
-tags: Linux
+tags: [操作系统,Linux]
+---
+
+## 环境介绍
+操作系统：Kali Linux
+
 ---
 
 ## ARP欺骗
@@ -33,9 +38,5 @@ apt install dsniff ssldump
 ```
 Kali更新源参考：<https://www.fujieace.com/kali-linux/update-source.html>
 
----
-
 ## setoolkit
 setoolkit是一款模拟网络攻防的社会实验工具。
-
----

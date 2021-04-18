@@ -1,12 +1,12 @@
 ---
 title: Zabbix实战
 date: 2020-01-20 20:35:13
-tags: Linux
+tags: [操作系统,Linux,运维]
 ---
 
-## 部署环境
+## 环境介绍
 操作系统：CentOS 8
-数据库：MySQL 8.0.17-3
+数据库版本：MySQL 8.0.17-3
 Web环境：Apache 2.4.37
 PHP版本：php 7.2.11
 zabbix版本：zabbix 4.0

@@ -1,7 +1,7 @@
 ---
 title: Windows10个性化定制版本安装笔记
 date: 2019-11-22 0:39:45
-tags: Windows
+tags: [操作系统,Windows]
 ---
 
 ## 一、光盘镜像文件：

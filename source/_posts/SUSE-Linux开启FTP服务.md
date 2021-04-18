@@ -1,12 +1,16 @@
 ---
 title: SUSE Linux开启FTP服务
 date: 2020-01-20 20:25:22
-tags: Linux
+tags: [操作系统,Linux]
 ---
 
+## 环境介绍
 操作系统：SUSE Linux
-FTP：vsftp
+FTP版本：vsftp
 
+---
+
+## 操作方法
 1、关闭防火墙
 ```bash
 service SuSEfirewall2_setup stop

@@ -1,9 +1,16 @@
 ---
 title: Linxu服务器开启Samba服务
 date: 2021-01-13 15:47:25
-tags: Linux,Windows
+tags: [操作系统,Linux,Windows,运维]
 ---
-## 在Ubuntu上搭建Samba服务器
+
+## 环境介绍
+操作系统：Ubuntu 20.04.2 LTS，Windows10
+软件版本：Samba
+
+---
+
+## 操作步骤
 ### 安装及配置
 ```bash
 sudo apt-get install samba-common samba #安装samba
