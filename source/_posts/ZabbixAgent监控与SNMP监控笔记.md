@@ -5,14 +5,18 @@ tags: [操作系统,Linux,Windows,网络,运维]
 ---
 
 ## 笔记介绍
-记录除了第一次实战中后续遇到的各种设备的监控操作方法。分为ZabbixAgent和SNMP两种记录。
+记录除了第一次实战中后续遇到的各种设备的监控操作方法。分为**ZabbixAgent**和**SNMP**两种记录。
+
+---
 
 ## ZabbixAgent
 官方下载地址：https://www.zabbix.com/cn/download_agents#tab:40LTS
 官方网站下选择Windows→Any→amd64→选择版本→OpenSSL→Archive（压缩包）或MSI（安装包）
+
 ### Windows OS
 将下载文件保存到本地，解压缩到C:\Program Files\路径下
 **配置zabbix_agentd.conf**，参考《Zabbix实战》
+
 ```bash
 Server=127.0.0.1,203.152.200.115 #被动地址，Zabbix-server的IP地址
 ServerActive=127.0.0.1,203.152.200.115 #主动模式，Zabbix-server的IP地址
@@ -40,6 +44,20 @@ zabbix_agentd.exe -d -c "c:\Program Files\zabbix_agent-4.0.16-windows\conf\zabbi
 net start "Zabbix Agent" #启动服务
 net stop "Zabbix Agent" #停止服务
 ```
+**添加系统盘空间监控**
+在zabbix上添加主机后，添加监控项。
+名称：C盘占用率/C盘容量/C盘已用容量
+键值：vfs.fs.size[c:,pused]/vfs.fs.size[c:,total]/vfs.fs.size[c:,used]
+信息类型：浮点数/数字（无正负）/数字（无正负）
+单位：%/Bytes/Bytes
+更新间隔：300s
+**添加系统时间校准监控触发器**
+名称：时间校准
+严重性：信息
+表达式上选择添加：监控项上选择系统UTC时间（需要提前添加监控器，其键值为：system.localtime[utc]）
+功能：fuzzytime()函数
+最后一个（T）：60
+结果：=0（意思是说监控项的时间与zabbix服务器的时间误差超过60秒则发送信息）
 ### Centos 8
 以下摘自《Zabbix实战》
 ```bash
@@ -74,6 +92,10 @@ Set操作：NMS使用该操作设置Agent的一个或多个参数值
 Response操作：Agent返回一个或多个参数值。该操作是前面三种操作的响应
 Trap操作：Agent主动发出的操作，通知NMS有某些事情发生。
 前四种操作，设备使用UDP协议，使用161端口发送报文。执行Trap操作时，设备使用UDP协议，采用162端口发送报文。由于收发采用了不同的端口，所以一个设备可以同时作为Agent和NMS。
+
+使用SNMP协议会遇到两个概念及MIB和OID，除了通用的一些映射关系以外，特定的设备还会由厂家提供私有的MIB和OID的对应关系。可以通过snmpwalk命令根据OID来查找SNMP返回的具体数值，同时可以通过snmpget命令根据MIB来获取所对应的“数字形式"的OID值。
+
+OID查询网站：https://www.alvestrand.no/objectid/1.3.6.1.4.html
 ### Windows 2008 R2
 ![图片](/assets/img/article_6/1.png "SNMP Services")
 2008 R2需要重启，service中双击SNMP Service，在安全选项中，添加团体名public，选择接受来自任何主机的SNMP数据包，或者可以指定主机。
@@ -101,4 +123,9 @@ PS：简单介绍一下Zabbix中菜单“配置”里的内容
 用于创建设备的选项，必填的有主机名称（可自定义），群组（就是上面提到的主机群组），选择对应的监控方式，最后添加描述。在第二个选项“模板”中，可以直接套用已有的监控模板来使用。第四个选项“宏”，用来定义连接时候使用到的自定义宏，比如使用snmp监控，使用主机宏{$SNMP_COMMUNITY}对应的值为public来设置团体名称。
 ### 防火墙
 防火墙：Juniper SSG550
-（未完待续）
+登录到防火墙管理web，Configuration→Report Settings→SNMP
+创建一个新的团体名称，填写团体名，选中write,trap,Including Traffic Alarms，选择对应的SNMP版本。
+HOST IP Address填写zabbix server的地址，Netmask填写255.255.255.255，Source Interface里选择zabbix server所在的内网接口，最后保存设置。
+在Network→Interfaces→找到对应的接口，在Service Options中选中SNMP，意思是开放此接口的SNMP管理权限。至此防火墙的设置结束！
+此处省略在zabbix server上创建主机的过程，与其他设备无异。模板选择Template Net Juniper SNMPv2
+参考https://blog.csdn.net/xoofly/article/details/103570417
