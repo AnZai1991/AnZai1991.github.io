@@ -251,7 +251,7 @@ yum install -y zabbix-server-mysql zabbix-web-mysql zabbix-agent zabbix-get
 ```bash
 vi  /etc/my.cnf
 [mysqld]
-datadir=/car/lib/mysql
+datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
 user=mysql
 # Disabling symbolic-links is recommended to prevent assorted security risks symbolic-links=0
