@@ -1,12 +1,12 @@
 ---
-title: Ubuntu环境下MySql数据库实操笔记
+title: Linux系统之MySql数据库
 date: 2020-03-28 11:32:36
 tags: [操作系统,Linux]
 ---
 
 ## 环境介绍
 操作系统：Ubuntu 18.04.4 LTS
-数据库版本：MySQL 5.7.29
+软件版本：MySQL 5.7.29
 
 ---
 

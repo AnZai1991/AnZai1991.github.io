@@ -1,12 +1,12 @@
 ---
-title: SUSE Linux开启FTP服务
+title: Linux系统之FTP服务
 date: 2020-01-20 20:25:22
 tags: [操作系统,Linux]
 ---
 
 ## 环境介绍
 操作系统：SUSE Linux
-FTP版本：vsftp
+软件版本：vsftp
 
 ---
 

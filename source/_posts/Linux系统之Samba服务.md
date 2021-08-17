@@ -1,5 +1,5 @@
 ---
-title: Linxu服务器开启Samba服务
+title: Linux系统之Samba服务
 date: 2021-01-13 15:47:25
 tags: [操作系统,Linux,Windows,运维]
 ---
