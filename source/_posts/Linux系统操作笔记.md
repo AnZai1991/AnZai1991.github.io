@@ -39,6 +39,21 @@ sudo apt-get update
 sudo apt-get upgrade
 #下载并安装在本系统上已有的软件包的最新版本
 ```
+更改用户名
+```bash
+su root
+sudo vim /etc/passwd #找到原用户名改掉
+sudo vim /etc/shadow #找到原用户名改掉
+cd /home
+mv xxxx yyyy
+sudo vim /etc/sudoers #在root	ALL=(ALL:ALL) ALL下加上
+yyyy	ALL=(ALL:ALL) ALL
+```
+更改主机名
+```bash
+sudo vim /etc/hostname #找到原主机名改掉
+sudo vim /etc/hosts #找到原主机名改掉
+```
 
 ### 常见问题
 #### APT工具的常用命令
