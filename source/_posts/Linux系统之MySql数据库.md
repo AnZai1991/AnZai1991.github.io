@@ -182,3 +182,20 @@ mysqldump -u username -p DBname table1 table2 >backup.sql
 #还原数据库，若是新搭建的数据库，需要先创建DBname。在终端界面输入
 mysql -u username -p DBname < backup.sql
 ```
+
+## 开启MySQL远程访问
+### 配置mysql，注释掉本地访问
+```bash
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+#将bind-address = 127.0.0.1注释掉
+```
+### 登录MySQL数据库配置
+```bash
+mysql> delete from user where user=''; #删除匿名用户
+
+msyql> update user set host='%' where user='root'; #设置root能通过任意地址访问，也可将%改为IP地址
+
+mysql> quit
+
+sudo service mysql restart
+```
