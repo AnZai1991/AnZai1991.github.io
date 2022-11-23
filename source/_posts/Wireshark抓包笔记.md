@@ -30,8 +30,13 @@ tcp.dstport == 80
 ---
 
 ## Wireshark抓包分析之sip
-首先根据被叫号码查询到sip消息
+根据主叫号码查询到sip消息
+sip.from.user == 13800000001
+根据被叫号码查询到sip消息
 sip.to.user == 13800000001
+根据包含内容（如软电话号码）查找sip消息
+sip contains 70001
+
 过滤之后，点击任一消息，得到Call-ID，再根据Call-ID获取这个通话的所有sip消息过滤结果
 sip.Call-ID == "856d5c37-b891-1239-2d9a-f0d4e2eb7bdc"
 
