@@ -79,6 +79,11 @@ rpm -qa #列出系统中安装的所有软件包#
 rpm -q 软件包名字 #列出安装的指定的软件包#
 sudo rpm -e 软件包名字 #卸载指定的软件包#
 ***dpkg和rpm这些软件包管理器不能有效解决依赖性问题，所以有了以APT、yum等为代表的高级软件包管理工具。***
+#### 添加应用程序的快捷方式到桌面
+```bash
+nautilus /usr/share/applications #nautilus是Ubuntu默认的软件管理工具
+```
+在文件夹中找到对应的应用程序文件复制到桌面，右键允许启动（不生效可尝试在命令行中增加执行权限sudo chmod +x 文件名）
 
 ---
 
@@ -178,10 +183,7 @@ cat /etc/issue #适用所有Linux发行版，显示发行版本信息
 ```bash
 uname -a #显示用户及Linux版本号
 cat /proc/version #显示正在运行的内核版本
-```
-查看cpu信息
-```bash
-cat /proc/cpuinfo
+cat /etc/redhat-release #查看centos的版本号
 ```
 查看进程信息
 ```bash
