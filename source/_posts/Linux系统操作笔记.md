@@ -169,6 +169,25 @@ yum remove 软件名 #卸载再安装
 ## 四、VNC Server
 附上一篇[本人CSDN博文链接][文章连接]
 
+## 五、第三方软件开机启动（以向日葵远程为例）
+此方法以向日葵为例，描述安装第三方软件如何设置开机自启动
+操作版本：Ubuntu  20.04
+软件版本：SunloginClient-11.0.0.36662 (Beta) for Linux
+
+```bash
+dpkg -L sunloginclient
+#根据返回可看到路径是/usr/local/sunlogin/bin/sunloginclient
+gnome-session-properties
+#在打开的窗口“启动应用程序首选项”中添加启动项
+#名称：向日葵
+#命令：/usr/local/sunlogin/bin/sunloginclient
+#注释：远程桌面
+```
+Linux版本的向日葵要登陆到桌面后才能启动，所以需检查用户自动登录的状态。在桌面右上角点击，设置-用户-自动登陆
+重启验证
+
+其他软件可参考此设置方法。参考网址:<https://blog.csdn.net/willhu2008/article/details/121702815>
+
 ---
 
 ## 附录
