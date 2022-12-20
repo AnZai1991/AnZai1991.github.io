@@ -67,8 +67,8 @@ Windows Defender禁用
 2.3更改计算机名（设置→系统→关于→重命名这台电脑）
 2.4更改锁屏方式（设置→账户→登录选项）
 
-3.1控制面板→操作中心→用户账户控制→最低
-  控制面板→Windows防火墙→打开
+3.1控制面板-系统和安全-更改用户账户控制设置-从不通知
+  控制面板-系统和安全-Windows Defender防火墙-打开
   关闭方法：选择关闭→左边有个高级设置→中间有个Windows防火墙属性→关闭。服务里也可以禁用Windows Firewall
 3.2服务→禁用Windows Search（因为everything更好用）/Superfetch
   服务→打开Security Center/Windows update/Windows Firewall
@@ -83,6 +83,10 @@ ps:Windows自带的关于安全的软件有操作中心、Security Center、Wind
   选择已启用→指定中等危险扩展名里输入.exe
 5.2纯个人喜好，把视频音乐图片下载分别指向别的盘符。
 ps：运行msconfig可以进行引导项的更改
+
+6.1创建Windows10 自动还原点
+右键此电脑，属性，系统保护，选中C盘，配置，启用系统保护，设置磁盘空间使用量。创建
+6.2Windows设置-个性化-任务栏-选择哪些图标显示在任务栏-通知区域始终显示所有图标
 
 Windows 8.1
 1、Chrome
