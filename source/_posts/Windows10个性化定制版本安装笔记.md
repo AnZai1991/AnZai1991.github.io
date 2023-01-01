@@ -50,8 +50,8 @@ Windows Defender禁用
 4.clean（清除磁盘所有分区）
 5.convert gpt（将磁盘转换成GPT格式）
 6.list partition（查看当前磁盘分区情况）
-7.create partition efi size=100（默认大小为M）
-8.create partition msr size =128
+7.create partition efi size = 100（默认大小为M）
+8.create partition msr size = 128
 9.create partition primary size =102400(此处为你想设置C盘的大小)
 10.两次输入exit
 
