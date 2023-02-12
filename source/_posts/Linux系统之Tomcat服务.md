@@ -38,7 +38,7 @@ servlet：sun公司提供的用于开发动态web资源的技术。
 jsp：（java server page），java提供的一门开发web网页的技术。
 tomcat软件：java开发的。java软件运行的时候需要jdk。
 |Tomcat版本|Servlet/JSP版本|JavaEE版本|运行环境|
-|-|-|-|-|
+|---|---|---|---|
 |4.1|2.3/1.2|1.3|JDK1.3|
 |5.0|2.4/2.0|1.4|JDK1.4|
 |5.5/6.0|2.5/2.1|5.0|JDK5.0|
