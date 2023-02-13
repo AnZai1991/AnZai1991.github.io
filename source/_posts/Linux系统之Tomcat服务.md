@@ -37,8 +37,9 @@ WebLogic：是Oracle公司的产品，是目前应用最广泛的Web服务器，
 servlet：sun公司提供的用于开发动态web资源的技术。
 jsp：（java server page），java提供的一门开发web网页的技术。
 tomcat软件：java开发的。java软件运行的时候需要jdk。
+
 | Tomcat版本 | Servlet/JSP版本 | JavaEE版本 | 运行环境 |
-| --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- |
 |4.1|2.3/1.2|1.3|JDK1.3|
 |5.0|2.4/2.0|1.4|JDK1.4|
 |5.5/6.0|2.5/2.1|5.0|JDK5.0|
@@ -46,13 +47,22 @@ tomcat软件：java开发的。java软件运行的时候需要jdk。
 |8.0|3.1/2.3|7.0|JDK7.0|
 
 ## 二、Tomcat下载
-http://tomcat.apache.org下载对应Linux的版本apache-tomcat-8.5.76.tar.gz
-JDK7.0下载http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
+
+访问http://tomcat.apache.org
+下载对应Linux的版本apache-tomcat-8.5.76.tar.gz
+访问http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
+下载JDK7.0
 
 ## 三、Tomcat & JDK安装
-解压apache-tomcat-8.5.76到/opt/mytomcat
-拷贝jdk-7u80-linux-x64.tar.gz到/opt/jvm路径下解压tar -zxvf jdk-7u80-linux-x64.tar.gz
+将apache-tomcat-8.5.76.tar.gz拷贝到/opt/mytomcat并解压
+将jdk-7u80-linux-x64.tar.gz拷贝到/opt/jvm并解压
+```bash
+tar -zxvf apache-tomcat-8.5.76.tar.gz
+tar -zxvf jdk-7u80-linux-x64.tar.gz
+```
+
 配置环境变量
+
 ```bash
 vim /etc/profile
 #在文件末尾加
@@ -84,6 +94,7 @@ export TOMCAT=/opt/mytomcat/apache-tomcat-8.5.76
 ## 四、Tomcat目录介绍
 
 ### 1、tomcat目录
+
 |目录|介绍|
 |-|-|
 |bin|可执行文件|
@@ -95,6 +106,7 @@ export TOMCAT=/opt/mytomcat/apache-tomcat-8.5.76
 |work|JSP文件在被翻译之后，保存在当前这个目录下，session对象被序列化之后保存的位置|
 
 ### 2、webapps目录
+
 |目录|介绍|
 |-|-|
 |doc|Tomcat帮助文档|
@@ -104,6 +116,7 @@ export TOMCAT=/opt/mytomcat/apache-tomcat-8.5.76
 |ROOT|默认站点根目录|
 
 ### 3、conf目录
+
 |目录|介绍|
 |-|-|
 |catalina||
@@ -190,6 +203,7 @@ tomcat目录下的/conf/server.xml
 </server>
 ```
 #### 2、组件介绍
+
 |  组件名称  | 功能介绍 |
 |  ----  | ----  |
 | engine | 核心容器组件，catalina引擎，负责通过connector接收用户请求，并处理请求，将请求转至对应的虚拟主机host。 |
@@ -204,11 +218,182 @@ tomcat目录下的/conf/server.xml
 | UserDataBaseRealm | 使用JNDI自定义的用户认证库。 |
 | MemoryRealm | 认证信息定义在tomcat-users.xml中。 |
 | JDBCRealm | 认证信息定义在数据库中，并通过JDBC连接至数据库中查找认证用户。 |
+
 #### 3、server.xml配置文件注释
-```
-<待补充>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!-- Note:  A "Server" is not itself a "Container", so you may not
+     define subcomponents such as "Valves" at this level.
+     Documentation at /docs/config/server.html
+ -->
+<Server port="8005" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <!-- Security listener. Documentation at /docs/config/listeners.html
+  <Listener className="org.apache.catalina.security.SecurityListener" />
+  -->
+  <!-- APR library loader. Documentation at /docs/apr.html -->
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  <!-- Prevent memory leaks due to use of particular java/javax APIs-->
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+  <!-- Global JNDI resources
+       Documentation at /docs/jndi-resources-howto.html
+  -->
+  <GlobalNamingResources>
+    <!-- Editable user database that can also be used by
+         UserDatabaseRealm to authenticate users
+    -->
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+              description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-users.xml" />
+  </GlobalNamingResources>
+
+  <!-- A "Service" is a collection of one or more "Connectors" that share
+       a single "Container" Note:  A "Service" is not itself a "Container",
+       so you may not define subcomponents such as "Valves" at this level.
+       Documentation at /docs/config/service.html
+   -->
+  <Service name="Catalina">
+
+    <!--The connectors can use a shared executor, you can define one or more named thread pools-->
+    <!--
+    <Executor name="tomcatThreadPool" namePrefix="catalina-exec-"
+        maxThreads="150" minSpareThreads="4"/>
+    -->
+
+
+    <!-- A "Connector" represents an endpoint by which requests are received
+         and responses are returned. Documentation at :
+         Java HTTP Connector: /docs/config/http.html
+         Java AJP  Connector: /docs/config/ajp.html
+         APR (HTTP/AJP) Connector: /docs/apr.html
+         Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
+    -->
+    <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+    <!-- A "Connector" using the shared thread pool-->
+    <!--
+    <Connector executor="tomcatThreadPool"
+               port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+    -->
+    <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443
+         This connector uses the NIO implementation. The default
+         SSLImplementation will depend on the presence of the APR/native
+         library and the useOpenSSL attribute of the AprLifecycleListener.
+         Either JSSE or OpenSSL style configuration may be used regardless of
+         the SSLImplementation selected. JSSE style configuration is used below.
+    -->
+    <!--
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               maxThreads="150" SSLEnabled="true">
+        <SSLHostConfig>
+            <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+    -->
+    <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
+         This connector uses the APR/native implementation which always uses
+         OpenSSL for TLS.
+         Either JSSE or OpenSSL style configuration may be used. OpenSSL style
+         configuration is used below.
+    -->
+    <!--
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
+               maxThreads="150" SSLEnabled="true" >
+        <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+        <SSLHostConfig>
+            <Certificate certificateKeyFile="conf/localhost-rsa-key.pem"
+                         certificateFile="conf/localhost-rsa-cert.pem"
+                         certificateChainFile="conf/localhost-rsa-chain.pem"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+    -->
+
+    <!-- Define an AJP 1.3 Connector on port 8009 -->
+    <!--
+    <Connector protocol="AJP/1.3"
+               address="::1"
+               port="8009"
+               redirectPort="8443" />
+    -->
+
+    <!-- An Engine represents the entry point (within Catalina) that processes
+         every request.  The Engine implementation for Tomcat stand alone
+         analyzes the HTTP headers included with the request, and passes them
+         on to the appropriate Host (virtual host).
+         Documentation at /docs/config/engine.html -->
+
+    <!-- You should set jvmRoute to support load-balancing via AJP ie :
+    <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
+    -->
+    <Engine name="Catalina" defaultHost="localhost">
+
+      <!--For clustering, please take a look at documentation at:
+          /docs/cluster-howto.html  (simple how to)
+          /docs/config/cluster.html (reference documentation) -->
+      <!--
+      <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>
+      -->
+
+      <!-- Use the LockOutRealm to prevent attempts to guess user passwords
+           via a brute-force attack -->
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <!-- This Realm uses the UserDatabase configured in the global JNDI
+             resources under the key "UserDatabase".  Any edits
+             that are performed against this UserDatabase are immediately
+             available for use by the Realm.  -->
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+               resourceName="UserDatabase"/>
+      </Realm>
+
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true">
+
+        <!-- SingleSignOn valve, share authentication between web applications
+             Documentation at: /docs/config/valve.html -->
+        <!--
+        <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
+        -->
+
+        <!-- Access log processes all example.
+             Documentation at: /docs/config/valve.html
+             Note: The pattern used is equivalent to using pattern="common" -->
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log" suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+
+      </Host>
+    </Engine>
+  </Service>
+</Server>
 ```
 #### 4、Connector主要参数说明
+
 | 参数 | 参数说明 |
 | --- | --- |
 | connector | 接收用户请求，类似于httpd的listen配置监听端口 |
@@ -221,7 +406,9 @@ tomcat目录下的/conf/server.xml
 | redirectPort | 指定服务器正在处理http请求时收到了一个SSL传输请求后重定向的端口号 |
 | acceptCount | 指定当所有可以使用的处理请求的线程数都被使用时，可以放到处理队列中的请求数，超过这个数的请求将不予处理 |
 | connectionTimeout | 指定超时的时间数（以毫秒为单位） |
+
 #### 5、host参数详解
+
 | 参数 | 参数说明 |
 | --- | --- |
 | host | 表示一个虚拟主机 |
@@ -231,13 +418,16 @@ tomcat目录下的/conf/server.xml
 | autoDeploy | 在tomcat启动时，是否自动部署 |
 | xmlValidation | 是否启动xml的校验功能，一般xmlValidation="false"。 |
 | xmlNamespaceAware | 检测名称空间，一般xmlNamespaceAware="false"。 |
+
 #### 6、Context参数说明
+
 | 参数 | 参数说明 |
 | --- | --- |
 | Context | 表示一个web应用程序，通常为WAR文件 |
 | docBase | 应用程序的路径或者是WAR文件存放的路径，也可以使用相对路径，其实路径为此Context所属Host中appBase定义的路径。 |
 | path | 表示此web应用程序的url的前缀，这样请求的url为http://localhost:8080/path/ |
 | reloadable | 这个属性非常重要，如果为true则tomcat会自动检测应用程序的/WEB-INF/lib和/WEB-INF/classes目录的变化，自动装载新的引用程序，可以在不重启tomcat的情况下改变应用程序 |
+
 ### 5、WEB站点部署
 1、直接将程序目录放在webapps目录下
 2、使用开发工具将程序打包成war包，然后上传到webapps目录下
@@ -275,21 +465,29 @@ rm -rf ROOT/
 ## 六、Tomcat优化
 ### 1、tomcat安全优化
 #### 1、telent管理端口保护（强制）
+
 | 类别 | 配置内容及说明 | 标准配置 |
 | --- | --- | --- |
 | telnet管理端口保护 | 1.修改默认的8005管理端口为不易猜测的端口（大于1024）；2.修改SHUTDOWN指令为其他字符串 | <Server port="8527" shutdown="dangerous"> |
+
 #### 2、ajp连接端口保护（推荐）
+
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | ---- | --- |--- | --- |
 | Ajp连接端口保护 | 1.修改默认的ajp8009端口为不易冲突的大于1024端口；2.通过iptables规则限制ajp端口访问的权限仅为线上机器 | <Connector prt="8528" protocol="AJP/1.3"/> | 以上配置项的配置内容仅为建议配置，请按照服务实际情况进行合理配置，但要求端口配置在8000-8999之间；保护此端口的目的在于防止线下的测试流量被mod_jk转发至线上tomcat服务器； |
+
 #### 3、禁用管理端（强制）
+
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
 | 禁用管理端 | 1.删除默认的tomcat安装目录/conf/tomcat-users.xml文件重启tomcat后将会自动生成新的文件；2.删除tomcat安装目录/webapps下默认的所有目录和文件；3.将tomcat应用根目录配置为tomcat安装目录以外的目录 | <Host name>="localhost" appBase="/application/work/webaps" | 对于前段web模块，tomcat管理端属于tomcat的高位安全隐患，一旦被攻破，黑客通过上传webshell的方式将会直接取得服务器的控制权，后果极其严重； |
+
 #### 4、降权启动（强制）
+
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
 | 降权启动 | 1.tomcat启动用户权限必须为非root权限，尽量降低tomcat启动用户的目录访问权限；2.如需直接对外使用80端口，可通过普通账号启动后，配置iptables规则进行转发； |  | 避免一旦tomcat服务被入侵，黑客直接获取高级用户权限危害整个server的安全 |
+
 ```
 useradd tomcat
 mkdir /home/tomcat -p
@@ -298,7 +496,9 @@ chown -R tomcat.tomcat /hom/tomcat/tomcat8_1/
 su -c '/home/tomcat/tomcat8_1/bin/startup.sh' tomcat
 ps -ef |grep tomcat #验证是否为tomcat用户启用了进程
 ```
+
 #### 5、文件列表访问控制（强制）
+
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
 | 文件列表访问控制 | 1.conf/web.xml文件中default部分listings的配置必须为false； | <init-param><param-name>listings</param-name><param-value>false</param-value></init-param> | false为布列出目录文件，true为允许列出，默认为false |
@@ -306,23 +506,33 @@ ps -ef |grep tomcat #验证是否为tomcat用户启用了进程
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
 | 版本信息隐藏 | 1.修改conf/web.xml,重定向403、404以及500等错误到指定的错误页面；2.也可以通过修改应用程序目录下的WEB-INF/web.xml下的配置进行错误页面的重定向； | <error-page><error-code>**403**</error-code><location>**/forbidden.jsp**</location></error-page><error-page><error-code>**404**</error-code><location>**/notfound.jsp**</location></error-page><error-page><error-code>**500**</error-code><location>**/systembusy.jsp**</location></error-page> | 在配置中对一些常见错误进行重定向，避免当出现错误时tomcat默认显示的错误页面暴露服务器和版本信息；必须确保程序根目录下的错误页面已经存在； |
+
 #### 7、Server header重写（推荐）
+
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
 | Serverheader重写 | 在HTTPConnector配置中加入server的配置； | server="webserver" | 当tomcat HTTP端口直接提供web服务时此配置生效，加入此配置，将会替换http响应Serverheader部分的默认配置，默认是Apache-Coyote/1.1 |
+
 #### 8、访问限制（可选）
+
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
 | 访问限制 | 通过配置，限定访问的IP来源 | <Context path="" docBase="/home/work/tomcat" debug="0" reloadable="false" crossContext="true"><Valve className="org.apache.catalina.valves.RemoteAddrValve"**allow="61.148.18.138,61.135.165.130" deny="*.*.*.*"**/></Context> | 通过配置信任ip的白名单，拒绝非白名单IP的访问，此配置主要针对高保密级别的系统，一般产品线不需要 |
+
 #### 9、启停脚本权限回收（推荐）
+
 | 类别 | 配置内容及说明 | 标准配置或操作 | 备注 |
 | --- | --- | --- | --- |
 | 启停脚本权限回收 | 去除其他用户对tomcat的bin目录下shutdown.sh、startup.sh、catalina.sh的可执行权限； | chmod -R 744 tomcat/bin/* | 放置其他用户有启停线上tomcat的权限； |
+
 #### 10、访问日志格式规范（推荐）
+
 | 类别 | 配置内容及说明 | 标准配置或操作 | 备注 |
 | --- | --- | --- | --- |
 | 访问日志格式规范 | 开启tomcat默认访问日志中的Referer和User-Agent记录 | <Valve className="org.apache.caalina.valves.AccessLogValve"directory="logs" prefix="localhost_access_log." suffix=".txt"   pattern="%h %1 %u %t %r %s %b %{Referer}i %{User-Agent}i %D" resolveHosts="false" /> | 开启Referer和User-Agent是为了一旦出现安全问题能够更好的根据日志进行问题排查； |
+
 #### 11、附录：建议配置及标准执行方案
+
 1、配置部分（${CATALINA_HOME}conf/server.xml）
 ```xml
 <Server port="8527">
@@ -393,6 +603,7 @@ JAVA_OPTS="-Djava.awt.headless=true -Dfile.encoding=UTF-8 -server -Xms800m -Xmx8
 使用较为广泛
 
 ## 七、部署jenkins实战
+
 下载地址：
 ```
 <待补充>
