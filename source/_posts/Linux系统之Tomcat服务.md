@@ -414,7 +414,7 @@ tomcat目录下的/conf/server.xml
 | host | 表示一个虚拟主机 |
 | name | 指定主机名 |
 | appBase | 应用程序基本目录，即存放应用程序的目录，一般为appBase="webapps"相对于CATALINA_HOME而言的，也可以写绝对路径 |
-| unpackWARs | 如果为true，则tomcat回自动将WAR文件解压，否则不解压，直接从WAR文件中运行应用程序 |
+| unpackWARs | 如果为true，则tomcat会自动将WAR文件解压，否则不解压，直接从WAR文件中运行应用程序 |
 | autoDeploy | 在tomcat启动时，是否自动部署 |
 | xmlValidation | 是否启动xml的校验功能，一般xmlValidation="false"。 |
 | xmlNamespaceAware | 检测名称空间，一般xmlNamespaceAware="false"。 |
@@ -480,7 +480,7 @@ rm -rf ROOT/
 
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
-| 禁用管理端 | 1.删除默认的tomcat安装目录/conf/tomcat-users.xml文件重启tomcat后将会自动生成新的文件；2.删除tomcat安装目录/webapps下默认的所有目录和文件；3.将tomcat应用根目录配置为tomcat安装目录以外的目录 | <Host name>="localhost" appBase="/application/work/webaps" | 对于前段web模块，tomcat管理端属于tomcat的高位安全隐患，一旦被攻破，黑客通过上传webshell的方式将会直接取得服务器的控制权，后果极其严重； |
+| 禁用管理端 | 1.删除默认的tomcat安装目录/conf/tomcat-users.xml文件重启tomcat后将会自动生成新的文件；2.删除tomcat安装目录/webapps下默认的所有目录和文件；3.将tomcat应用根目录配置为tomcat安装目录以外的目录 | <Host name>="localhost" appBase="/application/work/webapps" | 对于前段web模块，tomcat管理端属于tomcat的高危安全隐患，一旦被攻破，黑客通过上传webshell的方式将会直接取得服务器的控制权，后果极其严重； |
 
 #### 4、降权启动（强制）
 
@@ -492,7 +492,7 @@ rm -rf ROOT/
 useradd tomcat
 mkdir /home/tomcat -p
 cp -a /application/tomcat /home/tomcat/tomcat8_1
-chown -R tomcat.tomcat /hom/tomcat/tomcat8_1/
+chown -R tomcat:tomcat /home/tomcat/tomcat8_1/ #这里的tomcat:tomcat均指的是新添加的用户名
 su -c '/home/tomcat/tomcat8_1/bin/startup.sh' tomcat
 ps -ef |grep tomcat #验证是否为tomcat用户启用了进程
 ```
@@ -502,7 +502,9 @@ ps -ef |grep tomcat #验证是否为tomcat用户启用了进程
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
 | 文件列表访问控制 | 1.conf/web.xml文件中default部分listings的配置必须为false； | <init-param><param-name>listings</param-name><param-value>false</param-value></init-param> | false为布列出目录文件，true为允许列出，默认为false |
+
 #### 6、版本信息隐藏（强制）
+
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |
 | 版本信息隐藏 | 1.修改conf/web.xml,重定向403、404以及500等错误到指定的错误页面；2.也可以通过修改应用程序目录下的WEB-INF/web.xml下的配置进行错误页面的重定向； | <error-page><error-code>**403**</error-code><location>**/forbidden.jsp**</location></error-page><error-page><error-code>**404**</error-code><location>**/notfound.jsp**</location></error-page><error-page><error-code>**500**</error-code><location>**/systembusy.jsp**</location></error-page> | 在配置中对一些常见错误进行重定向，避免当出现错误时tomcat默认显示的错误页面暴露服务器和版本信息；必须确保程序根目录下的错误页面已经存在； |
@@ -523,7 +525,7 @@ ps -ef |grep tomcat #验证是否为tomcat用户启用了进程
 
 | 类别 | 配置内容及说明 | 标准配置或操作 | 备注 |
 | --- | --- | --- | --- |
-| 启停脚本权限回收 | 去除其他用户对tomcat的bin目录下shutdown.sh、startup.sh、catalina.sh的可执行权限； | chmod -R 744 tomcat/bin/* | 放置其他用户有启停线上tomcat的权限； |
+| 启停脚本权限回收 | 去除其他用户对tomcat的bin目录下shutdown.sh、startup.sh、catalina.sh的可执行权限； | chmod -R 744 tomcat/bin/* | 防止其他用户有启停线上tomcat的权限； |
 
 #### 10、访问日志格式规范（推荐）
 

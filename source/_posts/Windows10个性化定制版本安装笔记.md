@@ -90,12 +90,12 @@ ps：运行msconfig可以进行引导项的更改
 
 Windows 8.1
 1、Chrome
-2、火绒、CCleaner（捆绑了avast）、Uninstall Tool
+2、搜狗输入法、火绒、UninstallTool
 3、Rainmeter
 Windows10
 1、Chrome
-2、火绒、CCleaner、Uninstall Tool
-3、Rainmeter
-4、游戏相关（暴雪战网、WeGame、炉石传说、炉石传说盒子）
-5、腾讯QQ、向日葵、百度云盘、Bandzip、pandownload、office、potplayer
-6、NTLite
+2、搜狗输入法、火绒、UninstallTool
+3、百度网盘、Rainmeter、Speccy
+4、腾讯QQ、微信
+5、notepad++、PotPlayer、Bandzip、Typora、向日葵
+6、SecureCRT+FX、NTLite
