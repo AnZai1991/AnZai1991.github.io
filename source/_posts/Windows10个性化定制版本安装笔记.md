@@ -76,7 +76,8 @@ ps:Windows自带的关于安全的软件有操作中心、Security Center、Wind
 
 4.1文件夹选项将所有隐藏全部打开
   关闭休眠：powercfg -h off
-4.2修改虚拟内存到非系统盘
+4.2修改虚拟内存4G-10G到非系统盘
+pagefile.sys设置参考文档：https://learn.microsoft.com/en-US/troubleshoot/windows-client/performance/how-to-determine-the-appropriate-page-file-size-for-64-bit-versions-of-windows
 
 5.1关闭打开文件提示：
   运行→gpedit.msc→用户配置→管理模板→Windows组件→附件管理器→双击中等危险文件类型包含列表
