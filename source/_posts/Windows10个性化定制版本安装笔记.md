@@ -76,7 +76,8 @@ ps:Windows自带的关于安全的软件有操作中心、Security Center、Wind
 
 4.1文件夹选项将所有隐藏全部打开
   关闭休眠：powercfg -h off
-4.2修改虚拟内存到非系统盘
+4.2修改虚拟内存4G-10G到非系统盘
+pagefile.sys设置参考文档：https://learn.microsoft.com/en-US/troubleshoot/windows-client/performance/how-to-determine-the-appropriate-page-file-size-for-64-bit-versions-of-windows
 
 5.1关闭打开文件提示：
   运行→gpedit.msc→用户配置→管理模板→Windows组件→附件管理器→双击中等危险文件类型包含列表
@@ -90,12 +91,12 @@ ps：运行msconfig可以进行引导项的更改
 
 Windows 8.1
 1、Chrome
-2、火绒、CCleaner（捆绑了avast）、Uninstall Tool
+2、搜狗输入法、火绒、UninstallTool
 3、Rainmeter
 Windows10
 1、Chrome
-2、火绒、CCleaner、Uninstall Tool
-3、Rainmeter
-4、游戏相关（暴雪战网、WeGame、炉石传说、炉石传说盒子）
-5、腾讯QQ、向日葵、百度云盘、Bandzip、pandownload、office、potplayer
-6、NTLite
+2、搜狗输入法、火绒、UninstallTool
+3、百度网盘、Rainmeter、Speccy
+4、腾讯QQ、微信
+5、notepad++、PotPlayer、Bandzip、Typora、向日葵
+6、SecureCRT+FX、NTLite
