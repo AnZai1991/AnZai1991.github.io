@@ -1,7 +1,7 @@
 ---
 title: Linux系统之SSH服务
 date: 2021-08-17 17:03:37
-tags: [操作系统,Linux]
+tags: [Linux,运维]
 ---
 
 ## 环境介绍

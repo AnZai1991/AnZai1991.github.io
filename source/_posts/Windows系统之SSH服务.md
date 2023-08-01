@@ -1,7 +1,7 @@
 ---
 title: Windows系统之SSH服务
 date: 2021-10-30 10:53:42
-tags: [操作系统,Windows]
+tags: [运维]
 ---
 
 ## 环境介绍

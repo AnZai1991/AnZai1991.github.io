@@ -1,7 +1,7 @@
 ---
 title: Linux系统之Bourne Again Shell
 date: 2020-10-19 18:36:44
-tags: [操作系统,Linux,Shell]
+tags: [Linux]
 
 ---
 

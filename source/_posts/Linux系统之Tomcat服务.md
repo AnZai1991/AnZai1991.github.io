@@ -1,7 +1,7 @@
 ---
 title: Linux系统之Tomcat服务
 date: 2023-02-12 13:38:27
-tags: [Linux,Tomcat,运维]
+tags: [Linux,运维]
 ---
 
 ## 环境介绍
