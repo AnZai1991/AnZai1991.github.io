@@ -1,7 +1,7 @@
 ---
 title: Linux系统之NFS服务
 date: 2022-11-23 11:28:11
-tags: [操作系统,Linux]
+tags: [Linux,运维]
 ---
 
 ## 环境介绍

@@ -1,7 +1,7 @@
 ---
 title: Oracle数据库连接工具笔记
 date: 2022-04-17 15:13:59
-tags: [Oracle,PL/SQL,SQLPlus]
+tags: [数据库,运维]
 ---
 
 # 环境介绍

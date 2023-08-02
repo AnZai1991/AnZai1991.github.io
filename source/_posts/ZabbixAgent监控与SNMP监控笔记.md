@@ -1,7 +1,7 @@
 ---
 title: ZabbixAgent监控与SNMP监控笔记
 date: 2020-01-20 21:38:25
-tags: [操作系统,Linux,Windows,网络,运维]
+tags: [Zabbix,运维]
 ---
 
 ## 笔记介绍

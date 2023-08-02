@@ -1,7 +1,7 @@
 ---
 title: Linux系统之Tomcat服务
 date: 2023-02-12 13:38:27
-tags: [Linux,Tomcat,运维]
+tags: [Linux,运维]
 ---
 
 ## 环境介绍
@@ -503,7 +503,7 @@ ps -ef |grep tomcat #验证是否为tomcat用户启用了进程
 | --- | --- | --- | --- |
 | 文件列表访问控制 | 1.conf/web.xml文件中default部分listings的配置必须为false； | <init-param><param-name>listings</param-name><param-value>false</param-value></init-param> | false为布列出目录文件，true为允许列出，默认为false |
 
-#### 6、版本信息隐藏（强制）
+#### 6、版本信息隐藏（强制）（注意：会自动重启服务）
 
 | 类别 | 配置内容及说明 | 标准配置 | 备注 |
 | --- | --- | --- | --- |

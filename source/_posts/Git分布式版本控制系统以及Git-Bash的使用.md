@@ -1,7 +1,7 @@
 ---
 title: Git分布式版本控制系统以及Git Bash的使用
 date: 2019-12-17 12:32:15
-tags:
+tags: [运维,办公]
 ---
 ## Git Bash
 ### 绑定用户

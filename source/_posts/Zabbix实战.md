@@ -1,7 +1,7 @@
 ---
 title: Zabbix实战
 date: 2020-01-20 20:35:13
-tags: [操作系统,Linux,运维]
+tags: [Zabbix,运维]
 ---
 
 ## 环境介绍

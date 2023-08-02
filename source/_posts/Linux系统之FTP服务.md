@@ -1,7 +1,7 @@
 ---
 title: Linux系统之FTP服务
 date: 2020-01-20 20:25:22
-tags: [操作系统,Linux]
+tags: [Linux,运维]
 ---
 
 ## 环境介绍

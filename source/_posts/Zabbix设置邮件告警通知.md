@@ -1,7 +1,7 @@
 ---
 title: Zabbix设置邮件告警通知
 date: 2021-04-19 21:06:42
-tags: [操作系统,Linux,Windows,网络,运维]
+tags: [Zabbix,运维]
 ---
 
 ## 环境介绍

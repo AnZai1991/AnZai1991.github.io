@@ -1,7 +1,7 @@
 ---
 title: Markdown笔记
 date: 2019-10-19 22:09:45
-tags:
+tags: [办公]
 ---
 Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。
 Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。

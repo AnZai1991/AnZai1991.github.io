@@ -1,7 +1,7 @@
 ---
 title: Linux指令范例速查手册（第2版）
 date: 2022-02-01 15:25:38
-tags: [操作系统,Linux,Shell]
+tags: [Linux]
 ---
 
 # 目 录

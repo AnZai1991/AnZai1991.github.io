@@ -1,7 +1,7 @@
 ---
 title: 多台电脑更新Hexo博客
 date: 2019-12-17 12:01:26
-tags:
+tags: [办公]
 ---
 在网上找了很多的解决方案，采用了最常见的利用git分支的方法来实现。参考网址：https://www.jianshu.com/p/0b1fccce74e0
 

@@ -1,7 +1,7 @@
 ---
 title: Windows10个性化定制版本安装笔记
 date: 2019-11-22 0:39:45
-tags: [操作系统,Windows]
+tags: [办公]
 ---
 
 ## 一、光盘镜像文件：
@@ -86,17 +86,18 @@ pagefile.sys设置参考文档：https://learn.microsoft.com/en-US/troubleshoot/
 ps：运行msconfig可以进行引导项的更改
 
 6.1创建Windows10 自动还原点
-右键此电脑，属性，系统保护，选中C盘，配置，启用系统保护，设置磁盘空间使用量。创建
+右键此电脑→属性→系统保护→选中C盘→配置→启用系统保护→设置磁盘空间使用量→应用→确定，最后点击创建来创建还原点。
 6.2Windows设置-个性化-任务栏-选择哪些图标显示在任务栏-通知区域始终显示所有图标
 
 Windows 8.1
-1、Chrome
-2、搜狗输入法、火绒、UninstallTool
-3、Rainmeter
+1、UninstallTool（追踪程序安装）
+2、Chrome
+3、搜狗输入法、火绒、
+4、Rainmeter、Speccy
 Windows10
-1、Chrome
-2、搜狗输入法、火绒、UninstallTool
-3、百度网盘、Rainmeter、Speccy
-4、腾讯QQ、微信
-5、notepad++、PotPlayer、Bandzip、Typora、向日葵
-6、SecureCRT+FX、NTLite
+1、UninstallTool（追踪程序安装）
+2、Chrome
+3、搜狗输入法、火绒
+4、百度网盘、Rainmeter、Speccy
+5、腾讯QQ、微信
+6、notepad++、PotPlayer、7zip、Typora、向日葵
