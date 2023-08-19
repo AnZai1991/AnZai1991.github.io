@@ -86,18 +86,24 @@ pagefile.sys设置参考文档：https://learn.microsoft.com/en-US/troubleshoot/
 ps：运行msconfig可以进行引导项的更改
 
 6.1创建Windows10 自动还原点
+在以上配置及Windows更新完成后，重启电脑后进行还原点创建
 右键此电脑→属性→系统保护→选中C盘→配置→启用系统保护→设置磁盘空间使用量→应用→确定，最后点击创建来创建还原点。
-6.2Windows设置-个性化-任务栏-选择哪些图标显示在任务栏-通知区域始终显示所有图标
+6.2使用PE中的DG对系统盘做双备份
+建议将备份文件放置存储盘（例如F:\Backup）
 
+根据以下建议安装应用程序
 Windows 8.1
-1、UninstallTool（追踪程序安装）
-2、Chrome
-3、搜狗输入法、火绒、
-4、Rainmeter、Speccy
+1、**UninstallTool（追踪程序安装）**
+2、Chrome、**IDM（优先安装）**
+3、搜狗输入法、火绒、**百度网盘（备份前检查设置）**、Rainmeter
+4、Speccy
 Windows10
-1、UninstallTool（追踪程序安装）
-2、Chrome
-3、搜狗输入法、火绒
-4、百度网盘、Rainmeter、Speccy
-5、腾讯QQ、微信
-6、notepad++、PotPlayer、7zip、Typora、向日葵
+1、**UninstallTool（追踪程序安装）**
+2、Chrome、**IDM（优先安装）**
+3、搜狗输入法、火绒、**百度网盘（备份前检查设置）**、Rainmeter
+4、Speccy
+此处以上软件使用追踪安装后，可用PE中的DG对系统盘和软件盘做备份，备份文件放入存储盘（例如F:\Backup）
+5、QQ、微信
+6、notepad++、PotPlayer、向日葵、Typora、7zip
+
+7.Windows设置-个性化-任务栏-选择哪些图标显示在任务栏-通知区域始终显示所有图标
