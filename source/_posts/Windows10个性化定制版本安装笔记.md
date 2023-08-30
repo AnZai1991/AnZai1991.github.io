@@ -93,13 +93,13 @@ ps：运行msconfig可以进行引导项的更改
 1、**UninstallTool（追踪程序安装）**
 2、Chrome、**IDM（优先安装）**
 3、搜狗输入法、火绒、**百度网盘（备份前检查设置）**、Rainmeter
-4、Speccy
+4、Speccy、Everything
 
 > Windows10
 1、**UninstallTool（追踪程序安装）**
 2、Chrome、**IDM（优先安装）**
 3、搜狗输入法、火绒、**百度网盘（备份前检查设置）**、Rainmeter
-4、Speccy
+4、Speccy、Everything
 5、CCleaner、QQ、微信
 6、notepad++、Typora、PotPlayer、向日葵、7zip
 
