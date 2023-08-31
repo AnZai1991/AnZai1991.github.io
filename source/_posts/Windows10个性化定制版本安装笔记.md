@@ -65,7 +65,7 @@ Windows Defender禁用
 2.1安装Office
 2.2激活Windows和Office
 2.3更改计算机名（设置→系统→关于→重命名这台电脑）参考：DESKTOP-XX\LAPTOP-XX\PC-XX
-2.4更改锁屏方式（设置→账户→登录选项）
+2.4更改锁屏方式（Windows聚焦改为图片）和解锁方式（设置→账户→登录选项）
 
 3.1控制面板-系统和安全-更改用户账户控制设置-从不通知
   控制面板-系统和安全-Windows Defender防火墙-打开
@@ -78,6 +78,7 @@ Windows Defender禁用
   关闭休眠：powercfg -h off
 4.2修改虚拟内存4G-10G到非系统盘
 pagefile.sys设置参考文档：https://learn.microsoft.com/en-US/troubleshoot/windows-client/performance/how-to-determine-the-appropriate-page-file-size-for-64-bit-versions-of-windows
+4.3设置→电源和睡眠→睡眠改为从不
 
 5.1关闭打开文件提示：
   运行→gpedit.msc→用户配置→管理模板→Windows组件→附件管理器→双击中等危险文件类型包含列表
@@ -102,6 +103,7 @@ ps：运行msconfig可以进行引导项的更改
 4、Speccy、Everything
 5、CCleaner、QQ、微信
 6、notepad++、Typora、PotPlayer、向日葵、7zip
+7、Clash、UltraISO、傲软录屏、wolai
 
 6.3完成第4步软件安装后，使用PE中的DG对系统盘和软件盘做备份
 建议将备份文件放置存储盘（例如F:\Backup）
