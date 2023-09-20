@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://anzai1991.github.io">
-  <title>Wireshark抓包笔记 | 安仔的博客</title>
+  <title>Linux系统之环境变量配置的6种方法 | 安仔的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Wireshark的安装Wireshark的官方网站https://www.wireshark.org/Wireshark支持Windows、Linux、Unix系统，是个开源免费软件。以下笔记内容为Wireshare的Windows版本V3.4.7  使用方法打开Wireshark后，会出现捕获界面，显示的是所有的网络接口情况，包含有线、蓝牙、虚拟网卡。直接双击需要监视的项，就可以进入捕获网络接">
-<meta name="keywords" content="网络">
+  <meta name="description" content="环境介绍操作版本：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
+<meta name="keywords" content="运维,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Wireshark抓包笔记">
-<meta property="og:url" content="https://anzai1991.github.io/2021/08/18/Wireshark抓包笔记/index.html">
+<meta property="og:title" content="Linux系统之环境变量配置的6种方法">
+<meta property="og:url" content="https://anzai1991.github.io/2023/09/20/Linux系统之环境变量配置的6种方法/index.html">
 <meta property="og:site_name" content="安仔的博客">
-<meta property="og:description" content="Wireshark的安装Wireshark的官方网站https://www.wireshark.org/Wireshark支持Windows、Linux、Unix系统，是个开源免费软件。以下笔记内容为Wireshare的Windows版本V3.4.7  使用方法打开Wireshark后，会出现捕获界面，显示的是所有的网络接口情况，包含有线、蓝牙、虚拟网卡。直接双击需要监视的项，就可以进入捕获网络接">
+<meta property="og:description" content="环境介绍操作版本：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2022-08-04T05:00:39.518Z">
+<meta property="og:updated_time" content="2023-09-20T03:27:08.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wireshark抓包笔记">
-<meta name="twitter:description" content="Wireshark的安装Wireshark的官方网站https://www.wireshark.org/Wireshark支持Windows、Linux、Unix系统，是个开源免费软件。以下笔记内容为Wireshare的Windows版本V3.4.7  使用方法打开Wireshark后，会出现捕获界面，显示的是所有的网络接口情况，包含有线、蓝牙、虚拟网卡。直接双击需要监视的项，就可以进入捕获网络接">
+<meta name="twitter:title" content="Linux系统之环境变量配置的6种方法">
+<meta name="twitter:description" content="环境介绍操作版本：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
   
     <link rel="alternative" href="/atom.xml" title="安仔的博客" type="application/atom+xml">
   
@@ -163,36 +163,104 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Wireshark抓包笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux系统之环境变量配置的6种方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Wireshark抓包笔记
+      Linux系统之环境变量配置的6种方法
     </h1>
   
 
         
-        <a href="/2021/08/18/Wireshark抓包笔记/" class="archive-article-date">
-  	<time datetime="2021-08-18T14:37:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-18</time>
+        <a href="/2023/09/20/Linux系统之环境变量配置的6种方法/" class="archive-article-date">
+  	<time datetime="2023-09-20T03:13:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Wireshark的安装"><a href="#Wireshark的安装" class="headerlink" title="Wireshark的安装"></a>Wireshark的安装</h2><p>Wireshark的官方网站<a href="https://www.wireshark.org/" target="_blank" rel="noopener">https://www.wireshark.org/</a><br>Wireshark支持Windows、Linux、Unix系统，是个开源免费软件。<br>以下笔记内容为Wireshare的Windows版本V3.4.7</p>
-<hr>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>打开Wireshark后，会出现捕获界面，显示的是所有的网络接口情况，包含有线、蓝牙、虚拟网卡。直接双击需要监视的项，就可以进入捕获网络接口信息的状态。</p>
-<a id="more"></a>    
-<h4 id="常用的过滤使用方法"><a href="#常用的过滤使用方法" class="headerlink" title="常用的过滤使用方法"></a>常用的过滤使用方法</h4><p>过滤IP地址<br>ip.addr == 192.168.1.1<br>过滤源IP地址、目的地址<br>ip.src == 1.1.1.1<br>ip.dst == 1.1.1.1<br>端口过滤<br>tcp.port == 80<br>tcp.srcport == 80<br>tcp.dstport == 80<br>协议过滤<br>直接输入协议名称，如SIP</p>
-<hr>
-<h2 id="Wireshark抓包分析之sip"><a href="#Wireshark抓包分析之sip" class="headerlink" title="Wireshark抓包分析之sip"></a>Wireshark抓包分析之sip</h2><p>根据主叫号码查询到sip消息<br>sip.from.user == 13800000001<br>根据被叫号码查询到sip消息<br>sip.to.user == 13800000001<br>根据包含内容（如软电话号码）查找sip消息<br>sip contains 70001</p>
-<p>过滤之后，点击任一消息，得到Call-ID，再根据Call-ID获取这个通话的所有sip消息过滤结果<br>sip.Call-ID == “856d5c37-b891-1239-2d9a-f0d4e2eb7bdc”</p>
-<hr>
-<h2 id="使用Wireshark抓包QQ语音定位IP地址"><a href="#使用Wireshark抓包QQ语音定位IP地址" class="headerlink" title="使用Wireshark抓包QQ语音定位IP地址"></a>使用Wireshark抓包QQ语音定位IP地址</h2><p>使用Wireshark抓取一段QQ语音通话的流量，注意必须接通才可以。<br>使用Ctrl+F或者点击工具栏里的放大镜按钮，选择第三个下拉框选择“字符串”，第一个下拉框选择“分组详情”，第二个下拉框选择“宽窄”，在后面搜索框中输入“020048”。就能在记录里找到对方的目的IP地址，再根据目的IP地址来查找对应所在位置。</p>
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作版本：Ubuntu 20.04.2 LTS<br>用户名：az<br>以Java环境变量配置为例</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况<br>Linux读取环境变量</p>
+<ul>
+<li>export命令显示当前系统定义的所有环境变量</li>
+<li>echo $PATH命令输出当前的PATH环境变量的值</li>
+</ul>
+<p>其中PATH变量定义了运行命令的查找路径，以冒号:分割不同的路径，使用export定义的时候可加双引号也可不加。</p>
+<a id="more"></a>
+<h2 id="export-PATH"><a href="#export-PATH" class="headerlink" title="export PATH"></a>export PATH</h2><p>使用export命令直接修改PATH的值，配置Java环境变量的方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/opt/jvm/jdk1.7.0_80</span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$JAVA_HOME</span>/jre</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$CLASSPATH</span>:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JRE_HOME</span>/lib</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<ul>
+<li>生效时间：立即生效</li>
+<li>生效期限：当前终端有效，窗口关闭后无效</li>
+<li>生效范围：仅对当前用户有效</li>
+<li>配置的环境变量中不要忘了加上原来的配置，即$PATH部分，避免覆盖原来配置</li>
+</ul>
+<h2 id="vim-bashrc"><a href="#vim-bashrc" class="headerlink" title="vim ~/.bashrc"></a>vim ~/.bashrc</h2><p>通过修改用户目录下的~/.bashrc文件进行配置</p>
+<p>注意事项：</p>
+<ul>
+<li>生效时间：使用相同的用户打开新的终端时生效，或者手动source <code>~/.bashrc</code>生效</li>
+<li>生效期限：永久有效</li>
+<li>生效范围：仅对当前用户有效</li>
+<li>如果有后续的环境变量加载文件覆盖了PATH定义，则可能不生效</li>
+</ul>
+<h2 id="vim-bash-profile"><a href="#vim-bash-profile" class="headerlink" title="vim ~/.bash_profile"></a>vim ~/.bash_profile</h2><p>和修改~/.bashrc文件类似，也是要在文件最后加上新的路径即可<br>注意事项：</p>
+<ul>
+<li>生效时间：使用相同的用户打开新的终端时生效，或者手动source <code>~/.bash_profile</code>生效</li>
+<li>生效期限：永久有效</li>
+<li>生效范围：仅对当前用户有效</li>
+<li>如果没有<code>~/.bash_profile</code>文件，则可以编辑<code>~/.profile</code>文件或者新建一个</li>
+</ul>
+<h2 id="vim-etc-bashrc"><a href="#vim-etc-bashrc" class="headerlink" title="vim /etc/bashrc"></a>vim /etc/bashrc</h2><p>该方法是修改系统配置，需要管理员权限（如root）或者对该文件的写入权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod -v u+w /etc/bashrc</span><br><span class="line">vim /etc/bashrc</span><br><span class="line"><span class="comment">#在最后一行添加</span></span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<ul>
+<li>生效时间：新开终端生效，或者手动source /etc/bashrc生效</li>
+<li>生效期限：永久有效</li>
+<li>生效范围：对所有用户有效</li>
+</ul>
+<h2 id="vim-etc-profile"><a href="#vim-etc-profile" class="headerlink" title="vim /etc/profile"></a>vim /etc/profile</h2><p>该方法修改系统配置，需要管理员权限或者对该文件的写入权限，和vim /etc/bashrc类似</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod -v u+w /etc/profile</span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment">#在最后一行添加</span></span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<ul>
+<li>生效时间：新开终端生效，或者手动source /etc/profile生效</li>
+<li>生效期限：永久有效</li>
+<li>生效范围：对所有用户有效</li>
+</ul>
+<h2 id="vim-etc-environment"><a href="#vim-etc-environment" class="headerlink" title="vim /etc/environment"></a>vim /etc/environment</h2><p>该方法是修改系统环境配置文件，需要管理员权限或者对该文件的写入权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod -v u+w /etc/environment</span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment">#在最后一行添加</span></span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<ul>
+<li>生效时间：新开终端生效，或者手动source /etc/environment生效</li>
+<li>生效期限：永久有效</li>
+<li>生效范围：对所有用户有效</li>
+</ul>
+<h2 id="Linux环境变量加载原理解析"><a href="#Linux环境变量加载原理解析" class="headerlink" title="Linux环境变量加载原理解析"></a>Linux环境变量加载原理解析</h2><h3 id="环境变量分类"><a href="#环境变量分类" class="headerlink" title="环境变量分类"></a>环境变量分类</h3><p>环境变量可以简单的分成用户自定义的环境变量以及系统级别的环境变量。</p>
+<ul>
+<li>用户级别环境变量定义文件：<code>~/.bashrc</code>、<code>~/.profile</code>（部分系统为：<code>~/.bash_profile</code>）</li>
+<li>系统级别环境变量定义文件：/etc/bashrc、/etc/profile(部分系统为：/etc/bash_profile）、/etc/environment</li>
+</ul>
+<p>另外在用户环境变量中，系统会首先读取<code>~/.bash_profile</code>（或者<code>~/.profile</code>）文件，如果没有该文件则读取<code>~/.bash_login</code>，根据这些文件中内容再去读取<code>~/.bashrc</code>。</p>
+<h3 id="测试Linux环境变量加载顺序的方法"><a href="#测试Linux环境变量加载顺序的方法" class="headerlink" title="测试Linux环境变量加载顺序的方法"></a>测试Linux环境变量加载顺序的方法</h3><p>为了测试各个不同文件的环境变量加载顺序，我们在每个环境变量定义文件中的第一行都定义相同的环境变量UU_ORDER，该变量的值为本身的值连接上当前文件名称。<br>需要修改的文件如下：</p>
+<ul>
+<li>/etc/environment</li>
+<li>/etc/profile</li>
+<li>/etc/profile.d/test.sh 新建文件，没有文件夹可略过</li>
+<li>/etc/bashrc或者/etc/bash.bashrc</li>
+<li><code>~/.bash_profile</code>或者<code>~/.profile</code></li>
+<li><code>~/.bashrc</code><br>在每个文件中的第一行都加上下面这句代码，并相应的把冒号后的内容修改为当前文件的绝对文件名。<br>……此后省略……</li>
+</ul>
+<h3 id="Linxu环境变量文件加载详解"><a href="#Linxu环境变量文件加载详解" class="headerlink" title="Linxu环境变量文件加载详解"></a>Linxu环境变量文件加载详解</h3><p>由上面的测试可容易得出Linux加载环境变量的顺序如下：<br>系统环境变量 -&gt; 用户自定义环境变量 /etc/environment -&gt; /etc/profile -&gt; <code>~/.profile</code><br>打开/etc/profile文件你会发现，该文件的代码中会加载/etc/bash.bashrc文件，然后检查/etc/profile.d/目录下的.sh文件并加载。<br>其次再打开<code>~/.profile</code>文件，会发现该文件中加载了<code>~/.bashrc</code>文件。<br>从<code>~/.profile</code>文件中代码不难发现，/.profile文件只在用户登录的时候读取一次，而/.bashrc会在每次运行Shell脚本的时候读取一次。</p>
+<h3 id="一些小技巧"><a href="#一些小技巧" class="headerlink" title="一些小技巧"></a>一些小技巧</h3><p>可以自定义一个环境变量文件，比如在某个项目下定义uusama.profile，在这个文件中使用export定义一系列变量，然后在<code>~/.profile</code>文件后面加上：sourc uusama.profile，这样你每次登陆都可以在Shell脚本中使用自己定义的一系列变量。<br>也可以使用alias命令定义一些命令的别名，比如alias rm=”rm -i”（双引号必须），并把这个代码加入到<code>~/.profile</code>中，这样你每次使用rm命令的时候，都相当于使用rm -i命令，非常方便。</p>
+<p>参考：<a href="https://www.xjx100.cn/news/633902.html?action=onClick" target="_blank" rel="noopener">https://www.xjx100.cn/news/633902.html?action=onClick</a></p>
 
       
 
@@ -237,7 +305,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -293,7 +365,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://anzai1991.github.io/2021/08/18/Wireshark抓包笔记/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://anzai1991.github.io/2023/09/20/Linux系统之环境变量配置的6种方法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +379,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/10/30/Windows系统之SSH服务/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Windows系统之SSH服务
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/08/17/Linux系统之SSH服务/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux系统之SSH服务</div>
+    <a href="/2023/08/02/工作单位word模板制作/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">工作单位word模板和工作单位电子章的制作</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -345,7 +408,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wireshark的安装"><span class="toc-number">1.</span> <span class="toc-text">Wireshark的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">2.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用的过滤使用方法"><span class="toc-number">2.0.1.</span> <span class="toc-text">常用的过滤使用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wireshark抓包分析之sip"><span class="toc-number">3.</span> <span class="toc-text">Wireshark抓包分析之sip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Wireshark抓包QQ语音定位IP地址"><span class="toc-number">4.</span> <span class="toc-text">使用Wireshark抓包QQ语音定位IP地址</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境介绍"><span class="toc-number">1.</span> <span class="toc-text">环境介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#export-PATH"><span class="toc-number">3.</span> <span class="toc-text">export PATH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-bashrc"><span class="toc-number">4.</span> <span class="toc-text">vim ~/.bashrc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-bash-profile"><span class="toc-number">5.</span> <span class="toc-text">vim ~/.bash_profile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-etc-bashrc"><span class="toc-number">6.</span> <span class="toc-text">vim /etc/bashrc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-etc-profile"><span class="toc-number">7.</span> <span class="toc-text">vim /etc/profile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-etc-environment"><span class="toc-number">8.</span> <span class="toc-text">vim /etc/environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux环境变量加载原理解析"><span class="toc-number">9.</span> <span class="toc-text">Linux环境变量加载原理解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量分类"><span class="toc-number">9.1.</span> <span class="toc-text">环境变量分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试Linux环境变量加载顺序的方法"><span class="toc-number">9.2.</span> <span class="toc-text">测试Linux环境变量加载顺序的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linxu环境变量文件加载详解"><span class="toc-number">9.3.</span> <span class="toc-text">Linxu环境变量文件加载详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些小技巧"><span class="toc-number">9.4.</span> <span class="toc-text">一些小技巧</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
