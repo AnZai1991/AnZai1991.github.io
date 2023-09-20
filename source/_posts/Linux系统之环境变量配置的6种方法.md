@@ -4,7 +4,7 @@ date: 2023-09-20 11:13:30
 tags: [运维,Linux]
 ---
 ## 环境介绍
-操作版本：Ubuntu 20.04.2 LTS
+操作系统：Ubuntu 20.04.2 LTS
 用户名：az
 以Java环境变量配置为例
 
