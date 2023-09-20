@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://anzai1991.github.io">
   <title>Linux系统之环境变量配置的6种方法 | 安仔的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境介绍操作版本：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
+  <meta name="description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
 <meta name="keywords" content="运维,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统之环境变量配置的6种方法">
 <meta property="og:url" content="https://anzai1991.github.io/2023/09/20/Linux系统之环境变量配置的6种方法/index.html">
 <meta property="og:site_name" content="安仔的博客">
-<meta property="og:description" content="环境介绍操作版本：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
+<meta property="og:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2023-09-20T03:27:08.319Z">
+<meta property="og:updated_time" content="2023-09-20T07:21:27.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统之环境变量配置的6种方法">
-<meta name="twitter:description" content="环境介绍操作版本：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
+<meta name="twitter:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS用户名：az以Java环境变量配置为例 概述因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况Linux读取环境变量  export命">
   
     <link rel="alternative" href="/atom.xml" title="安仔的博客" type="application/atom+xml">
   
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作版本：Ubuntu 20.04.2 LTS<br>用户名：az<br>以Java环境变量配置为例</p>
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Ubuntu 20.04.2 LTS<br>用户名：az<br>以Java环境变量配置为例</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>因为发现一个很特别的现象，在az用户下java环境正常，切root下就不行，执行source /etc/profile后正常，切az下不正常，在az下执行source /etc/profile后正常，切root又不正常了。所以来研究下环境变量的加载到底是什么情况<br>Linux读取环境变量</p>
 <ul>
 <li>export命令显示当前系统定义的所有环境变量</li>
@@ -378,6 +378,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2023/09/20/Linux系统之Systemd/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux系统之Systemd
+        
+      </div>
+    </a>
   
   
     <a href="/2023/08/02/工作单位word模板制作/" id="article-nav-older" class="article-nav-link-wrap">
