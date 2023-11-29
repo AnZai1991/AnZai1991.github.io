@@ -9,17 +9,20 @@
   <title>Linux系统之Systemd | 安仔的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS Systemd基础Systemd 是 Linux 系统工具，用来启动守护进程，已成为大多数发行版的标准配置。 Systemd概述历史上，Linux 的启动一直采用init进程。">
-<meta name="keywords" content="运维,Linux">
+<meta name="keywords" content="Linux,运维">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统之Systemd">
 <meta property="og:url" content="https://anzai1991.github.io/2023/09/20/Linux系统之Systemd/index.html">
 <meta property="og:site_name" content="安仔的博客">
 <meta property="og:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS Systemd基础Systemd 是 Linux 系统工具，用来启动守护进程，已成为大多数发行版的标准配置。 Systemd概述历史上，Linux 的启动一直采用init进程。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2023-09-20T07:22:14.146Z">
+<meta property="og:image" content="https://anzai1991.github.io/assets/img/article_8/systemd_1.png">
+<meta property="og:image" content="https://anzai1991.github.io/assets/img/article_8/systemd_2.png">
+<meta property="og:updated_time" content="2023-11-29T03:42:51.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统之Systemd">
 <meta name="twitter:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS Systemd基础Systemd 是 Linux 系统工具，用来启动守护进程，已成为大多数发行版的标准配置。 Systemd概述历史上，Linux 的启动一直采用init进程。">
+<meta name="twitter:image" content="https://anzai1991.github.io/assets/img/article_8/systemd_1.png">
   
     <link rel="alternative" href="/atom.xml" title="安仔的博客" type="application/atom+xml">
   
@@ -194,7 +197,7 @@
 <p>Systemd 就是为了解决这些问题而诞生的。它的设计目标是，为系统的启动和管理提供一套完整的解决方案。<br>根据 Linux 惯例，字母<code>d</code>是守护进程（daemon）的缩写。 Systemd 这个名字的含义，就是它要守护整个系统。<br>使用了 Systemd，就不需要再用<code>init</code>了。Systemd 取代了<code>initd</code>，成为系统的第一个进程（PID 等于 1），其他进程都是它的子进程。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl --version <span class="comment">#查看Systemd的版本</span></span><br></pre></td></tr></table></figure>
 
-<p>Systemd 的优点是功能强大，使用方便，缺点是体系庞大，非常复杂。事实上，现在还有很多人反对使用 Systemd，理由就是它过于复杂，与操作系统的其他部分强耦合，违反”keep simple, keep stupid”的<a href="https://www.ruanyifeng.com/blog/2009/06/unix_philosophy.html" target="_blank" rel="noopener">Unix 哲学</a>。<br>下图为Systemd架构图<br>[图片]</p>
+<p>Systemd 的优点是功能强大，使用方便，缺点是体系庞大，非常复杂。事实上，现在还有很多人反对使用 Systemd，理由就是它过于复杂，与操作系统的其他部分强耦合，违反”keep simple, keep stupid”的<a href="https://www.ruanyifeng.com/blog/2009/06/unix_philosophy.html" target="_blank" rel="noopener">Unix 哲学</a>。<br>下图为Systemd架构图<br><img src="/assets/img/article_8/systemd_1.png" alt="图片" title="架构图"><br><img src="/assets/img/article_8/systemd_2.png" alt="图片" title="原理图"></p>
 <h3 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h3><p>Systemd 并不是一个命令，而是一组命令，涉及到系统管理的方方面面。</p>
 <h4 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h4><p><code>systemctl</code>是 Systemd 的主命令，用于管理系统。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重启系统</span></span><br><span class="line">sudo systemctl reboot</span><br><span class="line"><span class="comment"># 关闭系统，切断电源</span></span><br><span class="line">sudo systemctl poweroff</span><br><span class="line"><span class="comment"># CPU停止工作</span></span><br><span class="line">sudo systemctl halt</span><br><span class="line"><span class="comment"># 暂停系统</span></span><br><span class="line">sudo systemctl <span class="built_in">suspend</span></span><br><span class="line"><span class="comment"># 让系统进入冬眠状态</span></span><br><span class="line">sudo systemctl hibernate</span><br><span class="line"><span class="comment"># 让系统进入交互式休眠状态</span></span><br><span class="line">sudo systemctl hybrid-sleep</span><br><span class="line"><span class="comment"># 启动进入救援状态（单用户状态）</span></span><br><span class="line">sudo systemctl rescue</span><br></pre></td></tr></table></figure>
@@ -493,11 +496,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
         		</li>
       		
 		</ul>
@@ -721,19 +724,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">办公</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">办公</a>
               </li>
              
               <li class="article-tag-list-item">
