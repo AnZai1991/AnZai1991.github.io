@@ -164,6 +164,327 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux系统之NFS服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/23/Linux系统之NFS服务/">Linux系统之NFS服务</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/23/Linux系统之NFS服务/" class="archive-article-date">
+  	<time datetime="2022-11-23T03:28:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Ubuntu 20.04.2 LTS，CentOS，Windows 10企业版<br>软件版本：nfs-kernel-server，nfs-common</p>
+<h2 id="一、NFS简介"><a href="#一、NFS简介" class="headerlink" title="一、NFS简介"></a>一、NFS简介</h2><p>NFS(Network File System)网络文件系统，它主要的功能是通过网络(局域网)，让不同的机器、不同的操作系统可以共享彼此的目录或文件，将共享的目录挂载到本地的文件系统，一般用来存储共享视频和图片等静态数据，常用在集群架构后端进行数据共享，NFS依赖负责信息传输的RPC协议。</p>
+        
+          <a class="article-more-a" href="/2022/11/23/Linux系统之NFS服务/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/23/Linux系统之NFS服务/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-服务器设置访问IP端口白名单笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/22/服务器设置访问IP端口白名单笔记/">服务器设置访问IP端口白名单笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2022/07/22/服务器设置访问IP端口白名单笔记/" class="archive-article-date">
+  	<time datetime="2022-07-22T08:41:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Windows 2012R2和CentOS 7.7<br>软件版本：本地安全策略和IP tables</p>
+<hr>
+<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><h3 id="Windows-2012R2"><a href="#Windows-2012R2" class="headerlink" title="Windows 2012R2"></a>Windows 2012R2</h3><p>控制面板→系统和安全→管理工具→本地安全策略<br>IP安全策略，在本地计算机<br>右键创建IP安全策略向导→命名→不要勾选激活→不要勾选编辑属性<br>右键新建的策略属性→添加→注：这里的IP筛选器指的是IP地址信息<br>下一步则是设置IP筛选器所需执行的动作，即筛选器操作拒绝或允许（可更改编辑）<br>最后完成→应用</p>
+        
+          <a class="article-more-a" href="/2022/07/22/服务器设置访问IP端口白名单笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/07/22/服务器设置访问IP端口白名单笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Oracle数据库连接工具笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/17/Oracle数据库连接工具笔记/">Oracle数据库连接工具笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2022/04/17/Oracle数据库连接工具笔记/" class="archive-article-date">
+  	<time datetime="2022-04-17T07:13:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><p>操作系统：Windows或Linux<br>软件版本：Oracle 11g,PL/SQL,OracleInstant Client,SQLPlus</p>
+<h1 id="本地连接"><a href="#本地连接" class="headerlink" title="本地连接"></a>本地连接</h1><h2 id="SQLPlus"><a href="#SQLPlus" class="headerlink" title="SQLPlus"></a>SQLPlus</h2><p>sqlplus的使用方法<br>运行cmd<br>输入sqlplus /nolog<br>回车<br>输入conn 账号/密码@oracle服务器IP/实例名<br>回车<br>提示已连接，即成功。</p>
+        
+          <a class="article-more-a" href="/2022/04/17/Oracle数据库连接工具笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/04/17/Oracle数据库连接工具笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux指令范例速查手册（第2版）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/01/Linux指令范例速查手册（第2版）/">Linux指令范例速查手册（第2版）</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/01/Linux指令范例速查手册（第2版）/" class="archive-article-date">
+  	<time datetime="2022-02-01T07:25:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目-录"><a href="#目-录" class="headerlink" title="目 录"></a>目 录</h1><p>第1篇 Linux基础指令</p>
+<p>第1章<br>文件与目录操作</p>
+<p>1.1 ls指令：显示目录内容</p>
+<p>1.2 cd指令：将当前工作目录切换到指定目录</p>
+<p>1.3 cp指令：复制文件或目录</p>
+<p>1.4 mv指令：移动文件或改名</p>
+        
+          <a class="article-more-a" href="/2022/02/01/Linux指令范例速查手册（第2版）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/01/Linux指令范例速查手册（第2版）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-计算机网络之SIP协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -615,329 +936,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/13/Linux系统之Samba服务/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux系统之Bourne-Again-Shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/19/Linux系统之Bourne-Again-Shell/">Linux系统之Bourne Again Shell</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/19/Linux系统之Bourne-Again-Shell/" class="archive-article-date">
-  	<time datetime="2020-10-19T10:36:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、linux基础指令"><a href="#一、linux基础指令" class="headerlink" title="一、linux基础指令"></a>一、linux基础指令</h2><h3 id="1、文件与目录操作"><a href="#1、文件与目录操作" class="headerlink" title="1、文件与目录操作"></a>1、文件与目录操作</h3><p>1.1  ls指令：显示目录内容<br>1.2  cd指令：将当前工作目录切换到指定目录<br>1.3  cp指令：复制文件或目录<br>1.4  mv指令：移动文件或改名<br>1.5  pwd指令：打印当前工作目录<br>1.6  rm指令：删除文件或目录<br>1.7  rmdir指令：删除空目录<br>1.8  chgrp指令：改变文件所属工作组<br>1.9  chmod指令：改变文件访问权限<br>1.10  chown指令：改变文件的所有者和所属工作组<br>1.11  find指令：查找文件并执行指定的操作</p>
-        
-          <a class="article-more-a" href="/2020/10/19/Linux系统之Bourne-Again-Shell/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/19/Linux系统之Bourne-Again-Shell/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-iPerf3测试无线Wifi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/03/iPerf3测试无线Wifi/">iPerf3测试无线Wifi</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/03/iPerf3测试无线Wifi/" class="archive-article-date">
-  	<time datetime="2020-09-03T13:37:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>1、准备一台PC，一部手机，及要测试的无线路由器。将手机和PC都链接至此无线路由器的局域网内<br>2、去官网下载iPerf测试工具<a href="https://iperf.fr/iperf-download.php" target="_blank" rel="noopener">https://iperf.fr/iperf-download.php</a><br>3、在手机端安装HE NET Network Tools，这是官方推荐的手机端软件</p>
-<p>–</p>
-<h2 id="开始测试"><a href="#开始测试" class="headerlink" title="开始测试"></a>开始测试</h2><p>1、在PC上，运行→cmd→ipconfig/all查看本地分配的IP地址，假设为192.168.124.2。<br>2、打开Windows10的PowerShell或命令提示符，把iperf3.exe拖进去，然后后面加上” -s”就将PC作为服务端开始运行。<br>3、在手机端打开APP，选择iperf3功能页，在框里输入命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-c 192.168.124.2 -i 1 -t 30</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/09/03/iPerf3测试无线Wifi/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/03/iPerf3测试无线Wifi/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySql数据库实操笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/28/MySql数据库实操笔记/">Linux系统之MySql数据库</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/28/MySql数据库实操笔记/" class="archive-article-date">
-  	<time datetime="2020-03-28T03:32:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Ubuntu 18.04.4 LTS<br>软件版本：MySQL 5.7.29</p>
-<hr>
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
-
-<p>安装过程中没有提示要设置初始密码，使用空密码无法登录会报错</p>
-        
-          <a class="article-more-a" href="/2020/03/28/MySql数据库实操笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/28/MySql数据库实操笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ZabbixAgent监控与SNMP监控笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/20/ZabbixAgent监控与SNMP监控笔记/">ZabbixAgent监控与SNMP监控笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/20/ZabbixAgent监控与SNMP监控笔记/" class="archive-article-date">
-  	<time datetime="2020-01-20T13:38:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="笔记介绍"><a href="#笔记介绍" class="headerlink" title="笔记介绍"></a>笔记介绍</h2><p>记录除了第一次实战中后续遇到的各种设备的监控操作方法。分为<strong>ZabbixAgent</strong>和<strong>SNMP</strong>两种记录。</p>
-<hr>
-<h2 id="ZabbixAgent"><a href="#ZabbixAgent" class="headerlink" title="ZabbixAgent"></a>ZabbixAgent</h2><p>官方下载地址：<a href="https://www.zabbix.com/cn/download_agents#tab:40LTS" target="_blank" rel="noopener">https://www.zabbix.com/cn/download_agents#tab:40LTS</a><br>官方网站下选择Windows→Any→amd64→选择版本→OpenSSL→Archive（压缩包）或MSI（安装包）</p>
-<h3 id="Windows-OS"><a href="#Windows-OS" class="headerlink" title="Windows OS"></a>Windows OS</h3><p>将下载文件保存到本地，解压缩到C:\Program Files\路径下<br><strong>配置zabbix_agentd.conf</strong>，参考《Zabbix实战》</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Server=127.0.0.1,203.152.200.115 <span class="comment">#被动地址，Zabbix-server的IP地址</span></span><br><span class="line">ServerActive=127.0.0.1,203.152.200.115 <span class="comment">#主动模式，Zabbix-server的IP地址</span></span><br><span class="line">Hostname=Zabbix server <span class="comment">#本机的Hostname，使用主动模式必须配置</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/01/20/ZabbixAgent监控与SNMP监控笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Zabbix</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/20/ZabbixAgent监控与SNMP监控笔记/">展开全文 >></a>
         </p>
       
 
