@@ -81,7 +81,7 @@ Win+R打开命令行中输入
 
 ```bash
 mount 172.21.1.1:/home/ayb/文档/NFSFile F:
-#将172.21.1.1的/home/ayb/文档/NFSFile挂载到F盘（F盘必须为没有使用的盘符）
+#将NFS服务器的/home/ayb/文档/NFSFile挂载到F盘（F盘必须为没有使用的盘符）
 ```
 ### Linux
 #### Ubuntu系统
@@ -99,7 +99,7 @@ mkdir ./NFSFile
 #### 挂载
 ```bash
 sudo mount -t nfs 172.21.1.1:/home/ayb/文档/NFSFile /mnt
-#将本机的/home/ayb/文档/NFSFile挂载到/mnt
+#将NFS服务器的/home/ayb/文档/NFSFile挂载到/mnt
 df -h
 #检查本机客户端是否挂载成功
 ```
