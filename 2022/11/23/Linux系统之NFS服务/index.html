@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="安仔的博客">
 <meta property="og:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS，CentOS，Windows 10企业版软件版本：nfs-kernel-server，nfs-common 一、NFS简介NFS(Network File System)网络文件系统，它主要的功能是通过网络(局域网)，让不同的机器、不同的操作系统可以共享彼此的目录或文件，将共享的目录挂载到本地的文件系统，一般用来存储共享视频和图片等静态数据，">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2023-08-01T06:37:56.780Z">
+<meta property="og:updated_time" content="2023-10-11T09:09:03.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统之NFS服务">
 <meta name="twitter:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS，CentOS，Windows 10企业版软件版本：nfs-kernel-server，nfs-common 一、NFS简介NFS(Network File System)网络文件系统，它主要的功能是通过网络(局域网)，让不同的机器、不同的操作系统可以共享彼此的目录或文件，将共享的目录挂载到本地的文件系统，一般用来存储共享视频和图片等静态数据，">
@@ -268,7 +268,7 @@
 <td></td>
 </tr>
 </tbody></table>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount 172.21.1.1:/home/ayb/文档/NFSFile F:</span><br><span class="line"><span class="comment">#将172.21.1.1的/home/ayb/文档/NFSFile挂载到F盘（F盘必须为没有使用的盘符）</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount 172.21.1.1:/home/ayb/文档/NFSFile F:</span><br><span class="line"><span class="comment">#将NFS服务器的/home/ayb/文档/NFSFile挂载到F盘（F盘必须为没有使用的盘符）</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><h4 id="Ubuntu系统"><a href="#Ubuntu系统" class="headerlink" title="Ubuntu系统"></a>Ubuntu系统</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nfs-common</span><br></pre></td></tr></table></figure>
 
@@ -276,7 +276,7 @@
 
 <h4 id="创建客户端目录"><a href="#创建客户端目录" class="headerlink" title="创建客户端目录"></a>创建客户端目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir ./NFSFile</span><br></pre></td></tr></table></figure>
 
-<h4 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t nfs 172.21.1.1:/home/ayb/文档/NFSFile /mnt</span><br><span class="line"><span class="comment">#将本机的/home/ayb/文档/NFSFile挂载到/mnt</span></span><br><span class="line">df -h</span><br><span class="line"><span class="comment">#检查本机客户端是否挂载成功</span></span><br></pre></td></tr></table></figure>
+<h4 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t nfs 172.21.1.1:/home/ayb/文档/NFSFile /mnt</span><br><span class="line"><span class="comment">#将NFS服务器的/home/ayb/文档/NFSFile挂载到/mnt</span></span><br><span class="line">df -h</span><br><span class="line"><span class="comment">#检查本机客户端是否挂载成功</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo umount /mnt</span><br><span class="line"><span class="comment">#常见问题卸载时候提示device is busy</span></span><br><span class="line">fuser -mv /mnt</span><br><span class="line"><span class="comment">#查看/mnt的占用程序进程ID</span></span><br><span class="line"><span class="built_in">kill</span> -9 进程ID</span><br><span class="line"><span class="comment">#再执行卸载</span></span><br></pre></td></tr></table></figure>
 
