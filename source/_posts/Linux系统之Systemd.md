@@ -33,7 +33,8 @@ systemctl --version #查看Systemd的版本
 ```
 Systemd 的优点是功能强大，使用方便，缺点是体系庞大，非常复杂。事实上，现在还有很多人反对使用 Systemd，理由就是它过于复杂，与操作系统的其他部分强耦合，违反"keep simple, keep stupid"的[Unix 哲学](https://www.ruanyifeng.com/blog/2009/06/unix_philosophy.html)。
 下图为Systemd架构图
-[图片]
+![图片](/assets/img/article_8/systemd_1.png "架构图")
+![图片](/assets/img/article_8/systemd_2.png "原理图")
 
 ### 系统管理
 
