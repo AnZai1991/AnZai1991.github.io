@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://anzai1991.github.io">
-  <title>安仔的博客</title>
+  <title>Linux系统之Bluetoothctl | 安仔的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="郑州大学10级，此为个人博客。">
-<meta name="keywords" content="技术宅,个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="安仔的博客">
-<meta property="og:url" content="https://anzai1991.github.io/page/4/index.html">
+  <meta name="description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS硬件型号：Lenovo L450 介绍Bluetoothctl 是一个交互式且易于使用的工具，用于控制蓝牙设备。它是在基于 Linux 的操作系统上管理蓝牙的主要实用程序。本指南将向您展示如何使用 bluetoothctl 在 Linux PC 上轻松设置蓝牙设备和连接。 检查蓝牙状态1sudo systemctl status bluetoo">
+<meta name="keywords" content="办公,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux系统之Bluetoothctl">
+<meta property="og:url" content="https://anzai1991.github.io/2024/04/23/Linux系统之Bluetoothctl/index.html">
 <meta property="og:site_name" content="安仔的博客">
-<meta property="og:description" content="郑州大学10级，此为个人博客。">
+<meta property="og:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS硬件型号：Lenovo L450 介绍Bluetoothctl 是一个交互式且易于使用的工具，用于控制蓝牙设备。它是在基于 Linux 的操作系统上管理蓝牙的主要实用程序。本指南将向您展示如何使用 bluetoothctl 在 Linux PC 上轻松设置蓝牙设备和连接。 检查蓝牙状态1sudo systemctl status bluetoo">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2024-04-23T06:45:19.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安仔的博客">
-<meta name="twitter:description" content="郑州大学10级，此为个人博客。">
+<meta name="twitter:title" content="Linux系统之Bluetoothctl">
+<meta name="twitter:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS硬件型号：Lenovo L450 介绍Bluetoothctl 是一个交互式且易于使用的工具，用于控制蓝牙设备。它是在基于 Linux 的操作系统上管理蓝牙的主要实用程序。本指南将向您展示如何使用 bluetoothctl 在 Linux PC 上轻松设置蓝牙设备和连接。 检查蓝牙状态1sudo systemctl status bluetoo">
   
     <link rel="alternative" href="/atom.xml" title="安仔的博客" type="application/atom+xml">
   
@@ -162,38 +163,106 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Git分布式版本控制系统以及Git-Bash的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Linux系统之Bluetoothctl" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/17/Git分布式版本控制系统以及Git-Bash的使用/">Git分布式版本控制系统以及Git Bash的使用</a>
+    <h1 class="article-title" itemprop="name">
+      Linux系统之Bluetoothctl
     </h1>
   
 
         
-        <a href="/2019/12/17/Git分布式版本控制系统以及Git-Bash的使用/" class="archive-article-date">
-  	<time datetime="2019-12-17T04:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
+        <a href="/2024/04/23/Linux系统之Bluetoothctl/" class="archive-article-date">
+  	<time datetime="2024-04-23T05:05:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h2><h3 id="绑定用户"><a href="#绑定用户" class="headerlink" title="绑定用户"></a>绑定用户</h3><p>因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为github注册的账号和邮箱。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;xxx&quot;</span><br><span class="line">git config --global user.email &quot;12345@qq.com&quot;</span><br></pre></td></tr></table></figure>
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Ubuntu 20.04.2 LTS<br>硬件型号：Lenovo L450</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Bluetoothctl 是一个交互式且易于使用的工具，用于控制蓝牙设备。它是在基于 Linux 的操作系统上管理蓝牙的主要实用程序。本指南将向您展示如何使用 bluetoothctl 在 Linux PC 上轻松设置蓝牙设备和连接。</p>
+<h2 id="检查蓝牙状态"><a href="#检查蓝牙状态" class="headerlink" title="检查蓝牙状态"></a>检查蓝牙状态</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status bluetooth</span><br></pre></td></tr></table></figure>
 
-<p>有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init	//把当前目录变成git可以管理的仓库</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/12/17/Git分布式版本控制系统以及Git-Bash的使用/#more">more >></a>
-        
+<a id="more"></a>
+<h2 id="开启蓝牙服务"><a href="#开启蓝牙服务" class="headerlink" title="开启蓝牙服务"></a>开启蓝牙服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> bluetooth</span><br><span class="line">sudo systemctl start bluetooth</span><br></pre></td></tr></table></figure>
+
+<h2 id="扫描附近设备"><a href="#扫描附近设备" class="headerlink" title="扫描附近设备"></a>扫描附近设备</h2><p>要主动搜索可以连接的蓝牙设备，请使用扫描命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl scan on</span><br></pre></td></tr></table></figure>
+
+<p>当您运行上述命令时，您的电脑将查找并列出系统范围内的所有蓝牙设备<br>所有蓝牙设备都标记为设备，后跟各自的媒体访问控制 (MAC) 地址，这是网络上设备的唯一标识符。 MAC 地址遵循格式 XX : XX : XX : XX : XX : XX。 Bluetoothctl 还显示设备的名称<br>注意：如果您找不到所需的蓝牙设备，请确保您的系统蓝牙可被发现。<br>要使其他设备可以发现您的蓝牙适配器，请使用以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl discoverable on</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接到设备"><a href="#连接到设备" class="headerlink" title="连接到设备"></a>连接到设备</h2><p>连接蓝牙设备的最简单方法是使用配对命令将其与您的电脑配对</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl pair FC:69:47:7C:9D:A3</span><br></pre></td></tr></table></figure>
+
+<p>对于已与您的电脑配对的设备，您以后只需使用connect命令即可连接到它们，如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl connect FC:69:47:7C:9D:A3</span><br></pre></td></tr></table></figure>
+
+<h2 id="列出配对设备"><a href="#列出配对设备" class="headerlink" title="列出配对设备"></a>列出配对设备</h2><p>您可以通过运行以下命令来查看当前与系统配对的设备</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl paired-devices</span><br></pre></td></tr></table></figure>
+
+<p>您还可以使用以下命令列出计算机蓝牙范围内的设备</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl devices</span><br></pre></td></tr></table></figure>
+
+<h2 id="信任配对设备"><a href="#信任配对设备" class="headerlink" title="信任配对设备"></a>信任配对设备</h2><p>除了与蓝牙设备配对外，您还可以选择信任某些设备，以便将来轻松连接到它们。<br>要信任蓝牙设备</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl trust FC:69:47:7C:9D:A3</span><br></pre></td></tr></table></figure>
+
+<p>您可以通过发出以下命令来取消信任设备：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl untrust FC:69:47:7C:9D:A3</span><br></pre></td></tr></table></figure>
+
+<h2 id="断开蓝牙设备"><a href="#断开蓝牙设备" class="headerlink" title="断开蓝牙设备"></a>断开蓝牙设备</h2><p>要取消配对蓝牙设备，请使用删除命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl remove FC:69:47:7C:9D:A3</span><br></pre></td></tr></table></figure>
+
+<p>您还可以使用 bluetoothctl 将设备与系统断开连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl disconnect FC:69:47:7C:9D:A3</span><br></pre></td></tr></table></figure>
+
+<p>如果您希望阻止特定设备连接到您的系统，可以使用阻止命令，后跟该设备的 MAC 地址。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl block FC:69:47:7C:9D:A3</span><br></pre></td></tr></table></figure>
+
+<p>要取消阻止设备，只需将上述命令中的单词阻止替换为取消阻止即可。</p>
+<h2 id="使用交互模式"><a href="#使用交互模式" class="headerlink" title="使用交互模式"></a>使用交互模式</h2><p>如前所述，bluetoothctl 是一个交互式实用程序。在本指南中，我们使用长命令以避免混淆，但通常您应该使用交互模式，因为它更快、更容易使用。<br>要进入交互模式，只需运行不带参数的 bluetoothctl 命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl</span><br></pre></td></tr></table></figure>
+
+<p>切换到交互模式后，您可以发出命令，而无需预先添加 bluetoothctl，要退出交互模式，提示符中键入exit即可。</p>
+<p>参考资料：<a href="https://cn.linux-console.net/?p=13305" target="_blank" rel="noopener">https://cn.linux-console.net/?p=13305</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -204,11 +273,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -217,16 +286,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/17/Git分布式版本控制系统以及Git-Bash的使用/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://anzai1991.github.io/2024/04/23/Linux系统之Bluetoothctl/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2023/11/29/搜索信息技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">搜索信息技巧</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -241,565 +369,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-多台电脑更新Hexo博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/17/多台电脑更新Hexo博客/">多台电脑更新Hexo博客</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/17/多台电脑更新Hexo博客/" class="archive-article-date">
-  	<time datetime="2019-12-17T04:01:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在网上找了很多的解决方案，采用了最常见的利用git分支的方法来实现。参考网址：<a href="https://www.jianshu.com/p/0b1fccce74e0" target="_blank" rel="noopener">https://www.jianshu.com/p/0b1fccce74e0</a></p>
-<hr>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>创建新的分支XXX来存储hexo的环境文件，而推送到远端的静态文件（在public目录下）会依然根据配置文件中的配置，推送到master分支下。这样当自己需要在新电脑上更新Hexo博客的时候，只需要搭建好必须的环境，然后通过git clone将新分支XXX的环境文件clone到本地，就可以在本地完成Hexo的更新。</p>
-        
-          <a class="article-more-a" href="/2019/12/17/多台电脑更新Hexo博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/17/多台电脑更新Hexo博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境介绍"><span class="toc-number">1.</span> <span class="toc-text">环境介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">2.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检查蓝牙状态"><span class="toc-number">3.</span> <span class="toc-text">检查蓝牙状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启蓝牙服务"><span class="toc-number">4.</span> <span class="toc-text">开启蓝牙服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扫描附近设备"><span class="toc-number">5.</span> <span class="toc-text">扫描附近设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接到设备"><span class="toc-number">6.</span> <span class="toc-text">连接到设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列出配对设备"><span class="toc-number">7.</span> <span class="toc-text">列出配对设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信任配对设备"><span class="toc-number">8.</span> <span class="toc-text">信任配对设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#断开蓝牙设备"><span class="toc-number">9.</span> <span class="toc-text">断开蓝牙设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用交互模式"><span class="toc-number">10.</span> <span class="toc-text">使用交互模式</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-计算机硬件检测及烤机笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/22/计算机硬件检测及烤机笔记/">计算机硬件检测及烤机笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/22/计算机硬件检测及烤机笔记/" class="archive-article-date">
-  	<time datetime="2019-11-21T16:45:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="BIOS启动按键"><a href="#BIOS启动按键" class="headerlink" title="BIOS启动按键"></a>BIOS启动按键</h2><p>各厂商主板bios按键大全<br><img src="/assets/img/article_3/BIOS按键.PNG" width="50%"></p>
-        
-          <a class="article-more-a" href="/2019/11/22/计算机硬件检测及烤机笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/22/计算机硬件检测及烤机笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Windows10个性化定制版本安装笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/22/Windows10个性化定制版本安装笔记/">Windows10个性化定制版本安装笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/22/Windows10个性化定制版本安装笔记/" class="archive-article-date">
-  	<time datetime="2019-11-21T16:39:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、光盘镜像文件："><a href="#一、光盘镜像文件：" class="headerlink" title="一、光盘镜像文件："></a>一、光盘镜像文件：</h2><p>1、使用NTLite软件制作定制的ISO安装文件，我一般精简的内容如下：</p>
-<p><strong>组件移除：</strong><br>Metro应用<br>OneDrive（微软云盘）<br>MicrosoftEdge<br>MicrosoftEdgeDevToolsClient<br>SmartScreen<br>Windows Defender<br>XboxGameCallableUI<br>零售演示内容<br>屏保<br>Embedded Mode（嵌入模式）<br>Windows Recovery（Windows恢复）<br>安全中心</p>
-        
-          <a class="article-more-a" href="/2019/11/22/Windows10个性化定制版本安装笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/22/Windows10个性化定制版本安装笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-不同操作系统下查看系统资源的命令笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/">不同操作系统下查看系统资源的命令笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/" class="archive-article-date">
-  	<time datetime="2019-11-03T07:39:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Linux系统（以SUSE-Linux为例，各Linux基本一致）"><a href="#Linux系统（以SUSE-Linux为例，各Linux基本一致）" class="headerlink" title="Linux系统（以SUSE Linux为例，各Linux基本一致）"></a>Linux系统（以SUSE Linux为例，各Linux基本一致）</h2><p>查看主机信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl status <span class="comment">#查看当前主机信息，status可省略</span></span><br><span class="line">hostname <span class="comment">#适用于CentOS 7以前版本</span></span><br></pre></td></tr></table></figure>
-
-<p>查看CPU信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lscpu </span><br><span class="line"><span class="comment">#CPU(s) 查看处理器数量</span></span><br><span class="line"><span class="comment">#On-line CPU(s) list 查看在线处理器列表</span></span><br><span class="line"><span class="comment">#Thread(s) per core/每个核的线程数 查看每个核心的线程数</span></span><br><span class="line"><span class="comment">#Core(s) per socket/每个座的核数 查看每个CPU核心数</span></span><br><span class="line"><span class="comment">#Socket(s)/座 查看CPU个数</span></span><br><span class="line">cat /proc/cpuinfo <span class="comment">#查看CPU线程数每个processor细节</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-51单片机与MFRC522射频" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/02/51单片机与MFRC522射频/">51单片机与MFRC522射频</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/02/51单片机与MFRC522射频/" class="archive-article-date">
-  	<time datetime="2019-11-02T03:16:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>本项目将使用51单片机对射频模块进行读写操作。</strong> <del>(前期先实现读卡操作，后续补充写卡操作)</del><br><strong>硬件环境</strong>：<br>AT89S52单片机、MFRC522射频模块、ARM9单片机、Mifare one卡、若干杜邦线<br><strong>软件环境</strong>：<br>Windows环境 Keil C51 v802<br>Windows CE<br>串口调试助手</p>
-        
-          <a class="article-more-a" href="/2019/11/02/51单片机与MFRC522射频/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/02/51单片机与MFRC522射频/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Markdown笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/19/Markdown笔记/">Markdown笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/19/Markdown笔记/" class="archive-article-date">
-  	<time datetime="2019-10-19T14:09:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。<br>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
-<hr>
-<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h1><h1 id="一级标题在文字下面使用"><a href="#一级标题在文字下面使用" class="headerlink" title="一级标题在文字下面使用======"></a>一级标题在文字下面使用======</h1><h2 id="二级标题在文字下面使用——"><a href="#二级标题在文字下面使用——" class="headerlink" title="二级标题在文字下面使用——"></a>二级标题在文字下面使用——</h2><h1 id="使用井号也表示标题，1个井号代表一级标题"><a href="#使用井号也表示标题，1个井号代表一级标题" class="headerlink" title="使用井号也表示标题，1个井号代表一级标题"></a>使用井号也表示标题，1个井号代表一级标题</h1><h2 id="使用井号也可以表示标题，2个井号代表二级标题"><a href="#使用井号也可以表示标题，2个井号代表二级标题" class="headerlink" title="使用井号也可以表示标题，2个井号代表二级标题"></a>使用井号也可以表示标题，2个井号代表二级标题</h2><h6 id="最多使用六个井号，支持到六级标题"><a href="#最多使用六个井号，支持到六级标题" class="headerlink" title="最多使用六个井号，支持到六级标题"></a>最多使用六个井号，支持到六级标题</h6><hr>
-        
-          <a class="article-more-a" href="/2019/10/19/Markdown笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/19/Markdown笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/04/我的第一篇博客/">我的第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/04/我的第一篇博客/" class="archive-article-date">
-  	<time datetime="2019-10-03T18:56:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这是一个基于Hexo框架的静态博客。此博客用来更新我的日常技术总结文档，用来记录以便后续查找。博客内容使用Markdown编辑器，我的第一篇博客就来尝试使用Markdown来学习一下。<br>操作系统：Windows10<br>软件版本：node.js 12.13.1，npm 6.12.1，hexo 3.9.0</p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>1、首先下载Node.js<br>下载地址：<a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a>（根据系统环境选择版本，下载LTS长期支持版本）。<br>2、安装下载的安装包，我使用的Windows10系统，选择安装到D盘，其他默认下一步。<br>3、安装完成后，有两个组件，一个是nodejs，一个是npm。</p>
-<p><strong>Mac系统</strong>：<br>打开终端，切换到root用户<br>查看nodejs，npm的版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node –v</span><br><span class="line">npm –v</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/10/04/我的第一篇博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/04/我的第一篇博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -822,8 +417,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
