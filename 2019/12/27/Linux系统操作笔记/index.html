@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://anzai1991.github.io">
   <title>Linux系统操作笔记 | 安仔的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目录一、Linux操作系统二、Vim文本编辑器三、VMware Tools四、VNC Server附录  一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）分区以500G硬盘为例，大致分为以下分区| 设备 | 类型 | 挂载点 | 大小 ||———|———|———|———||/dev/sda1|swap| |8GB||/dev/sda2|efi| |99MB||/dev/">
-<meta name="keywords" content="Linux,操作系统">
+  <meta name="description" content="目录一、Linux操作系统二、Vim文本编辑器三、VMware Tools四、VNC Server五、第三方软件开机启动六、WPS安装字体附录  一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）分区以500G硬盘为例，大致分为以下分区| 设备 | 类型 | 挂载点 | 大小 ||———|———|———|———||/dev/sda1|swap| |8GB||/dev/sd">
+<meta name="keywords" content="操作系统,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统操作笔记">
 <meta property="og:url" content="https://anzai1991.github.io/2019/12/27/Linux系统操作笔记/index.html">
 <meta property="og:site_name" content="安仔的博客">
-<meta property="og:description" content="目录一、Linux操作系统二、Vim文本编辑器三、VMware Tools四、VNC Server附录  一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）分区以500G硬盘为例，大致分为以下分区| 设备 | 类型 | 挂载点 | 大小 ||———|———|———|———||/dev/sda1|swap| |8GB||/dev/sda2|efi| |99MB||/dev/">
+<meta property="og:description" content="目录一、Linux操作系统二、Vim文本编辑器三、VMware Tools四、VNC Server五、第三方软件开机启动六、WPS安装字体附录  一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）分区以500G硬盘为例，大致分为以下分区| 设备 | 类型 | 挂载点 | 大小 ||———|———|———|———||/dev/sda1|swap| |8GB||/dev/sd">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://anzai1991.github.io/assets/img/article_4/VMwareTools.png">
-<meta property="og:updated_time" content="2022-12-26T01:49:31.834Z">
+<meta property="og:updated_time" content="2024-04-23T03:29:07.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统操作笔记">
-<meta name="twitter:description" content="目录一、Linux操作系统二、Vim文本编辑器三、VMware Tools四、VNC Server附录  一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）分区以500G硬盘为例，大致分为以下分区| 设备 | 类型 | 挂载点 | 大小 ||———|———|———|———||/dev/sda1|swap| |8GB||/dev/sda2|efi| |99MB||/dev/">
+<meta name="twitter:description" content="目录一、Linux操作系统二、Vim文本编辑器三、VMware Tools四、VNC Server五、第三方软件开机启动六、WPS安装字体附录  一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）分区以500G硬盘为例，大致分为以下分区| 设备 | 类型 | 挂载点 | 大小 ||———|———|———|———||/dev/sda1|swap| |8GB||/dev/sd">
 <meta name="twitter:image" content="https://anzai1991.github.io/assets/img/article_4/VMwareTools.png">
   
     <link rel="alternative" href="/atom.xml" title="安仔的博客" type="application/atom+xml">
@@ -185,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>目录<br>一、Linux操作系统<br>二、Vim文本编辑器<br>三、VMware Tools<br>四、VNC Server<br>附录</p>
+        <p>目录<br>一、Linux操作系统<br>二、Vim文本编辑器<br>三、VMware Tools<br>四、VNC Server<br>五、第三方软件开机启动<br>六、WPS安装字体<br>附录</p>
 <hr>
 <h2 id="一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）"><a href="#一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）" class="headerlink" title="一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）"></a>一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）</h2><h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><p>以500G硬盘为例，大致分为以下分区<br>| 设备 | 类型 | 挂载点 | 大小 |<br>|———|———|———|———|<br>|/dev/sda1|swap| |8GB|<br>|/dev/sda2|efi| |99MB|<br>|/dev/sda3|ext4|/boot|1GB|<br>|/dev/sda4|ext4|/|150GB|<br>|/dev/sda5|ext4|/usr|80GB|<br>|/dev/sda6|ext4|/home|250GB|</p>
 <a id="more"></a>
@@ -240,6 +240,11 @@
 <p>Linux版本的向日葵要登陆到桌面后才能启动，所以需检查用户自动登录的状态。在桌面右上角点击，设置-用户-自动登陆<br>重启验证</p>
 <p>其他软件可参考此设置方法。参考网址:<a href="https://blog.csdn.net/willhu2008/article/details/121702815" target="_blank" rel="noopener">https://blog.csdn.net/willhu2008/article/details/121702815</a></p>
 <hr>
+<h2 id="六、WPS安装字体"><a href="#六、WPS安装字体" class="headerlink" title="六、WPS安装字体"></a>六、WPS安装字体</h2><p>下载好字体后使用命令行进入所在目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#放入系统字体所在文件夹</span></span><br><span class="line">sudo cp * /usr/share/fonts</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成索引信息</span></span><br><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line"></span><br><span class="line"><span class="comment">#更新字体缓存</span></span><br><span class="line">sudo <span class="built_in">fc</span>-cache</span><br></pre></td></tr></table></figure>
+
+<p>完成后重启WPS</p>
+<hr>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="常用Linux操作命令"><a href="#常用Linux操作命令" class="headerlink" title="常用Linux操作命令"></a>常用Linux操作命令</h3><p>查看系统版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsb_release -a <span class="comment">#适用所有Linux发行版，但是Debian要安装lsb</span></span><br><span class="line">cat /etc/issue <span class="comment">#适用所有Linux发行版，显示发行版本信息</span></span><br></pre></td></tr></table></figure>
 
@@ -293,11 +298,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -405,7 +410,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）"><span class="toc-number">1.</span> <span class="toc-text">一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分区"><span class="toc-number">1.0.1.</span> <span class="toc-text">分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初次登陆"><span class="toc-number">1.0.2.</span> <span class="toc-text">初次登陆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见问题"><span class="toc-number">1.1.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#APT工具的常用命令"><span class="toc-number">1.1.1.</span> <span class="toc-text">APT工具的常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#APT工具删除卸载命令的详解"><span class="toc-number">1.1.2.</span> <span class="toc-text">APT工具删除卸载命令的详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于rpm软件管理工具以及高级软件包管理工具APT"><span class="toc-number">1.1.3.</span> <span class="toc-text">关于rpm软件管理工具以及高级软件包管理工具APT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加应用程序的快捷方式到桌面"><span class="toc-number">1.1.4.</span> <span class="toc-text">添加应用程序的快捷方式到桌面</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Vim文本编辑器"><span class="toc-number">2.</span> <span class="toc-text">二、Vim文本编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#进入编辑模式"><span class="toc-number">2.0.1.</span> <span class="toc-text">进入编辑模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令模式"><span class="toc-number">2.0.2.</span> <span class="toc-text">命令模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim强制保存"><span class="toc-number">2.0.3.</span> <span class="toc-text">vim强制保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim清空文件内容"><span class="toc-number">2.0.4.</span> <span class="toc-text">vim清空文件内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见问题-1"><span class="toc-number">2.1.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#只读文件的修改"><span class="toc-number">2.1.1.</span> <span class="toc-text">只读文件的修改</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、VMware-Tools"><span class="toc-number">3.</span> <span class="toc-text">三、VMware Tools</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">3.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见问题-2"><span class="toc-number">3.2.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows下安装VMware-Tools"><span class="toc-number">3.2.1.</span> <span class="toc-text">Windows下安装VMware Tools</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux下安装VMware-Tools"><span class="toc-number">3.2.2.</span> <span class="toc-text">Linux下安装VMware Tools</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在CentOS下安装过程中提示要先卸载open-vm-tools"><span class="toc-number">3.2.3.</span> <span class="toc-text">在CentOS下安装过程中提示要先卸载open-vm-tools</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、VNC-Server"><span class="toc-number">4.</span> <span class="toc-text">四、VNC Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、第三方软件开机启动（以向日葵远程为例）"><span class="toc-number">5.</span> <span class="toc-text">五、第三方软件开机启动（以向日葵远程为例）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录"><span class="toc-number">6.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用Linux操作命令"><span class="toc-number">6.1.</span> <span class="toc-text">常用Linux操作命令</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）"><span class="toc-number">1.</span> <span class="toc-text">一、Linux操作系统（以下都以Ubuntu为例，其他版本Linux会注明）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分区"><span class="toc-number">1.0.1.</span> <span class="toc-text">分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初次登陆"><span class="toc-number">1.0.2.</span> <span class="toc-text">初次登陆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见问题"><span class="toc-number">1.1.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#APT工具的常用命令"><span class="toc-number">1.1.1.</span> <span class="toc-text">APT工具的常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#APT工具删除卸载命令的详解"><span class="toc-number">1.1.2.</span> <span class="toc-text">APT工具删除卸载命令的详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于rpm软件管理工具以及高级软件包管理工具APT"><span class="toc-number">1.1.3.</span> <span class="toc-text">关于rpm软件管理工具以及高级软件包管理工具APT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加应用程序的快捷方式到桌面"><span class="toc-number">1.1.4.</span> <span class="toc-text">添加应用程序的快捷方式到桌面</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Vim文本编辑器"><span class="toc-number">2.</span> <span class="toc-text">二、Vim文本编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#进入编辑模式"><span class="toc-number">2.0.1.</span> <span class="toc-text">进入编辑模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令模式"><span class="toc-number">2.0.2.</span> <span class="toc-text">命令模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim强制保存"><span class="toc-number">2.0.3.</span> <span class="toc-text">vim强制保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim清空文件内容"><span class="toc-number">2.0.4.</span> <span class="toc-text">vim清空文件内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见问题-1"><span class="toc-number">2.1.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#只读文件的修改"><span class="toc-number">2.1.1.</span> <span class="toc-text">只读文件的修改</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、VMware-Tools"><span class="toc-number">3.</span> <span class="toc-text">三、VMware Tools</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">3.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见问题-2"><span class="toc-number">3.2.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows下安装VMware-Tools"><span class="toc-number">3.2.1.</span> <span class="toc-text">Windows下安装VMware Tools</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux下安装VMware-Tools"><span class="toc-number">3.2.2.</span> <span class="toc-text">Linux下安装VMware Tools</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在CentOS下安装过程中提示要先卸载open-vm-tools"><span class="toc-number">3.2.3.</span> <span class="toc-text">在CentOS下安装过程中提示要先卸载open-vm-tools</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、VNC-Server"><span class="toc-number">4.</span> <span class="toc-text">四、VNC Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、第三方软件开机启动（以向日葵远程为例）"><span class="toc-number">5.</span> <span class="toc-text">五、第三方软件开机启动（以向日葵远程为例）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、WPS安装字体"><span class="toc-number">6.</span> <span class="toc-text">六、WPS安装字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录"><span class="toc-number">7.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用Linux操作命令"><span class="toc-number">7.1.</span> <span class="toc-text">常用Linux操作命令</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -434,7 +439,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 安亚博
+    		&copy; 2024 安亚博
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -521,10 +526,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
@@ -537,15 +538,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Zabbix</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color2">Zabbix</a>
               </li>
             
             <div class="clearfix"></div>
