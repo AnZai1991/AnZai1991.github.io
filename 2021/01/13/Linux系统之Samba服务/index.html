@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://anzai1991.github.io">
   <title>Linux系统之Samba服务 | 安仔的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS，Windows10软件版本：Samba  操作步骤安装及配置12sudo apt-get install samba-common samba #安装sambavim /etc/samba/smb.conf #进行配置">
+  <meta name="description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS，Windows10软件版本：Samba  简介Samba服务所使用的端口和协议:1)Port 137(UDP)-NetBl0S 名字服务;nmbd2)Port 138(UDP)- NetBlOS 数据报服务3)Port 139(TCP)-文件和打印共享: smbd(基于SMB(Server Message Block)协议，主要在局域网中使用">
 <meta name="keywords" content="运维,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统之Samba服务">
 <meta property="og:url" content="https://anzai1991.github.io/2021/01/13/Linux系统之Samba服务/index.html">
 <meta property="og:site_name" content="安仔的博客">
-<meta property="og:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS，Windows10软件版本：Samba  操作步骤安装及配置12sudo apt-get install samba-common samba #安装sambavim /etc/samba/smb.conf #进行配置">
+<meta property="og:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS，Windows10软件版本：Samba  简介Samba服务所使用的端口和协议:1)Port 137(UDP)-NetBl0S 名字服务;nmbd2)Port 138(UDP)- NetBlOS 数据报服务3)Port 139(TCP)-文件和打印共享: smbd(基于SMB(Server Message Block)协议，主要在局域网中使用">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2023-08-01T06:55:13.182Z">
+<meta property="og:updated_time" content="2024-05-15T15:15:57.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统之Samba服务">
-<meta name="twitter:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS，Windows10软件版本：Samba  操作步骤安装及配置12sudo apt-get install samba-common samba #安装sambavim /etc/samba/smb.conf #进行配置">
+<meta name="twitter:description" content="环境介绍操作系统：Ubuntu 20.04.2 LTS，Windows10软件版本：Samba  简介Samba服务所使用的端口和协议:1)Port 137(UDP)-NetBl0S 名字服务;nmbd2)Port 138(UDP)- NetBlOS 数据报服务3)Port 139(TCP)-文件和打印共享: smbd(基于SMB(Server Message Block)协议，主要在局域网中使用">
   
     <link rel="alternative" href="/atom.xml" title="安仔的博客" type="application/atom+xml">
   
@@ -185,11 +185,15 @@
       
         <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Ubuntu 20.04.2 LTS，Windows10<br>软件版本：Samba</p>
 <hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Samba服务所使用的端口和协议:<br>1)Port 137(UDP)-NetBl0S 名字服务;nmbd<br>2)Port 138(UDP)- NetBlOS 数据报服务<br>3)Port 139(TCP)-文件和打印共享: smbd(基于SMB(Server Message Block)协议，主要在局域网中使用，文件共享协议)<br>4)Port 389(TCP)-用于 LDAP (Active Directory Mode)<br>5)Por 445(TCP)-NetBIOS服务在windos 2000及以后版本使用此端口,(Common Internet File System，ClFS，它是SMB协议扩展到Internet后，实现Internet文件共享)<br>6)Port 901(TCP)-用于 SWAT，用于网页管理Samba</p>
+<a id="more"></a>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="安装及配置"><a href="#安装及配置" class="headerlink" title="安装及配置"></a>安装及配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install samba-common samba <span class="comment">#安装samba</span></span><br><span class="line">vim /etc/samba/smb.conf <span class="comment">#进行配置</span></span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
-<p>在配置文件末尾加入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[share] <span class="comment">#共享目录名，这个名字可以随意设置，会显示在Windows界面上的名称</span></span><br><span class="line">comment = Linux Share <span class="comment">#设置这个共享目录的描述</span></span><br><span class="line">path = /home/az <span class="comment">#设置共享目录的路径</span></span><br><span class="line">public = yes </span><br><span class="line">writeable = yes <span class="comment">#设置是否可写</span></span><br><span class="line">browseable = yes <span class="comment">#设置是否可在网上邻居中可见</span></span><br><span class="line">guest ok = yes <span class="comment">#设置是否允许匿名访问</span></span><br></pre></td></tr></table></figure>
+<p>默认使用445端口，因特殊情况被禁用，可以更改端口号，例如改为6445，在global中添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">smb ports = 6445</span><br></pre></td></tr></table></figure>
+
+<p>在配置文件末尾加入（注意：后面的注释说明要<strong>删掉</strong>否则启动报错）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[share] <span class="comment">#共享目录名，这个名字可以随意设置，会显示在Windows界面上的名称</span></span><br><span class="line">comment = Samba on Ubuntu <span class="comment">#设置这个共享目录的描述</span></span><br><span class="line">path = /home/az <span class="comment">#设置共享目录的路径</span></span><br><span class="line">writeable = yes <span class="comment">#设置是否可写</span></span><br><span class="line">browseable = no <span class="comment">#设置是否可在网上邻居中可见，默认yes</span></span><br><span class="line">guest ok = no <span class="comment">#设置是否允许匿名访问不需要提供用户名密码，默认no。此配置项等同public</span></span><br></pre></td></tr></table></figure>
 
 <p>登录samba用户的设置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd sambauser <span class="comment">#添加一个名为sambauser的用户，也可用系统已有用户</span></span><br><span class="line">sudo smbpasswd -a root <span class="comment">#为root添加一个samba密码，此密码独立于系统用户密码</span></span><br><span class="line"></span><br><span class="line">pdbedit -L <span class="comment">#列出samba用户列表</span></span><br><span class="line">pdbedit -Lv <span class="comment">#列出samba用户详细信息</span></span><br><span class="line">pdbedit -Lw <span class="comment">#列出smbpasswd格式的用户</span></span><br><span class="line">pdbedit -a abc <span class="comment">#增加用户abc</span></span><br><span class="line">pdbedit -x abc <span class="comment">#删除用户abc</span></span><br><span class="line">pdbedit –c <span class="string">"[D]"</span> –u abc <span class="comment">#暂停用户abc</span></span><br><span class="line">pdbedit –c <span class="string">"[]"</span> –u abc <span class="comment">#恢复用户abc</span></span><br></pre></td></tr></table></figure>
@@ -197,7 +201,12 @@
 <h3 id="启动Samba"><a href="#启动Samba" class="headerlink" title="启动Samba"></a>启动Samba</h3><p>启动samba服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/smbd start <span class="comment">#注意这里使用的是smbd，不是smb也不是samba</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="在Windows系统上进行访问"><a href="#在Windows系统上进行访问" class="headerlink" title="在Windows系统上进行访问"></a>在Windows系统上进行访问</h3><p>Windows10上的匿名访问<br>此时，若是win10系统，win+R运行→输入”\192.168.0.103”→回车<br>结果是看不到共享的目录的，提示“你不能访问此共享文件夹,因为你组织的安全策略阻止未经身份验证的来宾访问。”<br>win+R运行→gpedit.msc→计算机配置→管理模板→网络→Lanman工作站→启用不安全的来宾登录→确定<br>此时，问题解决，可以访问到共享的samba目录。</p>
+<h3 id="在Windows系统上使用默认445端口进行访问"><a href="#在Windows系统上使用默认445端口进行访问" class="headerlink" title="在Windows系统上使用默认445端口进行访问"></a>在Windows系统上使用默认445端口进行访问</h3><p>Windows10上的非匿名访问<br>此时，若是win10系统，win+R运行→输入”\192.168.0.103”→回车<br>根据提示输入上面创建的sambauser用户名密码。</p>
+<p>Windows10上的匿名访问方法一样，只是不需要输入用户名密码<br>但是可能出现看不到共享的目录的，提示“你不能访问此共享文件夹,因为你组织的安全策略阻止未经身份验证的来宾访问。”<br>win+R运行→gpedit.msc→计算机配置→管理模板→网络→Lanman工作站→启用不安全的来宾登录→确定<br>此时，问题解决，可以访问到共享的samba目录。</p>
+<h3 id="在Windows系统上使用非445端口进行访问，通过Windows端口映射的方法"><a href="#在Windows系统上使用非445端口进行访问，通过Windows端口映射的方法" class="headerlink" title="在Windows系统上使用非445端口进行访问，通过Windows端口映射的方法"></a>在Windows系统上使用非445端口进行访问，通过Windows端口映射的方法</h3><p>在管理员权限下的cmd中执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加代理映射</span></span><br><span class="line">netsh interface portproxy add v4tov4 listenport=445 listenaddress=127.0.0.1 connectport=6445 connectaddress=172.21.26.84</span><br><span class="line"><span class="comment">#查看</span></span><br><span class="line">netsh interface portproxy show all</span><br><span class="line"><span class="comment">#删除代理映射</span></span><br><span class="line">netsh interface portproxy delete v4tov4 listenport=445 listenaddress=127.0.0.1</span><br><span class="line"><span class="comment">#清空代理映射</span></span><br><span class="line">netsh interface portproxy reset</span><br></pre></td></tr></table></figure>
+
+<p>在控制面板-程序功能-启用或关闭windows功能开启SMB客户端，关闭SMB服务器(否则可能通过127.0.0.1访问到的是本地的samba共享目录)。需要重启Windows<br>win+R运行→输入”\127.0.0.1”→回车<br>参考：<a href="https://blog.csdn.net/babytang008/article/details/120489133" target="_blank" rel="noopener">https://blog.csdn.net/babytang008/article/details/120489133</a></p>
 
       
 
@@ -354,7 +363,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境介绍"><span class="toc-number">1.</span> <span class="toc-text">环境介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作步骤"><span class="toc-number">2.</span> <span class="toc-text">操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装及配置"><span class="toc-number">2.1.</span> <span class="toc-text">安装及配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Samba"><span class="toc-number">2.2.</span> <span class="toc-text">启动Samba</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Windows系统上进行访问"><span class="toc-number">2.3.</span> <span class="toc-text">在Windows系统上进行访问</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境介绍"><span class="toc-number">1.</span> <span class="toc-text">环境介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">2.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作步骤"><span class="toc-number">3.</span> <span class="toc-text">操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装及配置"><span class="toc-number">3.1.</span> <span class="toc-text">安装及配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Samba"><span class="toc-number">3.2.</span> <span class="toc-text">启动Samba</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Windows系统上使用默认445端口进行访问"><span class="toc-number">3.3.</span> <span class="toc-text">在Windows系统上使用默认445端口进行访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Windows系统上使用非445端口进行访问，通过Windows端口映射的方法"><span class="toc-number">3.4.</span> <span class="toc-text">在Windows系统上使用非445端口进行访问，通过Windows端口映射的方法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -466,15 +475,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">办公</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
              
               <li class="article-tag-list-item">
