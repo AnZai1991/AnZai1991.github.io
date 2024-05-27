@@ -9,6 +9,8 @@ tags: [操作系统,Linux]
 二、Vim文本编辑器
 三、VMware Tools
 四、VNC Server
+五、第三方软件开机启动
+六、WPS安装字体
 附录
 
 ---
@@ -189,6 +191,23 @@ Linux版本的向日葵要登陆到桌面后才能启动，所以需检查用户
 重启验证
 
 其他软件可参考此设置方法。参考网址:<https://blog.csdn.net/willhu2008/article/details/121702815>
+
+---
+
+## 六、WPS安装字体
+下载好字体后使用命令行进入所在目录
+```bash
+#放入系统字体所在文件夹
+sudo cp * /usr/share/fonts
+
+#生成索引信息
+sudo mkfontscale
+sudo mkfontdir
+
+#更新字体缓存
+sudo fc-cache
+```
+完成后重启WPS
 
 ---
 

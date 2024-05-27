@@ -57,27 +57,28 @@ Windows Defender禁用
 
 ## 三、优化步骤（个人喜好仅作参考）：
 1.1安装驱动（右键windows图标→设置→更新和安全→Windows更新）
-  官网下载驱动
+官网下载驱动
 1.2安装必备组件（.net3.5、C++运行库、DirectX Microsoft图形库）
-  .net3.5可以通过程序里的打开关闭windows功能安装
+.net3.5可以通过程序里的打开关闭windows功能安装
 或者dism.exe /online /enable-feature /featurename:NetFX3 /Source:(安装盘盘符):\sources\sxs
 
 2.1安装Office
 2.2激活Windows和Office
-2.3更改计算机名（设置→系统→关于→重命名这台电脑）
-2.4更改锁屏方式（设置→账户→登录选项）
+2.3更改计算机名（设置→系统→关于→重命名这台电脑）参考：DESKTOP-XX\LAPTOP-XX\PC-XX
+2.4更改锁屏方式（Windows聚焦改为图片）和解锁方式（设置→账户→登录选项）
 
 3.1控制面板-系统和安全-更改用户账户控制设置-从不通知
   控制面板-系统和安全-Windows Defender防火墙-打开
   关闭方法：选择关闭→左边有个高级设置→中间有个Windows防火墙属性→关闭。服务里也可以禁用Windows Firewall
 3.2服务→禁用Windows Search（因为everything更好用）/Superfetch
   服务→打开Security Center/Windows update/Windows Firewall
-ps:Windows自带的关于安全的软件有操作中心、Security Center、Windows Firewall、Windows Defender
+  ps:Windows自带的关于安全的软件有操作中心、Security Center、Windows Firewall、Windows Defender
 
 4.1文件夹选项将所有隐藏全部打开
   关闭休眠：powercfg -h off
 4.2修改虚拟内存4G-10G到非系统盘
 pagefile.sys设置参考文档：https://learn.microsoft.com/en-US/troubleshoot/windows-client/performance/how-to-determine-the-appropriate-page-file-size-for-64-bit-versions-of-windows
+4.3设置→电源和睡眠→睡眠改为从不
 
 5.1关闭打开文件提示：
   运行→gpedit.msc→用户配置→管理模板→Windows组件→附件管理器→双击中等危险文件类型包含列表
@@ -87,23 +88,24 @@ ps：运行msconfig可以进行引导项的更改
 
 6.1创建Windows10 自动还原点
 在以上配置及Windows更新完成后，重启电脑后进行还原点创建
-右键此电脑→属性→系统保护→选中C盘→配置→启用系统保护→设置磁盘空间使用量→应用→确定，最后点击创建来创建还原点。
-6.2使用PE中的DG对系统盘做双备份
-建议将备份文件放置存储盘（例如F:\Backup）
+右键此电脑→属性→系统保护→选中C盘→配置→启用系统保护→设置磁盘空间使用量→应用→确定，最后点击创建来创建还原点例如命名WindowsOffice激活yyyymmdd。
+6.2 根据以下建议安装应用程序
+> Windows 8.1
+1、**UninstallTool（追踪程序安装）**
+2、Chrome、**IDM（优先安装）**
+3、搜狗输入法、火绒、**百度网盘（备份前检查设置）**、Rainmeter
+4、Speccy、Everything
 
-根据以下建议安装应用程序
-Windows 8.1
+> Windows10
 1、**UninstallTool（追踪程序安装）**
 2、Chrome、**IDM（优先安装）**
 3、搜狗输入法、火绒、**百度网盘（备份前检查设置）**、Rainmeter
-4、Speccy
-Windows10
-1、**UninstallTool（追踪程序安装）**
-2、Chrome、**IDM（优先安装）**
-3、搜狗输入法、火绒、**百度网盘（备份前检查设置）**、Rainmeter
-4、Speccy
-此处以上软件使用追踪安装后，可用PE中的DG对系统盘和软件盘做备份，备份文件放入存储盘（例如F:\Backup）
-5、QQ、微信
-6、notepad++、PotPlayer、向日葵、Typora、7zip
+4、Speccy、Everything
+5、CCleaner、QQ、微信
+6、notepad++、Typora、PotPlayer、向日葵、7zip
+7、Clash、UltraISO、傲软录屏、wolai
+
+6.3完成第4步软件安装后，使用PE中的DG对系统盘和软件盘做备份
+建议将备份文件放置存储盘（例如F:\Backup）
 
 7.Windows设置-个性化-任务栏-选择哪些图标显示在任务栏-通知区域始终显示所有图标
