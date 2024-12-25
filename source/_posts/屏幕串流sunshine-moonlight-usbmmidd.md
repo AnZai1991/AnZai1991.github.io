@@ -9,7 +9,7 @@ tags: [杂记]
 安装完成后，右击右下角图标打开，在浏览器里开始配置
 ### 使用
 创建用户名密码
-sunshineaz\az1991
+sunshineaz\az1xx1
 configuration里修改为中文，保存应用重启
 远程串流需要打开网络里的UPnP
 ip地址族选择ipv4+ipv6
