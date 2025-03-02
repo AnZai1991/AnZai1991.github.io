@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="安仔的博客">
 <meta property="og:description" content="在网上找了很多的解决方案，采用了最常见的利用git分支的方法来实现。参考网址：https://www.jianshu.com/p/0b1fccce74e0  原理创建新的分支XXX来存储hexo的环境文件，而推送到远端的静态文件（在public目录下）会依然根据配置文件中的配置，推送到master分支下。这样当自己需要在新电脑上更新Hexo博客的时候，只需要搭建好必须的环境，然后通过git clo">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2025-03-02T03:08:07.786Z">
+<meta property="og:updated_time" content="2025-03-02T05:23:47.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多台电脑更新Hexo博客">
 <meta name="twitter:description" content="在网上找了很多的解决方案，采用了最常见的利用git分支的方法来实现。参考网址：https://www.jianshu.com/p/0b1fccce74e0  原理创建新的分支XXX来存储hexo的环境文件，而推送到远端的静态文件（在public目录下）会依然根据配置文件中的配置，推送到master分支下。这样当自己需要在新电脑上更新Hexo博客的时候，只需要搭建好必须的环境，然后通过git clo">
@@ -196,7 +196,7 @@
 <p>master分支和XXX分支各自保存着一个版本，master分支用于保存博客静态资源，提供博客页面供人访问；XXX分支用于备份博客部署文件，供自己维护更新，两者在一个GitHub仓库内互不冲突。</p>
 <p>5、在新机器上添加生成的ssh key到GitHub账户下，在新电脑上克隆username.github.io仓库的XXX分支到本地，此时本地git仓库处于XXX分支。切换到username.github.io目录，执行npm install(由于仓库有一个.gitignore文件，里面默认是忽略掉node_modules文件夹的，也就是说仓库的XXX分支并没有存储该目录，所以需要install下)</p>
 <hr>
-<h2 id="多机更新操作"><a href="#多机更新操作" class="headerlink" title="多机更新操作"></a>多机更新操作</h2><p>部署的过程完成，以下是在新设备上的操作流程。<br>首先在新设备上依次安装搭建好node.js、Hexo框架、git。<br>然后将自己的GitHub账号配置给git</p>
+<h2 id="多机更新操作"><a href="#多机更新操作" class="headerlink" title="多机更新操作"></a>多机更新操作</h2><p>部署的过程完成，以下是在新设备上的操作流程。<br>首先在新设备上依次安装搭建好node.js、Hexo框架、git。<br><strong>注意：我的GitHub上只能使用旧版本node.js12.13.1，文章后面有检查更新的方法</strong><br>然后将自己的GitHub账号配置给git</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"github注册的用户名"</span>   <span class="comment">#设置 Git 用户名</span></span><br><span class="line">git config --global user.email <span class="string">"github注册的邮箱"</span>   <span class="comment">#设置 Git 邮箱</span></span><br><span class="line"></span><br><span class="line">git config --global user.name   <span class="comment">#确认您正确设置了 Git 用户名</span></span><br><span class="line">git config --global user.email   <span class="comment">#确认您正确设置了 Git 邮箱</span></span><br><span class="line"></span><br><span class="line">gitclone https://github.com/xxxxxx.github.io.git   <span class="comment">#克隆https下载</span></span><br></pre></td></tr></table></figure>
 
 <p>1、通过Git Bash在自己想要存储Hexo的目录下拉取新建分支XXX的内容</p>
@@ -212,6 +212,11 @@
 <p>保证新建分支的版本是最新的。</p>
 <p>5、最后再执行一次民工三连，将本地的静态文件推送到master分支，就完成了远端的更新。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo检查更新的方法"><a href="#hexo检查更新的方法" class="headerlink" title="hexo检查更新的方法"></a>hexo检查更新的方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm outdated</span><br><span class="line"><span class="comment">#输出中标记红色的为需要更新的</span></span><br><span class="line">npm update xxxx --latest   <span class="comment">#将需要更新的package名替换xxxx</span></span><br></pre></td></tr></table></figure>
+
+<p>参考：<a href="http://xiejava.ishareread.com/posts/442ea121/" target="_blank" rel="noopener">http://xiejava.ishareread.com/posts/442ea121/</a></p>
+
       
 
       
@@ -363,7 +368,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署多机环境操作步骤"><span class="toc-number">2.</span> <span class="toc-text">部署多机环境操作步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多机更新操作"><span class="toc-number">3.</span> <span class="toc-text">多机更新操作</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署多机环境操作步骤"><span class="toc-number">2.</span> <span class="toc-text">部署多机环境操作步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多机更新操作"><span class="toc-number">3.</span> <span class="toc-text">多机更新操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo检查更新的方法"><span class="toc-number">3.1.</span> <span class="toc-text">hexo检查更新的方法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -487,11 +492,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,11 +504,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Zabbix</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color2">Zabbix</a>
               </li>
             
             <div class="clearfix"></div>
