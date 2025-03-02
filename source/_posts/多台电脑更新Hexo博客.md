@@ -35,9 +35,19 @@ master分支和XXX分支各自保存着一个版本，master分支用于保存�
 
 ## 多机更新操作
 部署的过程完成，以下是在新设备上的操作流程。
-在新设备上搭建好node.js并安装Hexo框架，同时需要安装git工具。
-将自己的GitHub账号配置给git
+首先在新设备上依次安装搭建好node.js、Hexo框架、git。
+然后将自己的GitHub账号配置给git
+```bash
+git config --global user.name "github注册的用户名"   #设置 Git 用户名
+git config --global user.email "github注册的邮箱"   #设置 Git 邮箱
+
+git config --global user.name   #确认您正确设置了 Git 用户名
+git config --global user.email   #确认您正确设置了 Git 邮箱
+
+gitclone https://github.com/xxxxxx.github.io.git   #克隆https下载
+```
 1、通过Git Bash在自己想要存储Hexo的目录下拉取新建分支XXX的内容
+
 ```bash
 git pull
 ```
