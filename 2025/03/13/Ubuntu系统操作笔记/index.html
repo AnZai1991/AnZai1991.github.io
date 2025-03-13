@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://anzai1991.github.io">
-  <title>Tag: 数据库 | 安仔的博客</title>
+  <title>Ubuntu系统操作笔记 | 安仔的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="郑州大学10级，此为个人博客。">
-<meta name="keywords" content="技术宅,个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="安仔的博客">
-<meta property="og:url" content="https://anzai1991.github.io/tags/数据库/index.html">
+  <meta name="description" content="环境介绍操作系统：Ubuntu 20.04 server 64bit和Windows 10专业版22H2软件版本：Chrome、RealVNC Viewer 7.7.0、TeamViewer、rdesktop、WPS 准备工作所需工具：U盘一个（最好8G以上）、Ubuntu ISO镜像一个、UltraISO。制作Ubuntu安装U盘 安装系统自定义分区：">
+<meta name="keywords" content="办公,操作系统,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu系统操作笔记">
+<meta property="og:url" content="https://anzai1991.github.io/2025/03/13/Ubuntu系统操作笔记/index.html">
 <meta property="og:site_name" content="安仔的博客">
-<meta property="og:description" content="郑州大学10级，此为个人博客。">
+<meta property="og:description" content="环境介绍操作系统：Ubuntu 20.04 server 64bit和Windows 10专业版22H2软件版本：Chrome、RealVNC Viewer 7.7.0、TeamViewer、rdesktop、WPS 准备工作所需工具：U盘一个（最好8G以上）、Ubuntu ISO镜像一个、UltraISO。制作Ubuntu安装U盘 安装系统自定义分区：">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://anzai1991.github.io/assets/img/article_4/ubuntu分区.PNG">
+<meta property="og:updated_time" content="2025-03-13T03:09:51.089Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安仔的博客">
-<meta name="twitter:description" content="郑州大学10级，此为个人博客。">
+<meta name="twitter:title" content="Ubuntu系统操作笔记">
+<meta name="twitter:description" content="环境介绍操作系统：Ubuntu 20.04 server 64bit和Windows 10专业版22H2软件版本：Chrome、RealVNC Viewer 7.7.0、TeamViewer、rdesktop、WPS 准备工作所需工具：U盘一个（最好8G以上）、Ubuntu ISO镜像一个、UltraISO。制作Ubuntu安装U盘 安装系统自定义分区：">
+<meta name="twitter:image" content="https://anzai1991.github.io/assets/img/article_4/ubuntu分区.PNG">
   
     <link rel="alternative" href="/atom.xml" title="安仔的博客" type="application/atom+xml">
   
@@ -162,116 +165,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Ubuntu系统操作笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/17/Oracle数据库连接工具笔记/" class="archive-article-date">
-  	<time datetime="2022-04-17T07:13:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/17/Oracle数据库连接工具笔记/">Oracle数据库连接工具笔记</a>
+    <h1 class="article-title" itemprop="name">
+      Ubuntu系统操作笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2025/03/13/Ubuntu系统操作笔记/" class="archive-article-date">
+  	<time datetime="2025-03-13T02:23:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Ubuntu 20.04 server 64bit和Windows 10专业版22H2<br>软件版本：Chrome、RealVNC Viewer 7.7.0、TeamViewer、rdesktop、WPS</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>所需工具：<br>U盘一个（最好8G以上）、Ubuntu ISO镜像一个、UltraISO。制作Ubuntu安装U盘</p>
+<h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>自定义分区：</p>
+<a id="more"></a>
+
+<img src="/assets/img/article_4/ubuntu分区.PNG" width="50%">
+设置好用户名和密码，系统第一次启动后，运行终端：sudo apt-get update 更新当前apt-get缓存中的软件包信息。
+
+<p>APT工具常用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-get install <span class="comment">#下载并安装软件包#</span></span><br><span class="line">apt-get upgrade <span class="comment">#下载并安装在本系统上已有的软件包的最新版本#</span></span><br><span class="line">apt-get remove <span class="comment">#卸载特定的软件包#</span></span><br><span class="line">apt-get <span class="built_in">source</span> <span class="comment">#下载特定的软件源代码#</span></span><br><span class="line">apt-get clean <span class="comment">#删除所有已下载的包文件#</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="一、安装chrome浏览器"><a href="#一、安装chrome浏览器" class="headerlink" title="一、安装chrome浏览器"></a>一、安装chrome浏览器</h2><p>在官网下载linux版本，下载后的文件格式为deb。</p>
+<p>安装方法1：<br>打开命令终端：sudo  dpkg  -i   文件名.deb<br>（dpkg -l 查看已安装的软件包、dpkg -r 卸载软件包）</p>
+<p>安装方法2：<br>右键下载好的deb文件，选择“用 软件安装打开”，即可以安装。<br>注：若安装新版桌面版时候提示安装依赖问题，如libgconf-2-4等，直接运行sudo apt install -f即可解决</p>
+<h2 id="二、安装VNC远程软件"><a href="#二、安装VNC远程软件" class="headerlink" title="二、安装VNC远程软件"></a>二、安装VNC远程软件</h2><h3 id="1、VNC下载地址"><a href="#1、VNC下载地址" class="headerlink" title="1、VNC下载地址"></a>1、VNC下载地址</h3><p><a href="https://www.realvnc.com/en/connect/download/viewer/windows/" target="_blank" rel="noopener">https://www.realvnc.com/en/connect/download/viewer/windows/</a></p>
+<h3 id="Ubuntu设置"><a href="#Ubuntu设置" class="headerlink" title="Ubuntu设置"></a>Ubuntu设置</h3><p>Ubuntu desktop 20.04自带了的GNOME桌面系统，这个Ubuntu默认的桌面是有桌面共享功能的，使用的就是Vino软件。Vino是GNOME桌面环境的默认组件，是VNC（虚拟网络计算）服务器，允许远程主机连接到Ubuntu 20.04的实际桌面。但是，最小化安装的Ubuntu不带Vino，是没有共享功能的。</p>
+<h4 id="完整安装的系统不需要此操作"><a href="#完整安装的系统不需要此操作" class="headerlink" title="完整安装的系统不需要此操作"></a>完整安装的系统不需要此操作</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install vino <span class="comment">#完整安装的Ubuntu默认已经安装好</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="设置方法"><a href="#设置方法" class="headerlink" title="设置方法"></a>设置方法</h4><p>打开 设置–&gt;共享（Setting–&gt;Sharing），安装完vino后会出现屏幕共享（Screen Sharing）选项，打开共享（Sharing）和屏幕共享（Screen Sharing），设置访问密码之后即可。</p>
+<p>方法1：命令行输入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gsettings <span class="built_in">set</span> org.gnome.Vino require-encryption <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>方法2：安装 dconf-editor 系统配置编辑器，修改/org/gnome/desktop/remote-access<br>打开一个终端，输入下面的命令，安装系统配置编辑器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install dconf-editor</span><br></pre></td></tr></table></figure>
+
+<p>打开 dconf-editor在桌面右下方图标里找<br>按照如下路径org-&gt;gnome-&gt;desktop-&gt;remote access-&gt;require encrytion把原先默认的开启状态改为关闭<br>最后打开Windows上安装好的VNC，输入IP地址就可以正常连接</p>
+<p>参考网站：<a href="https://www.cnblogs.com/kebibuluan/p/17851577.html" target="_blank" rel="noopener">https://www.cnblogs.com/kebibuluan/p/17851577.html</a></p>
+<h2 id="三、安装其它远程软件"><a href="#三、安装其它远程软件" class="headerlink" title="三、安装其它远程软件"></a>三、安装其它远程软件</h2><h3 id="安装teamview"><a href="#安装teamview" class="headerlink" title="安装teamview"></a>安装teamview</h3><p>在官网下载linux版本，下载后的文件格式也为deb。安装方法同上。使用方法跟windows版本的一毛一样。</p>
+<h3 id="安装向日葵远程"><a href="#安装向日葵远程" class="headerlink" title="安装向日葵远程"></a>安装向日葵远程</h3><p>在官网下载linux版本，下载后的文件格式为tar.gz。将文件解压缩出来，阅读README文件，里面有软件的详细使用介绍。根据内容可知，分为绿色版本和安装版本，都为.sh文件的脚本形式运行。使用绿色版本，运行script脚本“./run.sh”。使用安装版本，运行script脚本“./install.sh”。你最终会发现，它只能被远程控制，没有远程控制windows电脑的功能。哈哈哈哈哈！</p>
+<p>后续版本的向日葵有deb版本了，下载后安装方法一样，不过新版本的都要登录才能远控其他电脑。</p>
+<h3 id="安装rdesktop"><a href="#安装rdesktop" class="headerlink" title="安装rdesktop"></a>安装rdesktop</h3><p>如果想用linux电脑通过远程桌面的形式远程Windows电脑，安装这个软件就可以。<br>注意：Windows10系统需要在Windows远程桌面设置里，取消勾选需要计算机使用网络级别身份验证集进行连接（建议）。<br>下载后的文件格式为tar.gz。将文件解压缩出来。有些linux版本会自带此软件，不需要另外安装。同理，解压出来的文件夹里有README文件，仔细阅读使用说明。可以看到此软件也是通过script脚本运行安装。</p>
+<p>Ubuntu可以直接运行安装命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install rdesktop</span><br></pre></td></tr></table></figure>
+
+<p>使用方法：输入命令 rdesktop ip:port（默认3389可不用写） -u administrator -p secretnumber -a 16 -g 1360*768(分辨率) -r sound:local -5</p>
+<p>参考网址：<a href="https://blog.csdn.net/cunjiu9486/article/details/109073104" target="_blank" rel="noopener">https://blog.csdn.net/cunjiu9486/article/details/109073104</a></p>
+<h2 id="四、安装办公软件"><a href="#四、安装办公软件" class="headerlink" title="四、安装办公软件"></a>四、安装办公软件</h2><h3 id="安装typora"><a href="#安装typora" class="headerlink" title="安装typora"></a>安装typora</h3><p>目前只有安装0.11.18版本可以避免激活问题</p>
+<h3 id="安装WPS"><a href="#安装WPS" class="headerlink" title="安装WPS"></a>安装WPS</h3><p>从官网下载deb格式<br>需要安装wps字体来解决字体显示问题</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://anzai1991.github.io/2025/03/13/Ubuntu系统操作笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/13/远程无显示器主机分辨率无法调整解决方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">远程无显示器主机分辨率无法调整解决方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/28/MySql数据库实操笔记/" class="archive-article-date">
-  	<time datetime="2020-03-28T03:32:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境介绍"><span class="toc-number">1.</span> <span class="toc-text">环境介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装系统"><span class="toc-number">3.</span> <span class="toc-text">安装系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、安装chrome浏览器"><span class="toc-number">4.</span> <span class="toc-text">一、安装chrome浏览器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、安装VNC远程软件"><span class="toc-number">5.</span> <span class="toc-text">二、安装VNC远程软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、VNC下载地址"><span class="toc-number">5.1.</span> <span class="toc-text">1、VNC下载地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ubuntu设置"><span class="toc-number">5.2.</span> <span class="toc-text">Ubuntu设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#完整安装的系统不需要此操作"><span class="toc-number">5.2.1.</span> <span class="toc-text">完整安装的系统不需要此操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置方法"><span class="toc-number">5.2.2.</span> <span class="toc-text">设置方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、安装其它远程软件"><span class="toc-number">6.</span> <span class="toc-text">三、安装其它远程软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装teamview"><span class="toc-number">6.1.</span> <span class="toc-text">安装teamview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装向日葵远程"><span class="toc-number">6.2.</span> <span class="toc-text">安装向日葵远程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装rdesktop"><span class="toc-number">6.3.</span> <span class="toc-text">安装rdesktop</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、安装办公软件"><span class="toc-number">7.</span> <span class="toc-text">四、安装办公软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装typora"><span class="toc-number">7.1.</span> <span class="toc-text">安装typora</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装WPS"><span class="toc-number">7.2.</span> <span class="toc-text">安装WPS</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/28/MySql数据库实操笔记/">Linux系统之MySql数据库</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -294,9 +416,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
