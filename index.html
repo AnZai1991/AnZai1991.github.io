@@ -164,6 +164,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-远程无显示器主机分辨率无法调整解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/13/远程无显示器主机分辨率无法调整解决方法/">远程无显示器主机分辨率无法调整解决方法</a>
+    </h1>
+  
+
+        
+        <a href="/2025/03/13/远程无显示器主机分辨率无法调整解决方法/" class="archive-article-date">
+  	<time datetime="2025-03-13T01:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Windows 10专业版22H2<br>软件版本：usbmmidd_v2<br>情况说明：利用向日葵远程Windows主机时，若主机没有显示器，会出现默认800*600分辨率无法更改的情况。此时可以借助虚拟显示器软件来解决或者采用Windows自带的远程桌面可以指定分辨率。</p>
+<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>管理员身份打开cmd命令行依次执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d:</span><br><span class="line">cd d:\usbmmidd_v2</span><br><span class="line">deviceinstaller64 install usbmmidd.inf usbmmidd</span><br><span class="line">deviceinstaller64 enableidd 1</span><br></pre></td></tr></table></figure>
+
+<p>如果是在Windows 10中添加4个虚拟显示器，最多可以运行最后一条命令4次。<br>如果你使用的是32位系统，将”deviceinstaller64”替换为”deviceinstaller”<br>包含的批处理文件usbmmid.bat会自动运行这些命令，并在32位或64位版本的设备安装程序之间进行选择。<br>如果您不习惯打开命令提示符并输入这些命令，右键单击usbmmid.bat和“以管理员身份运行”。</p>
+        
+          <a class="article-more-a" href="/2025/03/13/远程无显示器主机分辨率无法调整解决方法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/03/13/远程无显示器主机分辨率无法调整解决方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-屏幕串流sunshine-moonlight-usbmmidd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -880,86 +960,9 @@
 
 
   
-    <article id="post-工作单位word模板制作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/08/02/工作单位word模板制作/">工作单位word模板和工作单位电子章的制作</a>
-    </h1>
-  
-
-        
-        <a href="/2023/08/02/工作单位word模板制作/" class="archive-article-date">
-  	<time datetime="2023-08-02T02:17:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：Windows 10<br>软件版本：Microsoft Office 2013</p>
-<h2 id="工作单位word模板"><a href="#工作单位word模板" class="headerlink" title="工作单位word模板"></a>工作单位word模板</h2><p>说明：记录了如何将单位logo图片作为水印和页眉页脚，来生成工作单位专用的空白word模板<br>1、页眉。<br>（1）打开一个新文档，双击页面顶端空白区域，进入页眉页脚编辑视图；<br>（2）点击菜单：页眉和页脚工具–设计–页码–页面顶端–X / Y 加粗显示的数字3，系统会自动帮你插入一个页码，把“/”删除，输入of；<br>（3）点击菜单：插入–图片，插入公司的logo，自己调整图片大小比例，选中图片，右键单击：文字环绕–浮于文字上方，将图片拖曳至左端；<br>（4）检查调整一下，删除空行对齐图片啥的，页眉制作完毕。</p>
-        
-          <a class="article-more-a" href="/2023/08/02/工作单位word模板制作/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/08/02/工作单位word模板制作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
