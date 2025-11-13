@@ -58,6 +58,43 @@ sudo vim /etc/hosts #找到原主机名改掉
 ```
 
 ### 常见问题
+#### Ubuntu24.04LTS更换软件源
+```bash
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+vim sources.list #修改注释掉里面内容添加以下阿里源
+```
+```bash
+# 阿里云source
+Types: deb
+URIs: http://mirrors.aliyun.com/ubuntu/
+Suites: noble noble-updates noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+```
+
+#### CentOS8更换软件源及防火墙的操作方法
+```bash
+#切root用户
+sudo su
+#进入yum.repos.d目录
+cd /etc/yum.repos.d/
+#备份yum源文件
+mkdir backup && mv *repo backup/
+#下载国内yum源文件替换原始文件
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+#清理所有文件并建立缓存
+yum clean all && yum makecache
+```
+
+```bash
+#临时关闭防火墙
+sudo systemctl stop firewalld.service
+#禁用防火墙
+sudo systemctl disable firewalld.service
+#查看防火墙状态
+sudo firewall-cmd --state
+```
+
 #### APT工具的常用命令
 ```bash
 apt-get install #下载并安装软件包#
