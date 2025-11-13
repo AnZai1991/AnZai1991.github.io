@@ -30,15 +30,22 @@ tcp.dstport == 80
 ---
 
 ## Wireshark抓包分析之sip
-根据主叫号码查询到sip消息
+根据主叫号码查询到sip消息（注意新版本的需要使用引号）
 sip.from.user == 13800000001
-根据被叫号码查询到sip消息
+根据被叫号码查询到sip消息（注意新版本的需要使用引号）
 sip.to.user == 13800000001
-根据包含内容（如软电话号码）查找sip消息
+根据包含内容（如软电话号码）查找sip消息（注意新版本的需要使用引号）
 sip contains 70001
 
 过滤之后，点击任一消息，得到Call-ID，再根据Call-ID获取这个通话的所有sip消息过滤结果
 sip.Call-ID == "856d5c37-b891-1239-2d9a-f0d4e2eb7bdc"
+
+通过坐席侧的数据只能看到与ASBC公网地址的交互信息，通过ASBC上的数据流量可以看到到ASBC到平台sip代理的交互信息，甚至可以知道此通话从哪台语音网关呼入呼出的。首先同样根据以上的过滤方式，在ACK请求消息中
+
+Session Initation Protocol(ACK)
+Message Body
+Session Description Protocol
+Owner/Creator,Session Id(o)后面可以找到网关和媒体服务的IP地址
 
 ---
 
