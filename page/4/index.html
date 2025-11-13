@@ -164,6 +164,172 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ZabbixAgent监控与SNMP监控笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/20/ZabbixAgent监控与SNMP监控笔记/">ZabbixAgent监控与SNMP监控笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/20/ZabbixAgent监控与SNMP监控笔记/" class="archive-article-date">
+  	<time datetime="2020-01-20T13:38:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="笔记介绍"><a href="#笔记介绍" class="headerlink" title="笔记介绍"></a>笔记介绍</h2><p>记录除了第一次实战中后续遇到的各种设备的监控操作方法。分为<strong>ZabbixAgent</strong>和<strong>SNMP</strong>两种记录。</p>
+<hr>
+<h2 id="ZabbixAgent"><a href="#ZabbixAgent" class="headerlink" title="ZabbixAgent"></a>ZabbixAgent</h2><p>官方下载地址：<a href="https://www.zabbix.com/cn/download_agents#tab:40LTS" target="_blank" rel="noopener">https://www.zabbix.com/cn/download_agents#tab:40LTS</a><br>官方网站下选择Windows→Any→amd64→选择版本→OpenSSL→Archive（压缩包）或MSI（安装包）</p>
+<h3 id="Windows-OS"><a href="#Windows-OS" class="headerlink" title="Windows OS"></a>Windows OS</h3><p>将下载文件保存到本地，解压缩到C:\Program Files\路径下<br><strong>配置zabbix_agentd.conf</strong>，参考《Zabbix实战》</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Server=127.0.0.1,203.152.200.115 <span class="comment">#被动地址，Zabbix-server的IP地址</span></span><br><span class="line">ServerActive=127.0.0.1,203.152.200.115 <span class="comment">#主动模式，Zabbix-server的IP地址</span></span><br><span class="line">Hostname=Zabbix server <span class="comment">#本机的Hostname，使用主动模式必须配置</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/01/20/ZabbixAgent监控与SNMP监控笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Zabbix</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/20/ZabbixAgent监控与SNMP监控笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Zabbix实战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/20/Zabbix实战/">Zabbix实战</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/20/Zabbix实战/" class="archive-article-date">
+  	<time datetime="2020-01-20T12:35:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>操作系统：CentOS 8<br>数据库版本：MySQL 8.0.17-3<br>Web环境：Apache 2.4.37<br>PHP版本：php 7.2.11<br>zabbix版本：zabbix 4.0</p>
+<hr>
+<p><strong>名词解释</strong>：<br>lnmp环境：Linux、Nginx、MySQL或MariaDB、PHP或Perl或Python<br>lamp环境：Linux、Apache、MySQL或MariaDB、PHP或Perl或Python</p>
+        
+          <a class="article-more-a" href="/2020/01/20/Zabbix实战/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Zabbix</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/20/Zabbix实战/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux系统之FTP服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -206,11 +372,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
         		</li>
       		
 		</ul>
@@ -815,162 +981,6 @@
 
 
   
-    <article id="post-不同操作系统下查看系统资源的命令笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/">不同操作系统下查看系统资源的命令笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/" class="archive-article-date">
-  	<time datetime="2019-11-03T07:39:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Linux系统（以SUSE-Linux为例，各Linux基本一致）"><a href="#Linux系统（以SUSE-Linux为例，各Linux基本一致）" class="headerlink" title="Linux系统（以SUSE Linux为例，各Linux基本一致）"></a>Linux系统（以SUSE Linux为例，各Linux基本一致）</h2><p>查看主机信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl status <span class="comment">#查看当前主机信息，status可省略</span></span><br><span class="line">hostname <span class="comment">#适用于CentOS 7以前版本</span></span><br></pre></td></tr></table></figure>
-
-<p>查看CPU信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lscpu </span><br><span class="line"><span class="comment">#CPU(s) 查看处理器数量</span></span><br><span class="line"><span class="comment">#On-line CPU(s) list 查看在线处理器列表</span></span><br><span class="line"><span class="comment">#Thread(s) per core/每个核的线程数 查看每个核心的线程数</span></span><br><span class="line"><span class="comment">#Core(s) per socket/每个座的核数 查看每个CPU核心数</span></span><br><span class="line"><span class="comment">#Socket(s)/座 查看CPU个数</span></span><br><span class="line">cat /proc/cpuinfo <span class="comment">#查看CPU线程数每个processor细节</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-51单片机与MFRC522射频" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/02/51单片机与MFRC522射频/">51单片机与MFRC522射频</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/02/51单片机与MFRC522射频/" class="archive-article-date">
-  	<time datetime="2019-11-02T03:16:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>本项目将使用51单片机对射频模块进行读写操作。</strong> <del>(前期先实现读卡操作，后续补充写卡操作)</del><br><strong>硬件环境</strong>：<br>AT89S52单片机、MFRC522射频模块、ARM9单片机、Mifare one卡、若干杜邦线<br><strong>软件环境</strong>：<br>Windows环境 Keil C51 v802<br>Windows CE<br>串口调试助手</p>
-        
-          <a class="article-more-a" href="/2019/11/02/51单片机与MFRC522射频/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/02/51单片机与MFRC522射频/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1072,14 +1082,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">办公</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
@@ -1088,7 +1090,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">办公</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Linux，运维</a>
               </li>
              
               <li class="article-tag-list-item">

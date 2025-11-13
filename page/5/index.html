@@ -164,6 +164,162 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-不同操作系统下查看系统资源的命令笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/">不同操作系统下查看系统资源的命令笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/" class="archive-article-date">
+  	<time datetime="2019-11-03T07:39:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux系统（以SUSE-Linux为例，各Linux基本一致）"><a href="#Linux系统（以SUSE-Linux为例，各Linux基本一致）" class="headerlink" title="Linux系统（以SUSE Linux为例，各Linux基本一致）"></a>Linux系统（以SUSE Linux为例，各Linux基本一致）</h2><p>查看主机信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl status <span class="comment">#查看当前主机信息，status可省略</span></span><br><span class="line">hostname <span class="comment">#适用于CentOS 7以前版本</span></span><br></pre></td></tr></table></figure>
+
+<p>查看CPU信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lscpu </span><br><span class="line"><span class="comment">#CPU(s) 查看处理器数量</span></span><br><span class="line"><span class="comment">#On-line CPU(s) list 查看在线处理器列表</span></span><br><span class="line"><span class="comment">#Thread(s) per core/每个核的线程数 查看每个核心的线程数</span></span><br><span class="line"><span class="comment">#Core(s) per socket/每个座的核数 查看每个CPU核心数</span></span><br><span class="line"><span class="comment">#Socket(s)/座 查看CPU个数</span></span><br><span class="line">cat /proc/cpuinfo <span class="comment">#查看CPU线程数每个processor细节</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/不同操作系统下查看系统资源的命令笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-51单片机与MFRC522射频" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/02/51单片机与MFRC522射频/">51单片机与MFRC522射频</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/02/51单片机与MFRC522射频/" class="archive-article-date">
+  	<time datetime="2019-11-02T03:16:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>本项目将使用51单片机对射频模块进行读写操作。</strong> <del>(前期先实现读卡操作，后续补充写卡操作)</del><br><strong>硬件环境</strong>：<br>AT89S52单片机、MFRC522射频模块、ARM9单片机、Mifare one卡、若干杜邦线<br><strong>软件环境</strong>：<br>Windows环境 Keil C51 v802<br>Windows CE<br>串口调试助手</p>
+        
+          <a class="article-more-a" href="/2019/11/02/51单片机与MFRC522射频/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/02/51单片机与MFRC522射频/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Markdown笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -422,14 +578,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">办公</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
@@ -438,7 +586,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">办公</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Linux，运维</a>
               </li>
              
               <li class="article-tag-list-item">

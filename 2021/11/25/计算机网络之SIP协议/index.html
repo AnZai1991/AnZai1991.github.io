@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="安仔的博客">
 <meta property="og:description" content="协议简介SIP（Session Initiation Protocol，会话初始协议）是由IETF（Internet Engineering Task Force，因特网工程任务组）制定的多媒体通信协议。广泛应用于CS（Circuit Switched，电路交换）、NGN（Next Generation Network，下一代网络）以及IMS（IP Multimedia Subsystem，IP多">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2025-03-02T02:59:45.942Z">
+<meta property="og:updated_time" content="2025-06-11T01:36:54.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络之SIP协议">
 <meta name="twitter:description" content="协议简介SIP（Session Initiation Protocol，会话初始协议）是由IETF（Internet Engineering Task Force，因特网工程任务组）制定的多媒体通信协议。广泛应用于CS（Circuit Switched，电路交换）、NGN（Next Generation Network，下一代网络）以及IMS（IP Multimedia Subsystem，IP多">
@@ -185,6 +185,7 @@
       
         <h2 id="协议简介"><a href="#协议简介" class="headerlink" title="协议简介"></a>协议简介</h2><p>SIP（Session Initiation Protocol，会话初始协议）是由IETF（Internet Engineering Task Force，因特网工程任务组）制定的多媒体通信协议。广泛应用于CS（Circuit Switched，电路交换）、NGN（Next Generation Network，下一代网络）以及IMS（IP Multimedia Subsystem，IP多媒体子系统）的网络中，可以支持并应用于语音、视频、数据等多媒体业务，同时也可以应用于Presence（呈现）、Instant Message（即时消息）等特色业务。可以说，有IP网络的地方就有SIP协议的存在。<br>SIP是类似于HTTP，SIP可以减少应用特别是高级应用的开发时间。由于基于IP协议的SIP利用了IP网络，固定网运营商也会逐渐认识到SIP技术对于他们的远意义。</p>
 <a id="more"></a>
+
 <hr>
 <h2 id="两种会话模式"><a href="#两种会话模式" class="headerlink" title="两种会话模式"></a>两种会话模式</h2><h3 id="Session-Model"><a href="#Session-Model" class="headerlink" title="Session Model"></a>Session Model</h3><p>会话中，对于消息体内容大于1300字节时，一般采用Session Model。<br>主叫方A呼叫被叫方B：<br>步骤1：主叫方A发送INVITE请求到代理服务器；<br>步骤2：代理服务器发送100 Trying 响应主叫方A；<br>步骤3-6：代理服务器搜索被叫方B的地址，获取地址后转发INVITE请求；<br>步骤7-9：被叫方B生成的180 振铃响应，返回给主叫方A；<br>步骤10-12：被叫方B生成的200 OK响应，返回给主叫方A；<br>步骤13-17：主叫方A收到被叫方B200 OK响应后，向被叫方B发送一个ACK，会话建立；<br>步骤18-20：会话结束后，任何参与者（A或B）都可以发送一个BYE请求来终止会话；<br>步骤21-23：主叫方A发送200 OK响应来确认BYE，会话终止。<br>注：以上的整个流程称之为一个Dialog</p>
 <h3 id="Pager-Model"><a href="#Pager-Model" class="headerlink" title="Pager Model"></a>Pager Model</h3><p>在Sip消息中，对于消息体不大于1300字节时，一般采用Pager Model。Sip消息通信中采用MESSAGE方法，MESSAGE方法本身并不建立Dialog，在多数应用中，每条IM消息都是独立的，颇似分页消息。<br>其余内容可参考<a href="https://www.cnblogs.com/xiaxveliang/p/12434170.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaxveliang/p/12434170.html</a></p>
@@ -510,14 +511,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">办公</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
@@ -526,7 +519,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">办公</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Linux，运维</a>
               </li>
              
               <li class="article-tag-list-item">
