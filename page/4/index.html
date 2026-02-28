@@ -372,11 +372,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
         		</li>
       		
 		</ul>
@@ -669,7 +669,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/17/Git分布式版本控制系统以及Git-Bash的使用/">Git分布式版本控制系统以及Git Bash的使用</a>
+      <a class="article-title" href="/2019/12/17/Git分布式版本控制系统以及Git-Bash的使用/">Git分布式版本控制系统以及GitHub的使用</a>
     </h1>
   
 
@@ -682,11 +682,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h2><h3 id="绑定用户"><a href="#绑定用户" class="headerlink" title="绑定用户"></a>绑定用户</h3><p>因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为github注册的账号和邮箱。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;xxx&quot;</span><br><span class="line">git config --global user.email &quot;12345@qq.com&quot;</span><br></pre></td></tr></table></figure>
-
-<p>有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init	//把当前目录变成git可以管理的仓库</span><br></pre></td></tr></table></figure>
+        <h2 id="Git-GitHub-Git-Bash的关系"><a href="#Git-GitHub-Git-Bash的关系" class="headerlink" title="Git\GitHub\Git Bash的关系"></a>Git\GitHub\Git Bash的关系</h2><ul>
+<li><p>Git</p>
+<ul>
+<li>一个分布式版本控制系统，用来在本地和远端仓库中管理代码及历史记录。</li>
+<li>负责提交、分支、合并、回滚等版本控制操作的核心工具。</li>
+<li>可以在没有任何远程托管服务的情况下独立使用。</li>
+</ul>
+</li>
+<li><p>GitHub</p>
+<ul>
+<li>基于 Git 的在线托管服务平台，提供远程仓库、协作功能（issues、pull request、code review、CI 等）。</li>
+<li>不是必须的，你也可以把代码托管在 GitLab、Bitbucket、自己搭的服务器等，或者只在本地使用 Git。</li>
+<li>方便多人协作和代码分享。
         
           <a class="article-more-a" href="/2019/12/17/Git分布式版本控制系统以及Git-Bash的使用/#more">more >></a>
         
@@ -995,7 +1003,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 安亚博
+    		&copy; 2026 安亚博
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1082,19 +1090,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">办公</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">办公</a>
               </li>
              
               <li class="article-tag-list-item">

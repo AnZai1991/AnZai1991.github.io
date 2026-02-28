@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://anzai1991.github.io">
-  <title>Git分布式版本控制系统以及Git Bash的使用 | 安仔的博客</title>
+  <title>Git分布式版本控制系统以及GitHub的使用 | 安仔的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Git Bash绑定用户因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为github注册的账号和邮箱。 12git config --global user.name &amp;quot;xxx&amp;quot;git config --global user.email &amp;quot;12345@qq.com&amp;quot;  有了这个参数，表示你这台机器上所有的Git仓库都会使用">
+  <meta name="description" content="Git\GitHub\Git Bash的关系 Git  一个分布式版本控制系统，用来在本地和远端仓库中管理代码及历史记录。 负责提交、分支、合并、回滚等版本控制操作的核心工具。 可以在没有任何远程托管服务的情况下独立使用。   GitHub  基于 Git 的在线托管服务平台，提供远程仓库、协作功能（issues、pull request、code review、CI 等）。 不是必须的，你也可以">
 <meta name="keywords" content="运维,办公">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git分布式版本控制系统以及Git Bash的使用">
+<meta property="og:title" content="Git分布式版本控制系统以及GitHub的使用">
 <meta property="og:url" content="https://anzai1991.github.io/2019/12/17/Git分布式版本控制系统以及Git-Bash的使用/index.html">
 <meta property="og:site_name" content="安仔的博客">
-<meta property="og:description" content="Git Bash绑定用户因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为github注册的账号和邮箱。 12git config --global user.name &amp;quot;xxx&amp;quot;git config --global user.email &amp;quot;12345@qq.com&amp;quot;  有了这个参数，表示你这台机器上所有的Git仓库都会使用">
+<meta property="og:description" content="Git\GitHub\Git Bash的关系 Git  一个分布式版本控制系统，用来在本地和远端仓库中管理代码及历史记录。 负责提交、分支、合并、回滚等版本控制操作的核心工具。 可以在没有任何远程托管服务的情况下独立使用。   GitHub  基于 Git 的在线托管服务平台，提供远程仓库、协作功能（issues、pull request、code review、CI 等）。 不是必须的，你也可以">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2025-03-02T02:59:45.933Z">
+<meta property="og:updated_time" content="2026-02-28T06:13:25.761Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git分布式版本控制系统以及Git Bash的使用">
-<meta name="twitter:description" content="Git Bash绑定用户因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为github注册的账号和邮箱。 12git config --global user.name &amp;quot;xxx&amp;quot;git config --global user.email &amp;quot;12345@qq.com&amp;quot;  有了这个参数，表示你这台机器上所有的Git仓库都会使用">
+<meta name="twitter:title" content="Git分布式版本控制系统以及GitHub的使用">
+<meta name="twitter:description" content="Git\GitHub\Git Bash的关系 Git  一个分布式版本控制系统，用来在本地和远端仓库中管理代码及历史记录。 负责提交、分支、合并、回滚等版本控制操作的核心工具。 可以在没有任何远程托管服务的情况下独立使用。   GitHub  基于 Git 的在线托管服务平台，提供远程仓库、协作功能（issues、pull request、code review、CI 等）。 不是必须的，你也可以">
   
     <link rel="alternative" href="/atom.xml" title="安仔的博客" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Git分布式版本控制系统以及Git Bash的使用
+      Git分布式版本控制系统以及GitHub的使用
     </h1>
   
 
@@ -183,28 +183,64 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h2><h3 id="绑定用户"><a href="#绑定用户" class="headerlink" title="绑定用户"></a>绑定用户</h3><p>因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为github注册的账号和邮箱。</p>
+        <h2 id="Git-GitHub-Git-Bash的关系"><a href="#Git-GitHub-Git-Bash的关系" class="headerlink" title="Git\GitHub\Git Bash的关系"></a>Git\GitHub\Git Bash的关系</h2><ul>
+<li><p>Git</p>
+<ul>
+<li>一个分布式版本控制系统，用来在本地和远端仓库中管理代码及历史记录。</li>
+<li>负责提交、分支、合并、回滚等版本控制操作的核心工具。</li>
+<li>可以在没有任何远程托管服务的情况下独立使用。</li>
+</ul>
+</li>
+<li><p>GitHub</p>
+<ul>
+<li>基于 Git 的在线托管服务平台，提供远程仓库、协作功能（issues、pull request、code review、CI 等）。</li>
+<li>不是必须的，你也可以把代码托管在 GitLab、Bitbucket、自己搭的服务器等，或者只在本地使用 Git。</li>
+<li>方便多人协作和代码分享。<a id="more"></a></li>
+</ul>
+</li>
+<li><p>Git Bash</p>
+<ul>
+<li>Windows 下的一种“带 Bash 的命令行环境”，通常随 Git for Windows 一起安装。</li>
+<li>让你在 Windows 上使用类 Unix 的命令行和 Git 命令；在 macOS/Linux 上直接用 Terminal 即可运行 Git。</li>
+<li>也包含一些常用的工具（ssh、scp 等），便于和远程仓库交互。</li>
+</ul>
+</li>
+</ul>
+<p>常见工作流程（简述）</p>
+<ul>
+<li>本地使用 Git 做版本控制：git init、git add、git commit。</li>
+<li>关联远端仓库：git remote add origin &lt;仓库地址&gt;。</li>
+<li>将改动推送到 GitHub：git push -u origin main（或 master）。</li>
+<li>从 GitHub 获取他人改动：git pull、git fetch、git merge。</li>
+<li>通过 GitHub 协作：创建分支、发起 Pull Request、代码评审、合并到主分支。</li>
+</ul>
+<hr>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="绑定用户"><a href="#绑定用户" class="headerlink" title="绑定用户"></a>绑定用户</h3><p>因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为github注册的账号和邮箱。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;xxx&quot;</span><br><span class="line">git config --global user.email &quot;12345@qq.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init	//把当前目录变成git可以管理的仓库</span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
 <p> 创建完后，会在当前目录下创建一个.git隐藏文件夹 </p>
 <hr>
-<h3 id="为GitHub设置SSH-key"><a href="#为GitHub设置SSH-key" class="headerlink" title="为GitHub设置SSH key"></a>为GitHub设置SSH key</h3><p>查看电脑中，C盘用户目录是否有.ssh目录，看看里面是否有rd_rsa和id_rsa.pub这两个文件。如果没有参考第一篇博客建立的文章中有介绍怎么生成SSH key。</p>
-<hr>
-<h3 id="上传本地项目到GitHub"><a href="#上传本地项目到GitHub" class="headerlink" title="上传本地项目到GitHub"></a>上传本地项目到GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init //把这个目录变成Git可以管理的仓库</span><br><span class="line">git add sqlist.h //将工作文件修改提交到本地暂存区</span><br><span class="line">git add . //将所有修改过的工作文件提交到本地暂存区</span><br><span class="line">git commit -m &quot;first commit&quot; //把文件提交到仓库，双引号内容为注释</span><br><span class="line">git remote add origin xxx@github.com:xxxx/xxxx.git //将本地仓库和远程仓库关联</span><br><span class="line">git push -u origin master //把本地仓库的项目推送到远程仓库（github）上</span><br></pre></td></tr></table></figure>
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><h3 id="添加SSHKey到GitHub"><a href="#添加SSHKey到GitHub" class="headerlink" title="添加SSHKey到GitHub"></a>添加SSHKey到GitHub</h3><p>SSH key：用于 Git 传输层的认证（<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a> 这条路）<br>认证方式：用你的本地私钥做公钥认证；GitHub 只保存公钥。<br>主要用途：git clone/pull/push 走 SSH 协议（remote 形如 <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:org/repo.git）。</p>
+<p>查看本地电脑C盘的用户目录是否有.ssh目录，看看里面是否有rd_rsa和id_rsa.pub这两个文件。如果没有参考第一篇博客建立的文章中有介绍怎么生成SSH key。或按照以下步骤创建<br>通过右键菜单中的gitbash here打开命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#在用户目录下创建</span><br><span class="line">mkdir ~/.ssh</span><br><span class="line"></span><br><span class="line">#配置全局的name和email</span><br><span class="line">git config –global user.name “AnZaiXXXX”</span><br><span class="line">git config –global user.email “XXXX@qq.com“</span><br><span class="line"></span><br><span class="line">#生成key，推荐使用ed25519</span><br><span class="line">ssh-keygen -t rsa -C XXXX@qq.com</span><br><span class="line">ssh-keygen -t ed25519 -C &quot;XXXX@qq.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>1将所有项目文件放入仓库的当前目录下</p>
+<p>一路回车会默认生成到 ~/.ssh/id_ed25519；建议设置一个 passphrase。<br>复制 ~/.ssh/id_rsa.pub内容或cat ~/.ssh/id_ed25519.pub<br>回到GitHub页面： Settings → SSH and GPG keys → New SSH key → 粘贴进去保存（titel可以用主机名命名以便识别公钥）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#测试SSH 能否连上 GitHub</span><br><span class="line">ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">#设置remote方式为SSH，将ORG/REPO替换为你的仓库例如我的是git@github.com:AnZai1991/AnZai1991.github.io.git</span><br><span class="line">git remote set-url origin git@github.com:ORG/REPO.git</span><br><span class="line"></span><br><span class="line">#验证remote方式是否是ssh</span><br><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
+<p><strong>常见问题</strong>：<br>你有多个 key：需要在 ~/.ssh/config 里为 github.com 指定 IdentityFile。<br>公司网络/代理阻断 22 端口：可改用 SSH over 443（ssh.github.com:443）。</p>
+<h4 id="补充：添加Personal-Access-Token（classic）到GitHub"><a href="#补充：添加Personal-Access-Token（classic）到GitHub" class="headerlink" title="补充：添加Personal Access Token（classic）到GitHub"></a>补充：添加Personal Access Token（classic）到GitHub</h4><p>Personal Access Token（classic）：用于 HTTPS / API 的访问凭证（<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> 这条路）<br>主要用途：<br>git clone/pull/push 走 HTTPS 协议（remote 形如 <a href="https://github.com/org/repo.git" target="_blank" rel="noopener">https://github.com/org/repo.git</a> ）时，作为“密码”替代品（GitHub 已禁用账号密码推送）。<br>调用 GitHub API（REST/GraphQL），比如自动化脚本、CI 工具查询/创建 issue、发 release、管理 webhook 等。<br>认证方式：一个可复制的字符串（泄露风险更像“密码”）。</p>
+<p>回到GitHub页面： Settings → Developer Settings → Personal access tokens → tokens(classic) → Generate new token (classic)</p>
+<h3 id="上传本地项目到GitHub"><a href="#上传本地项目到GitHub" class="headerlink" title="上传本地项目到GitHub"></a>上传本地项目到GitHub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git init //把这个目录变成Git可以管理的仓库</span><br><span class="line">git add sqlist.h //将工作文件修改提交到本地暂存区</span><br><span class="line">git add . //将所有修改过的工作文件提交到本地暂存区</span><br><span class="line">git commit -m &quot;first commit&quot; //把文件提交到仓库，双引号内容为注释</span><br><span class="line">git remote add origin git@github.com:xxxx/xxxx.git //将本地仓库和远程仓库关联</span><br><span class="line">git push -u origin master //把本地仓库的项目推送到远程仓库（github）上</span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
+
+<p>将所有项目文件放入仓库的当前目录下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;xxx&quot;</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h3 id="关联GitHub仓库"><a href="#关联GitHub仓库" class="headerlink" title="关联GitHub仓库"></a>关联GitHub仓库</h3><p>到github test仓库复制仓库地址，注意点击SSH，也可以使用https协议，SSH速度快一些。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin xxx@github.com:xxxx/xxxx.git</span><br><span class="line">git push -u origin master</span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
-
 <p><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">推荐git教程——廖雪峰官网</a></p>
-
+<hr>
+<h2 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h2><h3 id="Git-Bash中常用的命令"><a href="#Git-Bash中常用的命令" class="headerlink" title="Git Bash中常用的命令"></a>Git Bash中常用的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#快速查看所有配置及来源</span><br><span class="line">git config --list --show-origin</span><br><span class="line"></span><br><span class="line">#注意有三层配置：系统级、全局（用户）级、本地（仓库）级，优先级是本地 &gt; 全局 &gt; 系统。</span><br><span class="line">#逐层查看（仅显示该层级的配置）</span><br><span class="line">#本地仓库（当前仓库中的 .git/config）</span><br><span class="line">git config --local --list</span><br><span class="line">#全局用户级</span><br><span class="line">git config --global --list</span><br><span class="line">#系统级</span><br><span class="line">git config --system --list</span><br></pre></td></tr></table></figure>
       
 
       
@@ -360,7 +396,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-Bash"><span class="toc-number">1.</span> <span class="toc-text">Git Bash</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定用户"><span class="toc-number">1.1.</span> <span class="toc-text">绑定用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为GitHub设置SSH-key"><span class="toc-number">1.2.</span> <span class="toc-text">为GitHub设置SSH key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传本地项目到GitHub"><span class="toc-number">1.3.</span> <span class="toc-text">上传本地项目到GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关联GitHub仓库"><span class="toc-number">1.4.</span> <span class="toc-text">关联GitHub仓库</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-GitHub-Git-Bash的关系"><span class="toc-number">1.</span> <span class="toc-text">Git\GitHub\Git Bash的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">2.</span> <span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定用户"><span class="toc-number">2.1.</span> <span class="toc-text">绑定用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub"><span class="toc-number">3.</span> <span class="toc-text">GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加SSHKey到GitHub"><span class="toc-number">3.1.</span> <span class="toc-text">添加SSHKey到GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#补充：添加Personal-Access-Token（classic）到GitHub"><span class="toc-number">3.1.1.</span> <span class="toc-text">补充：添加Personal Access Token（classic）到GitHub</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传本地项目到GitHub"><span class="toc-number">3.2.</span> <span class="toc-text">上传本地项目到GitHub</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-Bash"><span class="toc-number">4.</span> <span class="toc-text">Git Bash</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-Bash中常用的命令"><span class="toc-number">4.1.</span> <span class="toc-text">Git Bash中常用的命令</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -389,7 +425,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 安亚博
+    		&copy; 2026 安亚博
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -476,19 +512,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">办公</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">办公</a>
               </li>
              
               <li class="article-tag-list-item">
