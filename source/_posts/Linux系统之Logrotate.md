@@ -34,7 +34,16 @@ yum install -y logrotate
 
 ## logrotate日志切割
 
-### logrotate配置过程
+### logrotate常用核心配置项
+
+1、轮转周期设置
+2、保留文件策略
+3、压缩处理
+4、文件处理
+5、脚本触发
+参考：https://linux.die.net/man/8/logrotate
+
+### logrotate配置案例
 
 在/etc/logrotate.d下创建tomcat-direct文件，内容如下
 
@@ -56,7 +65,7 @@ dateformat .%Y%m%d-%H点    #配合dateext使用，紧跟在下一行出现，�
 olddir /var/log/tomcat/oldlog  #轮替后日志文件放入指定的目录 
 ```
 
-### 参数说明
+## 参数说明
 
 以下信息可通过man logrotate获取
 
