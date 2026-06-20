@@ -265,6 +265,7 @@ pid-file=/var/run/mysqld/mysqld.pid
 ```
 启动服务并设置开机自启动
 ```bash
+#yum install -y mariadb-server mariadb如果没有安装成功mariabd，可以手动安装
 systemctl start mariadb #启动
 systemctl enable mariadb #加入自启动
 ```
@@ -288,8 +289,8 @@ netstat -nlput|grep 3306 #查看端口
 mysqladmin -uroot password admin #设置root用户密码为admin
 mysql -uroot -padmin #登录MySQL
 mysql> create database zabbix character set utf8; #创建名称为zabbix的数据库，并设置其字符集为utf-8
-mysql> grant all privileges onzabbix.* to zabbix@'localhost' identified by 'zabbix';
-mysql> grant all privileges onzabbix.* to zabbix@'127.0.0.1' identified by 'zabbix';
+mysql> grant all privileges on zabbix.* to zabbix@'localhost' identified by 'zabbix';
+mysql> grant all privileges on zabbix.* to zabbix@'127.0.0.1' identified by 'zabbix';
 #设置zabbix数据库的所有权限，允许用户zabbix的IP地址为127.0.0.1和localhost访问，并将zabbix账号的密码设置为zabbix
 mysql> flush privileges; #刷新权限，使其立即生效
 \q #退出MySQL或者quit
